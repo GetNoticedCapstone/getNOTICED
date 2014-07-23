@@ -1,0 +1,37 @@
+
+body{
+    background: url('../img/bgMain.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+.margTop{
+    margin-top: 10px;
+}
+.headerBox{
+    text-shadow: 0px 2px 5px #3498db;
+}
+.main{
+    max-width: 960px;
+    background-color: white;
+    margin-bottom: 25px;
+    box-shadow: 0px 0px 10px #000000;
+}
+.title{
+    min-height: 25px;
+    max-width: 960px;
+    background-color: #2980b9;
+    color: white;
+    font-size: 18px;
+    border-radius: 10px;
+    
+}
+.padL{
+    padding-left: 5px;
+}
+.margB{
+    margin-bottom: 20px;
+}
+.mainBtn{
+    margin-top: 50px;
+    margin-bottom: 15px;
+}

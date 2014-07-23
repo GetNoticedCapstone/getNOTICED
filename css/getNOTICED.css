@@ -1,0 +1,83 @@
+
+/* 
+    Created on : May 14, 2014, 8:03:03 PM
+    Author     : davidlandi
+*/
+
+body{
+    background: url('../img/bgMain.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+.jumbotron{
+    background-color: #3498db;
+}
+hr{
+/*    border-top: 1px solid #bdc3c7;*/
+    margin-right: 20px;
+}
+.shadow{
+    box-shadow: 0px 0px 10px #000000;
+}
+.padR{
+    margin-right: 10px;
+}
+.colorWhite{
+/*    background-color: #ecf0f1;*/
+background-color: white;
+}
+.marginTop{
+    margin-top: 20px;
+}
+.marginBtm{
+    margin-bottom: 20px;
+}
+
+
+.container {
+  margin: 0 auto;
+  max-width: 960px;
+}
+.maxWidth{
+    max-width: 810px;
+}
+
+.round{
+    border-radius: 10px;
+}
+
+.imageIcon:hover {
+-webkit-transform: rotate(360deg); transform: rotate(360deg);
+}
+.imageIcon {
+-webkit-transition: all 0.7s ease; transition: all 0.7s ease;
+}
+
+.colorBlack{
+    background-color: black;
+}
+.logoFont{
+    
+    font-weight: bolder;
+    font-family: 'Poiret One',cursive;
+    text-shadow: 2px 2px 2px black;
+    margin-bottom: 40px;
+}
+.logoSubFont{
+    font-family: 'Architects Daughter', cursive;
+    font-size: 18px;
+    
+}
+.mainFont{
+    font-family: 'Architects Daughter', cursive;
+    font-size: 18px;
+}
+.labelFont{
+    font-family: 'Architects Daughter', cursive;
+    font-weight: bolder;
+    text-shadow: 2px 2px 2px #e74c3c;
+}
+//============================Sign up & Login css=============================//
+
+//============================================================================//
+
