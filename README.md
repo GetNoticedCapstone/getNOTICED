@@ -7,8 +7,8 @@ Project Name: GetNOTICED
 
 Group: David Landi, Justin Barreira, Terri Gaskell
 
-July 22, 2014
-================================================================================
+
+
 Project Description
 
 GetNOTICED is a SaaS based web application that will allow millions of people to create, 
@@ -28,7 +28,7 @@ up today and take charge of your career by providing employers with a centralize
 where all of your qualification will easily be accessible with a simple mouse click. GetNOTICED 
 
 today. 
-================================================================================
+
 Functionality
 
 Functionality of the Get Noticed Saas application must include:
@@ -58,7 +58,7 @@ Functionality of the Get Noticed Saas application must include:
         o Customize their site with provided components
 
         o Create distinct URL that can be provided to potential employers site
-================================================================================
+
 Development Platform
 
 The GetNOTICED application will be utilizing the following technologies:
