@@ -11,7 +11,7 @@ Users Page
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="css/bootstrap.css" rel="stylesheet">
-        <link href="css/userThemeOne.css" rel="stylesheet" media="all">
+        <link href="css/userThemeThree.css" rel="stylesheet" media="all">
         <link href='http://fonts.googleapis.com/css?family=Racing+Sans+One' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=Yellowtail' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=Limelight' rel='stylesheet' type='text/css'>
