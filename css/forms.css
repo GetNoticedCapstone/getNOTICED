@@ -1,0 +1,46 @@
+
+body{
+    background: url('../img/bgMain.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+.signInFrm{
+    max-width: 500px;
+    background-color: white;
+    margin-top: 40px;
+    padding-top: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0px 0px 5px #000000;
+}
+.inputMargTop{
+    margin-top: 20px;
+    
+}
+.signInFrm .input-lg{
+    margin-top: 2px;
+}
+.frmHeader{
+    margin-top: 55px;
+    text-shadow: 0px 2px 5px #3498db;
+    margin-bottom: 25px;
+    font-style: italic;
+    font-size: 30px;
+}
+.profImg{
+    height: 220px;
+    width: 220px;
+    box-shadow: 0px 10px 10px #7f8c8d;
+        
+}
+.logo{
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 10px 8px #7f8c8d;
+}
+.btn{
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+.newAcc{
+    font-size: 18px;
+}
