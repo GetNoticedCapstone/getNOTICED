@@ -13,7 +13,7 @@ Designed developed and managed by David landi, Terri Gaskell, and Justin Barreir
         <link href="font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
         <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
-        <title>getNOTICED</title>
+        <title>get<i>N</i>OTICED</title>
     </head>
     <body>
 <!--{END CSS & GOOGLE FONTS}................................................ -->
@@ -178,7 +178,7 @@ Designed developed and managed by David landi, Terri Gaskell, and Justin Barreir
         <div id="contact" class="contentSection"><!--{contact section}-->
     
         </div><!--{contact about section}-->   
-<!--{END MAIN CONTENT}........................................................... -->
+<!--{END MAIN CONTENT}...................................................... -->
 
 <!--{lOAD JAVASCRIPT}....................................................... -->
         <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>

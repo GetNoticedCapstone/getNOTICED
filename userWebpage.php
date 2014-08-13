@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <!--
-David Landi
-5/14
-Final PHP Project
-Users Page
+This is the page that will be populated using php with the users data that has
+been stored on our sql database. 
+One page filled dynamically that millions of people can use. 
+Each page will have a unique url that can be shared with anyone. To access the 
+page all a person would have to do is enter the url in their browser. 
+This page also is 100% responsive and works on all major browsers.
 -->
 <html lang="en">
-<!--{LOAD CSS & GOOGLE FONTS}..................................................................................... -->
+<!--{LOAD CSS & GOOGLE FONTS}............................................... -->
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,23 +21,15 @@ Users Page
         <title>Home</title>
     </head>
     <body>
-<!--{END CSS & GOOGLE FONTS}...................................................................................... -->
+<!--{END CSS & GOOGLE FONTS}................................................ -->
         
-<!--{GLOBAL PHP}.................................................................................................. -->
-<!--
-INFO
-
--->
-        <?php
+<!--{GLOBAL PHP}............................................................ -->
+    <?php
         // put your code here
-        ?>
-<!--{END PHP}..................................................................................................... -->
+    ?>
+<!--{END PHP}............................................................... -->
 
-<!--{NAVIGATION CONTAINER}........................................................................................ -->
-<!--
-INFO
-
--->
+<!--{NAVIGATION}............................................................ -->
         <div class="navbar navbar-inverse ">
             <div class="container">
                 <div class="navbar-header">
@@ -45,11 +39,10 @@ INFO
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="index.php">Portfolio Builder</a>
+                    <a class="navbar-brand" href="index.php">get<i>N</i>OTICED</a>
                 </div>
                 <div class="collapse navbar-collapse">
-                    <ul class="nav navbar-nav">
-                        <li class="active"><a href="#">Home</a></li>
+                    <ul class="nav navbar-nav navbar-right">
                         <li><a href="#">Experience</a></li>
                         <li><a href="#">About</a></li>
                         <li><a href="#">Contact</a></li>
@@ -57,71 +50,72 @@ INFO
                 </div>
             </div>
         </div>
-<!--{End NAVIGATION CONTAINER}.................................................................................... -->
+<!--{End NAVIGATION}........................................................ -->
 
-<!--{INNER CONTAINER}............................................................................................. -->
-<!--
-INFO
-
--->
-        <div class="container">
-            <div class="row"><!--{HEADER SECTION}-->
-                <div class="col-md-8 ">
-                    <h1 class="nameFont">Your Name</h1>
-                    <p class="titleFont">Your Title</p>
-                </div>
-                <div class="col-md-4 tPad">
-                    <img src="img/github.png" alt="" class="pLeft ingrave">
-                    <img src="img/linkedin.png" alt="" class="ingrave">
-                    <img src="img/facebook.png" alt="" class="ingrave">
-                </div>                
-            </div><!--{END HEADER SECTION}-->
-            <div class="row margTop"><!--{INNER CONTENT}-->
-                <div class="col-md-4 "><!--{EXPERIENCE SECTION}-->
-                    <div class="box img-responsive text-center tPad">
-                        <h2 class="boxLable">EXPERIENCE</h2>
-                        <a href="#expModal" role="button" data-toggle="modal"><img class="" src="img/skills.png" alt=""></a>
-                        <div id="expModal" class="modal fade">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                        <h4 class="modal-title">Qualifications</h4>
-                                    </div>
-                                    <div class="modal-body">
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <h4>Education</h4>
-                                            </div>
-                                            <div class="col-md-6">
-                                                
-                                            </div>
-                                        </div>
-                                        <hr>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <h4>Skills</h4>
-                                            </div>
-                                            <div class="col-md-6">
-                                                
-                                            </div>                                            
-                                        </div>
-                                        <hr>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <h4>Related Work History</h4>
-                                            </div>
-                                            <div class="col-md-6">
-                                                
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>                               
-                            </div>
+<!--{MAIN CONTENT}.......................................................... -->
+        <div class="container"><!-- main wrapper -->
+            <div class="header"><!-- header wrapper -->
+                <div class="row">
+                    <div class="col-md-8">
+                        <h1 class="nameFont">Your Name</h1>
+                        <p class="titleFont">Your Title</p>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="social">
+                            <img src="img/github.png" alt="" class="pLeft">
+                            <img src="img/linkedin.png" alt="" class="">
+                            <img src="img/facebook.png" alt="" class="">
                         </div>
                     </div>
-                </div><!--{END EXPERIENCE SECTION}-->
-                <div class="col-md-4"><!--{ABOUT SECTION}-->
+                </div>
+            </div><!-- end header wrapper -->
+            <div class="container innerCore"><!-- inner content wrapper -->
+                <div class="row">
+                    <div class="col-md-4"><!-- exp section -->
+                        <div class="box img-responsive text-center tPad">
+                            <h2 class="boxLable">EXPERIENCE</h2>
+                            <a href="#expModal" role="button" data-toggle="modal"><img class="" src="img/skills.png" alt=""></a>
+                            <div id="expModal" class="modal fade">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                            <h4 class="modal-title">Qualifications</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <h4>Education</h4>
+                                                </div>
+                                                <div class="col-md-6">
+                                                
+                                                </div>
+                                            </div>
+                                            <hr>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <h4>Skills</h4>
+                                                </div>
+                                                <div class="col-md-6">
+                                                
+                                                </div>                                            
+                                            </div>
+                                            <hr>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <h4>Related Work History</h4>
+                                                </div>
+                                                <div class="col-md-6">
+                                                
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>                               
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- end exp section -->
+                    <div class="col-md-4"><!--{ABOUT SECTION}-->
                     <div class="box img-responsive text-center tPad">
                         <h2 class="boxLable">ABOUT</h2>
                         <a href="#aboutModal" role="button" data-toggle="modal"><img class="" src="img/Contact.png" alt=""></a>
@@ -201,21 +195,21 @@ INFO
                             </div>
                         </div>
                     </div>
-                </div><!--{END CONTACT SECTION}-->
-            </div><!--{END INNER CONTENT}-->
-            <div class="row"><!--{FOOTER SECTION}-->
-                <div class="col-md-12">
-                    <p class="text-center footer">Created by DL WebPortfolio Builder</p>
+                </div><!--{end contact section}-->
                 </div>
-            </div><!--{END FOOTER SECTION}-->
-        </div>
-<!--{END INNER CONTAINER}.......................................................................................... -->
+                
+            </div><!-- end inner content wrapper -->
+        </div><!-- end main wrapper -->
+        <div class="footer"><!--{FOOTER SECTION}-->
+            <p class="text-center footerText"> &copy; get<i>N</i>OTICED all rights reserved</p>  
+        </div><!--{END FOOTER SECTION}-->
 
-<!--{lOAD JAVASCRIPT}.............................................................................................. -->
+<!--{END MAIN CONTENT}...................................................... -->
+
+<!--{lOAD JAVASCRIPT}....................................................... -->
         <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
         <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-        <script src="js/bootstrap.js"></script> 
-        <script src="js/landi.js"></script> 
-<!--{END JAVASCRIPT}............................................................................................... -->        
+        <script src="js/bootstrap.js"></script>  
+<!--{END JAVASCRIPT}........................................................ -->        
     </body>
 </html>
