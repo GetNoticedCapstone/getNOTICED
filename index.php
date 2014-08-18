@@ -13,7 +13,8 @@ Designed developed and managed by David landi, Terri Gaskell, and Justin Barreir
         <link href="font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
         <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
-        <title>get<i>N</i>OTICED</title>
+        
+        <title>getNOTICED</title>
     </head>
     <body>
 <!--{END CSS & GOOGLE FONTS}................................................ -->
@@ -176,15 +177,98 @@ Designed developed and managed by David landi, Terri Gaskell, and Justin Barreir
             </div><!--{end container}-->
         </div><!--{end team section}-->
         <div id="contact" class="contentSection"><!--{contact section}-->
-    
-        </div><!--{contact about section}-->   
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="img-responsive captionBox center-block">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <img src="img/contactUS.jpg" alt="" class="img-circle img-responsive">
+                                </div>
+                                <div class="col-md-6">
+                                    <h1 class="text-center contactText">Contact Information</h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                    <div class="row">                       
+                        <div class="col-md-12">
+                            <div class="img-responsive captionBox center-block">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <h2>David Landi</h2>
+                                        <p>djlandi@email.neit.edu</p>
+                                        <p>
+                                            <img src="img/githubIcon.png" alt="" height="45px" width="45px" title="gitHub">
+                                            <img src="img/linkedinIcon.png" alt="" title="LinkedIn">
+                                        </p>
+                                        
+                                        <h2>Terri Gaskell</h2>
+                                        <p>tlgaskell@email.neit.edu</p>
+                                        <p>
+                                            <img src="img/githubIcon.png" alt="" height="45px" width="45px" title="gitHub">
+                                            <img src="img/linkedinIcon.png" alt="" title="LinkedIn">
+                                        </p>
+                                        <h2>Justin Barreira</h2>
+                                        <p>jabarreira@email.neit.edu</p>
+                                        <p>
+                                            <img src="img/githubIcon.png" alt="" height="45px" width="45px" title="gitHub">
+                                            <img src="img/linkedinIcon.png" alt="" title="LinkedIn">
+                                        </p>
+                                    </div>
+                                    <div class="col-md-9">
+                              
+                                        <div id="googleMap">
+                                
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>   
+                    </div>
+                <hr/>
+                <div class="row">
+                    <div class="col-md-12">
+                        <footer>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <p class="text-left">
+                                        <strong>School Information</strong><br/>
+                                        New England Tech<br/>
+                                       AS, Software Engineering<br/>
+                                        Capstone Project 2014
+                                    </p>
+                                </div>
+                                 <div class="col-md-4">
+                                     <p class="text-center">
+                                         <strong>Technical Resources</strong><br/>
+                                         <a href="http://getbootstrap.com/components/">Twitter Bootstrap Framework</a><br/>
+                                         <a href="http://php.net/">php</a><br/>
+                                         <a href="http://www.w3schools.com/js/">JavaScript</a>  
+                                     </p>
+                                </div>
+                               
+                                <div class="col-md-4">
+                                    <p class="copyRight text-right">&COPY; 2014 get<i>N</i>OTICED. All rights reserved</p>
+                                </div>
+                               
+                            </div>
+                        </footer>
+                    </div>
+                </div>
+            </div>
+        </div><!--{contact about section}-->  
+        
 <!--{END MAIN CONTENT}...................................................... -->
 
 <!--{lOAD JAVASCRIPT}....................................................... -->
         <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
         <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
         <script src="js/bootstrap.js"></script> 
         <script src="js/pageScroll.js"></script>
+        <script src="js/googleMaps.js"></script>
 <!--{END JAVASCRIPT}........................................................ -->        
     </body>
 </html>
