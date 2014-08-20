@@ -22,7 +22,9 @@ and open the template in the editor.
 <!--{END CSS & GOOGLE FONTS}................................................ -->
 
 <!--{GLOBAL PHP}............................................................ -->
-    
+    <?php
+        
+    ?>
 <!--{End PHP}............................................................... -->
 
 <!--{Main Navigation}....................................................... -->          
@@ -103,17 +105,7 @@ and open the template in the editor.
         <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
         <script src="js/bootstrap.js"></script> 
         <script src="js/loginSwitch.js"></script>
-<!--{END JAVASCRIPT}........................................................ -->        
-
-    <?php
-        if($_SESSION['changePage'] === '0'){
-            echo "<script> SwitchToLogin(); </script>";
-        }
-        else if($_SESSION['changePage'] === '1'){
-            echo "<script> SwitchToSignUp(); </script>";
-        }
-    ?>
-
+<!--{END JAVASCRIPT}........................................................ -->  
     </body>
 </html>
 
