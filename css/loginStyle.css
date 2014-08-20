@@ -67,7 +67,7 @@ all style for login page
     -webkit-border-radius: 50%;
     border-radius: 50%;
 }
-.toggle
+.create, .login
 {
     text-decoration-line: underline;
     margin-top: 8px;
