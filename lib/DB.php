@@ -1,9 +1,9 @@
 <?php
 
 /**
- * Description of DB
+ * getNoticed Database get/set and close 
  *
- * @author David
+ * 
  */
 class DB {
     /**

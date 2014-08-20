@@ -1,0 +1,67 @@
+CREATE TABLE IF NOT EXISTS Admin (
+    AdminID INT NOT NULL,
+    AdminName VARCHAR(45) NULL,
+    AdminPassword VARCHAR(15) NULL,
+    PRIMARY KEY (AdminID),
+    UNIQUE INDEX AdminID_UNIQUE (AdminID ASC)
+)
+
+CREATE TABLE IF NOT EXISTS Members (
+  MemberID INT NOT NULL AUTO_INCREMENT,
+  FirstName VARCHAR(45) NULL,
+  LastName VARCHAR(45) NULL,
+  MInitial VARCHAR(2) NULL,
+  Email VARCHAR(45) NULL,
+  PrimaryPhone VARCHAR(15) NULL,
+  CellPhone VARCHAR(15) NULL,
+  Address1 VARCHAR(100) NULL,
+  Address2 VARCHAR(100) NULL,
+  City VARCHAR(100) NULL,
+  State VARCHAR(2) NULL,
+  ZipCode VARCHAR(10) NULL,
+  WebsiteURL VARCHAR(45) NULL,
+  PRIMARY KEY (MemberID),
+  UNIQUE INDEX MemberID_UNIQUE (MemberID ASC)
+)
+
+CREATE TABLE IF NOT EXISTS MemberStatus (
+  MemberID INT NOT NULL,
+  StatusCode VARCHAR(1) NULL,
+  DateNew DATE NULL,
+  DateClosed DATE NULL,
+  DateRenewed DATE NULL,
+  INDEX MemberID_idx (MemberID ASC),
+  PRIMARY KEY (MemberID),
+  CONSTRAINT MemberID
+    FOREIGN KEY (MemberID)
+    REFERENCES getnoticed.Members (MemberID)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION
+)
+
+CREATE TABLE IF NOT EXISTS SignIn (
+  MemberID INT NOT NULL,
+  Password VARCHAR(45) NULL,
+  ResetPhrase VARCHAR(255) NULL,
+  ResetAnswer VARCHAR(100) NULL,
+  INDEX MemberID_idx (MemberID ASC),
+  PRIMARY KEY (MemberID),
+  CONSTRAINT MemberID
+    FOREIGN KEY (MemberID)
+    REFERENCES getnoticed.Members (MemberID)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION
+)
+
+CREATE TABLE IF NOT EXISTS Themes (
+  ThemeID INT NOT NULL AUTO_INCREMENT,
+  MemberID INT NOT NULL,
+  ThemeName VARCHAR(45) NULL,
+  INDEX MemberID_idx (MemberID ASC),
+  PRIMARY KEY (ThemeID, MemberID),
+  CONSTRAINT MemberID
+    FOREIGN KEY (MemberID)
+    REFERENCES getnoticed.Members (MemberID)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION
+)
