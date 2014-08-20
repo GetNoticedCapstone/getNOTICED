@@ -1,15 +1,14 @@
 <?php
 
 /**
- * Description of Config
+ * Database connection
  *
- * @author David
  */
 class Config {
     
-    const DB_DNS = "mysql:host=localhost;port=3306;dbname=saas",
-          DB_USER = "root",
-          DB_PASSWORD = ""; 
-//          PASS_CODE = 'landi';
+    const   DB_DNS = "mysql:host=localhost;port=3306;dbname=getnoticed",
+            DB_USER  = "getnoticed_web",
+            DB_PASSWORD  = "neit2014";
+          //PASS_CODE = 'demo';
 }
 
