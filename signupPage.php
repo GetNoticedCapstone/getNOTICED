@@ -14,9 +14,7 @@ and open the template in the editor.
         <link href="css/bootstrap.css" rel="stylesheet">
         <link href="css/loginSignupStyle.css" rel="stylesheet" media="all">
         <link href="font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-        <title>get<i>N</i>OTICED</title>
-        
-    
+        <title>getNOTICED</title>
     </head>
     <body>
 <!--{END CSS & GOOGLE FONTS}................................................ -->
@@ -43,7 +41,7 @@ and open the template in the editor.
             </div>
             <div id="mainNav" class="collapse navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">                                                 
-                    <li><a href="signupPage.php">Sign up</a></li>
+                    <li><a href="loginPage.php">login</a></li>
                     <li><a href="signupPage.php">Help</a></li> 
                 </ul>
             </div>                  
@@ -57,10 +55,10 @@ and open the template in the editor.
                 <div class="frmHeader">
                     <div class="row">
                         <div class="col-md-6">
-                            <img class="profile-img" src="img/login_img.png" alt="">
+                            <img class="profile-img" src="img/signUp_img.png" alt="">
                         </div>
                         <div class="col-md-6">
-                            <h2 class="text-center">Welcome Back</h2>
+                            <h2 class="text-center">Free Membership</h2>
                         </div>
                     </div>
                     <hr/>
@@ -80,9 +78,8 @@ and open the template in the editor.
                 <div class="frmFooter">
                     <div class="row">
                         <div class="col-md-12">
-                            <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>                   
-                            <button class="btn btn-lg btn-primary btn-block" type="submit">Forgot Password?</button>
-                            <button class="btn btn-lg btn-primary btn-block" type="submit">Not a member?</button> 
+                            <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>                 
+                            <button class="btn btn-lg btn-primary btn-block" type="submit">Already a member?</button> 
                         </div>
                     </div>
                 </div>            
@@ -97,6 +94,3 @@ and open the template in the editor.
 <!--{END JAVASCRIPT}........................................................ -->  
     </body>
 </html>
-
-
-
