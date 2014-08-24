@@ -81,8 +81,8 @@ and open the template in the editor.
                     <div class="row">
                         <div class="col-md-12">
                             <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>                   
-                            <button class="btn btn-lg btn-primary btn-block" type="submit">Forgot Password?</button>
-                            <button class="btn btn-lg btn-primary btn-block" type="submit">Not a member?</button> 
+                            <a class="btn btn-lg btn-primary btn-block" href="loginPage.php">Forgot password?</a>
+                            <a class="btn btn-lg btn-primary btn-block" href="signupPage.php">Not a member?</a>
                         </div>
                     </div>
                 </div>            

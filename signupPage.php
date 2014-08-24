@@ -79,7 +79,7 @@ and open the template in the editor.
                     <div class="row">
                         <div class="col-md-12">
                             <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>                 
-                            <button class="btn btn-lg btn-primary btn-block" type="submit">Already a member?</button> 
+                            <a class="btn btn-lg btn-primary btn-block" href="loginPage.php">Already a member?</a> 
                         </div>
                     </div>
                 </div>            
