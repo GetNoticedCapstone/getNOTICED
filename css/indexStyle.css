@@ -218,6 +218,7 @@ body{
 }
 .carousel{
     margin-top: 90px;
+    margin-bottom: 90px;
 }
 @media (max-width: 480px){
     .carouselSize{

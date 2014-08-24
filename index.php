@@ -167,8 +167,12 @@ Designed developed and managed by David landi, Terri Gaskell, and Justin Barreir
                             <a class="carousel-control right" href="#slideShow" data-slide="next"> 
                             <span class="icon-next"></span></a>
                         </div>
+                        <a href="#" class="btn btnCircle gnScroll center-block" data-id="team">
+                            <i class="fa fa-angle-double-down animated"></i>
+                        </a>
                     </div>
                 </div>
+              
             </div>
         </div><!--{about section}-->
         
@@ -177,7 +181,7 @@ Designed developed and managed by David landi, Terri Gaskell, and Justin Barreir
                 <div class="row">
                     <div class="col-md-4 col-lg-4 extSpaceTop"><!--{justin bio}-->
                         <div class="center-block">
-                            <img src="img/justin1.png" alt="" class="img-circle img-responsive">
+                            <img src="img/justin1.png" width="300" height="300" alt="" class="img-circle img-responsive">
                             <div class="captionBox text-center">
                                 <h2 class="captionTitle">Justin Barreira</h2>
                                 <h4 class="captionTitle">Lead PHP Developer</h4>
@@ -193,7 +197,7 @@ Designed developed and managed by David landi, Terri Gaskell, and Justin Barreir
                     </div><!--{end justin bio}-->
                     <div class="col-md-4 col-lg-4 extSpaceTop"><!--{terry bio}-->
                         <div class="img-responsive center-block">
-                            <img src="img/justin1.png" alt="" class="img-circle img-responsive">
+                            <img src="img/terri.png" alt="" width="300" height="300" class="img-circle img-responsive">
                             <div class="captionBox text-center img-responsive">
                                 <h2 class="captionTitle">Terri Gaskell</h2>
                                 <h4 class="captionTitle">Project Manager & sql Developer</h4>
@@ -211,7 +215,7 @@ Designed developed and managed by David landi, Terri Gaskell, and Justin Barreir
                     </div><!--{end terry bio}-->
                     <div class="col-md-4 col-lg-4 extSpaceTop"><!--{david bio}-->
                         <div class="img-responsive center-block">
-                            <img src="img/david1.jpg" alt="" class="img-circle img-responsive">
+                            <img src="img/david1.jpg" width="300" height="300" alt="" class="img-circle img-responsive">
                             <div class="captionBox text-center img-responsive">
                                 <h2 class="captionTitle">David Landi</h2>
                                 <h4 class="captionTitle">Lead Front-End Developer</h4>
@@ -228,6 +232,9 @@ Designed developed and managed by David landi, Terri Gaskell, and Justin Barreir
                         </div>
                     </div><!--{end david bio}-->
                 </div><!--{end row}-->
+                <a href="#" class="btn btnCircle gnScroll center-block" data-id="contact">
+                    <i class="fa fa-angle-double-down animated"></i>
+                </a>
             </div><!--{end container}-->
         </div><!--{end team section}-->
         <div id="contact" class="contentSection"><!--{contact section}-->
@@ -254,20 +261,20 @@ Designed developed and managed by David landi, Terri Gaskell, and Justin Barreir
                                         <h2>David Landi</h2>
                                         <p>djlandi@email.neit.edu</p>
                                         <p>
-                                            <img src="img/githubIcon.png" alt="" height="45px" width="45px" title="gitHub">
-                                            <img src="img/linkedinIcon.png" alt="" title="LinkedIn">
+                                            <a href="https://github.com/davidlandi" target="_blank" title=""><img src="img/githubIcon.png" alt="" height="45px" width="45px" title="gitHub"></a>
+                                            <a href="https://linkedin.com/pub/david-landi/51/838/b4b/" target="_blank" title=""><img src="img/linkedinIcon.png" alt="" title="LinkedIn"></a>
                                         </p>
                                         
                                         <h2>Terri Gaskell</h2>
                                         <p>tlgaskell@email.neit.edu</p>
                                         <p>
-                                            <img src="img/githubIcon.png" alt="" height="45px" width="45px" title="gitHub">
-                                            <img src="img/linkedinIcon.png" alt="" title="LinkedIn">
+                                            <a href="https://github.com/JustinBarreira" target="_blank" title=""><img src="img/githubIcon.png" alt="" height="45px" width="45px" title="gitHub"></a>
+                                            <a href="#" target="_blank" title=""><img src="img/linkedinIcon.png" alt="" title="LinkedIn"></a>
                                         </p>
                                         <h2>Justin Barreira</h2>
                                         <p>jabarreira@email.neit.edu</p>
                                         <p>
-                                            <img src="img/githubIcon.png" alt="" height="45px" width="45px" title="gitHub">
+                                            <a href="https://github.com/TGaskell" target="_blank" title=""><img src="img/githubIcon.png" alt="" height="45px" width="45px" title="gitHub"></a>
                                             <img src="img/linkedinIcon.png" alt="" title="LinkedIn">
                                         </p>
                                     </div>
