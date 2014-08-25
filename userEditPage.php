@@ -12,34 +12,15 @@ Admin Page
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="css/bootstrap.css" rel="stylesheet">
-        <link href="css/adminStyle.css" rel="stylesheet" media="all">
-        <title>Admin Page</title>
+        <link href="css/editPageStyle.css" rel="stylesheet" media="all">
+        <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+        <title>Edit Content</title>
     </head>
     <body> 
 <!--{END CSS & GOOGLE FONTS}...................................................................................... -->
 
 <!--{GLOBAL PHP}.................................................................................................. -->
-<!--
-INFO
-
--->
         <?php
-//        Util::checkLogout();
-//        Util::confirmAccess();
-//        
-//        $content = new UserContent();
-//        $newContent = $content->getContent();
-//        
-//        if(Util::isPostRequest()){
-//           $content= filter_input_array(INPUT_POST);
-//           $content['title'] = $updatedInfo['title'];  
-//           $content['theme'] = $updatedInfo['theme'];  
-//           $content['address'] = $updatedInfo['address'];  
-//           $content['phone'] = $updatedInfo['phone'];  
-//           $content['email'] = $updatedInfo['email'];              
-//           $content['content'] = $updatedInfo['about']; 
-//            
-//        }
 
         ?>
 <!--{END PHP}..................................................................................................... -->
@@ -49,277 +30,270 @@ INFO
 INFO
 
 -->
-        <div class="navbar navbar-inverse ">
+        <nav class="navbar navbar-inverse" role="navigation">
             <div class="container">
                 <div class="navbar-header">
-                    <!-- When screen size in mobile nav becomes one btn with dropdown -->
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="index.php">Portfolio Builder</a>
-                </div>
-                <div class="collapse navbar-collapse">
-                    <ul class="nav navbar-nav">
-                        <li><a href="#">Help</a></li>
-                        <li><a href="#">Inspiration</a></li>
-                    </ul>
-                </div>
+                <button type="button" id="nav-toggle" class="navbar-toggle" data-toggle="collapse" data-target="#mainNav">
+                    <span class="sr-only">Toggle</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="index.php" class="navbar-brand">get<i>N</i>OTICED</a>
             </div>
-        </div>
+            <div id="mainNav" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">                                                 
+                    <li><a href="signupPage.php">Inspiration</a></li>
+                    <li><a href="signupPage.php">Help</a></li> 
+                </ul>
+            </div>                  
+            </div>              
+        </nav>
 <!--{End NAVIGATION CONTAINER}.................................................................................... -->
 
 <!--{INNER CONTAINER}............................................................................................. -->
-<!--
-INFO
-
--->
-        <form name="mainform" action="#" method="post" class="container main">
-            
-            <div class="row margB"><!--{HEADER SECTION}-->
-                <div class="col-lg-12">
-                    <div class="headerBox  text-center">
-                        <h1>Once you have filled out all of the required fields, your web portfolio will be complete.</h1>
+        <div class="container"><!--{Main Wrapper}-->
+            <div class="jumbotron text-center">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="title">get<i>N</i>OTICED</h1>
+                        <p>Just fill in the required fields, click publish and your personal web portfolio will be instantly created!</p>
                     </div>
                 </div>
-            </div><!--{END HEADER SECTION}-->
-            <div class="row"><!--{Theme Selection}-->
-                <div class="col-md-12 col-sm-12 col-xs-12">
-                    <div class="title margB">
-                        <p class="padL">Select a theme</p>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-4 col-xs-4">
-                    <img src="img/Theme1Admin.png" alt="" class="img-responsive">
-                    
-                </div>
-                <div class="col-md-4 col-sm-4 col-xs-4">
-                    <img src="img/Theme2Admin.png" alt="" class="img-responsive">
-                    
-                </div>
-                <div class="col-md-4 col-sm-4 col-xs-4">
-                    <img src="img/theme3Admin.png" alt="" class="img-responsive">
-                   
-                </div>
-                <div class="col-md-12 col-sm-12 col-xs-12 margTop" >
-                    <select class="form-control margB">
-                        <option>Theme 1</option>
-                        <option>Theme 2</option>
-                        <option>Theme 3 </option>
-                    </select>
-                </div>              
-            </div><!--{End Theme Selection-->
-            <div class="row margTop"><!--{NAME & TITLE SECTION}-->
-                <div class="col-md-12 col-sm-12 col-xs-12">
-                    <div class="title margB">
-                        <p class="padL">Enter name and title</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-sm-6 col-xs-6">
-                    <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" class="form-control" id="name" placeholder="First & Last Name">
-                    </div>
-                </div>
-                <div class="col-md-6 col-sm-6 col-xs-6 margB">
-                    <div class="form-group">
-                        <label for="jobTitle">Title</label>
-                        <input type="text" class="form-control" id="jobTitle" placeholder="Ex. Jr .NET Programmer">
-                    </div>
-                </div>
-            </div><!--{END NAME & TITLE SECTION}-->
-            <div class="row "><!--{EXPERIENCE SECTION}-->
-                <div class="col-md-12 col-sm-12 col-xs-12">
-                    <div class="title margB">
-                        <p class="padL">Experience</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-sm-6 col-xs-12">
-                    <h4>Skills</h4>
-                    <p>Enter your top 3 skills</p>
-                    <hr>
-                </div>
-                <div class="col-md-6 col-sm-6 col-xs-12">
-                    <div class="form-group">
-                        <input type="text" class="form-control" id="skillOne" placeholder="Skill 1">
-                    </div>
-                    <div class="form-group">
-                        <input type="text" class="form-control" id="skillTwo" placeholder="Skill 2">
-                    </div>
-                    <div class="form-group">
-                        <input type="text" class="form-control" id="skillThree" placeholder="Skill 3">
-                    </div>
-                    <hr>
-                </div>  
-                <div class="col-md-6 col-sm-6 col-xs-12 margTop">
-                    <h4>Job History</h4>
-                    <p>Enter your current or last position<br>
-                    If you enter your current position we recommend that you add "Present"</p>
-                    <p>Please limit your text with in the Responsibilities section to 150 characters.</p>
-                    <hr>
-                </div>
-                <div class="col-md-6 col-sm-6 col-xs-12">
-                    <div class="form-group">
-                        <label for="jTitle">Title</label>
-                        <input type="text" class="form-control" id="jTitle" placeholder="Job Title">
-                    </div>
-                    <div class="form-group">
-                        <label for="sDate">Start Date</label>
-                        <input type="text" class="form-control" id="sDate" placeholder="Ex. Oct. 2014">
-                    </div>
-                    <div class="form-group">
-                        <label for="eDate">End Date</label>
-                        <input type="text" class="form-control" id="eDate" placeholder="Ex. Dec. 2014">
-                    </div>
-                    <div class="form-group">
-                        <label for="jDetail">Responsibilities</label>
-                        <textarea class="form-control" id="jDetail" rows="3"></textarea>
-                    </div>
-                    <hr>
-                </div>
-                <div class="col-md-6 col-sm-6 col-xs-12 margTop">
-                    <h4>Education</h4>
-                    <p>Enter your education information.</p>
-                    <p>With in the additional detail section you can enter major projects you have completed, 
-                       classes that you have taken, or you can leave it blank.</p>
-                    <p>Please limit your text with in the Responsibilities section to 150 characters.</p>
-                    <hr>
-                      
-                </div>
-                <div class="col-md-6 col-sm-6 col-xs-12">
-                    <div class="form-group">
-                        <label for="schoolName">School Name</label>
-                        <input type="text" class="form-control" id="schoolName" placeholder="Ex. New England Tech">
-                    </div>
-                    <div class="form-group">
-                        <label for="program">Degree Program</label>
-                        <input type="text" class="form-control" id="program" placeholder="Ex. Softwear Engineering">
-                    </div>
-                    <div class="form-group">
-                        <label for="degreeType">Degree Type</label>
-                        <select id="degreeType">
-                            <option>Associates</option>
-                            <option>Bachelor's</option>
-                            <option>Masters</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="status">Degree Status</label>
-                        <select id="status">
-                            <option>graduated</option>
-                            <option>in progress</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="schoolComments">Additional Detail</label>
-                        <textarea class="form-control" id="schoolComments" rows="3"></textarea>
-                    </div>
-                </div>
-            </div><!--{END EXPERIENCE SECTION}-->
-            
-            <!--{ABOUT SECTION}-->
-            <div class="row margTop">
-                <div class="col-md-12 col-sm-12 col-xs-12 margTop">
-                    <div class="title">
-                        <p class="padL">About</p>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-info" style="width: 20%">
+                                <span class="sr-only">20% complete</span>
+                            </div>
+                        </div>
+                       
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-6 col-sm-6 col-xs-12">
-                    <h4>Summary</h4>
-                    <p>With in the summary section provide a brief description about your professional background.<br>
-                    If you are still in school and have little experience this would be a good section for you to highlight 
-                    why you believe that you are a good candidate for any potential company's that may be viewing your webpage.</p>
-                    <p>Please limit your text with in the Responsibilities section to 150 characters.</p>
-                                       
-                </div>
-                <div class="col-md-6 col-sm-6 col-xs-12">
-                    <div class="form-group">
-                        <label for="summary" class="margTop">Summary</label>
-                        <textarea class="form-control" id="summary" rows="3"></textarea>
+            <form class="frmLogin center-block">
+                <div id="screen1"><!--{1st form}-->
+                    <div class="frmHeader text-center">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h2>Select a theme</h2>
+                            </div>
+                        </div>
+                        <hr/>
                     </div>
-                <hr>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6 col-sm-6 col-xs-12 margTop">
-                    <h4>Objective</h4>
-                    <p>With in the objective section provide a brief explanation about the type of position you are looking for.</p>
-                    <p>Please limit your text with in the Responsibilities section to 150 characters.</p>                     
-                </div>
-                <div class="col-md-6 col-sm-6 col-xs-12">
-                    <div class="form-group">
-                        <label for="objective">Objective</label>
-                        <textarea class="form-control" id="objective" rows="3"></textarea>
+                    <div class="frmCore">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="thumbnail center-block">
+                                    <img class="img-responsive" src="http://placehold.it/250x250" alt="">
+                                    <div class="caption">
+                                        <h3>Theme 1</h3>
+                                        <p>Created by David Landi</p>
+                                    </div>
+                                    <div class="input-group">
+                                        <span class="input-group-addon">
+                                            <input type="radio">
+                                        </span>
+                                        <input type="text" class="form-control" id="theme1">
+                                    </div>
+                                </div>                              
+                            </div>
+                            <div class="col-md-4">
+                                <div class="thumbnail center-block">
+                                    <img class="img-responsive" src="http://placehold.it/250x250" alt="">
+                                    <div class="caption">
+                                        <h3>Theme 2</h3>
+                                        <p>Created by Justin Barreira</p>
+                                    </div>
+                                    <div class="input-group">
+                                        <span class="input-group-addon">
+                                            <input type="radio">
+                                        </span>
+                                        <input type="text" class="form-control" id="theme2">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="thumbnail center-block">
+                                    <img class="img-responsive" src="http://placehold.it/250x250" alt="">
+                                    <div class="caption">
+                                        <h3>Theme 3</h3>
+                                        <p>Created by Terri Gaskell</p>
+                                    </div>
+                                    <div class="input-group">
+                                        <span class="input-group-addon">
+                                            <input type="radio">
+                                        </span>
+                                        <input type="text" class="form-control" id="theme2">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <div class="frmFooter">
+                    <div class="row">
+                        <div class="col-md-12">                   
+                            <div class="btn1 btn btn-success center-block"><a href="#">Next Section</a></div>                          
+                        </div>
                     </div>
                 </div>  
-            </div>
-            <!--{END ABOUT SECTION}-->
-            
-            <!--{CONTACT SECTION}-->
-            <div class="row">
-                <div class="col-md-12 col-sm-12 col-xs-12 margTop">
-                    <div class="title">
-                        <p class="padL">Contact</p>
+                </div><!--{end 1st form}-->
+                <div id="screen2"><!--{2nd form}-->
+                    <div class="frmHeader text-center">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h2>Contact Information</h2>
+                            </div>
+                        </div>
+                        <hr/>
                     </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6 col-sm-6 col-xs-12 margTop">
-                   <h4>Social Media Icons</h4>
-                   <p>Included on your webpage there are 3 social media icons: Facebook, Github and LinkedIn.
-                   If you would like to have these icons linked to your personal sites you will need to provide the url's.
-                   This is not required however the icons will appear on your page even if the url is not provided.</p>
-                </div>
-                <div class="col-md-6 col-sm-6 col-xs-12 margTop">
-                    <div class="form-group">
-                        <label for="gitHub">Git Hub </label>
-                        <input type="text" class="form-control" id="gitHub" placeholder="url">
+                    <div class="frmCore">
+                        <div class="row">
+                            <div class="col-md-6 col-lg-6 col-sm-6">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="First & Last Name" required="true">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Job Title" required="true">                   
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Phone Number" required="true">                   
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" class="form-control" placeholder="Email" required="true">                   
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="City" required="true">                   
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="State" required="true">                   
+                                </div>
+                            </div>
+                            <div class="col-sm-12 col-md-12 col-lg-12">
+                                
+                            </div>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="fbook">Facebook</label>
-                        <input type="text" class="form-control" id="fbook" placeholder="url">
+                <div class="frmFooter">
+                    <div class="row">
+                        <div class="col-md-12">                   
+                            <div class="btn2 btn btn-success center-block"><a href="#">Next Section</a></div>                          
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="linkedin">LinkedIn</label>
-                        <input type="text" class="form-control" id="linkedin" placeholder="url">
+                </div>  
+                </div><!--{end 2nd form}-->
+                <div id="screen3"><!--{3rd form}-->
+                    <div class="frmHeader text-center">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h2>Social Media</h2>
+                            </div>
+                        </div>
+                        <hr/>
                     </div>
-                    <hr>
-                </div> 
-            </div>
-            <div class="row">
-                <div class="col-md-6 col-sm-6 col-xs-12">
-                   <h4>Contact Info</h4>
-                   <p>Be sure to enter accurate contact information so that employers are able to contact you.</p>
-                   <p>This is a required section.</p>
-                </div>
-                <div class="col-md-6 col-sm-6 col-xs-12">
-                    <div class="form-group">
-                        <label for="phone">Phone</label>
-                        <input type="text" class="form-control" id="phone" placeholder="###-###-####">
+                    <div class="frmCore">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="thumbnail center-block">
+                                    <img class="img-responsive" src="http://placehold.it/250x250" alt="">
+                                    <div class="caption">
+                                        <h3>GitHub</h3>
+                                        <p>A great place to show off your work</p>
+                                    </div>
+                                    <div class="input-group">
+                                        <span class="input-group-addon">
+                                            <input type="radio">
+                                        </span>
+                                        <input type="text" class="form-control" placeholder="Enter Url" id="gitHub">
+                                    </div>
+                                </div>                              
+                            </div>
+                            <div class="col-md-4">
+                                <div class="thumbnail center-block">
+                                    <img class="img-responsive" src="http://placehold.it/250x250" alt="">
+                                    <div class="caption">
+                                        <h3>Facebook</h3>
+                                        <p>Be sure not to have content that you wouldnt want a employer to see</p>
+                                    </div>
+                                    <div class="input-group">
+                                        <span class="input-group-addon">
+                                            <input type="radio">
+                                        </span>
+                                        <input type="text" class="form-control" placeholder="Enter Url" id="faceBook">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="thumbnail center-block">
+                                    <img class="img-responsive" src="http://placehold.it/250x250" alt="">
+                                    <div class="caption">
+                                        <h3>LinkedIn</h3>
+                                        <p>A great place to network and display qualifications</p>
+                                    </div>
+                                    <div class="input-group">
+                                        <span class="input-group-addon">
+                                            <input type="radio">
+                                        </span>
+                                        <input type="text" class="form-control" placeholder="Enter Url" id="linkedIn">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" class="form-control" id="email" placeholder="sample@sample.com">
+                <div class="frmFooter">
+                    <div class="row">
+                        <div class="col-md-12">                   
+                            <div class="btn3 btn btn-success center-block"><a href="#">Next Section</a></div>                         
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="city">City</label>
-                        <input type="text" class="form-control" id="city" placeholder="Ex. Providence">
+                </div>  
+                </div><!--{end 3rd form}-->
+                <div id="screen4"><!--{4th form}-->
+                    <div class="frmHeader text-center">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h2>Qualifications</h2>
+                            </div>
+                        </div>
+                        <hr/>
                     </div>
-                    <div class="form-group">
-                        <label for="state">State</label>
-                        <input type="text" class="form-control" id="state" placeholder="Ex. Rhode Island">
+                    <div class="frmCore">
+                        <div class="row">
+                            <div class="col-md-6 col-lg-6 col-sm-6">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Skill One" required="true">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Skill Two" required="true">                   
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Skill Three" required="true">                   
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" class="form-control" placeholder="Email" required="true">                   
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="City" required="true">                   
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="State" required="true">                   
+                                </div>
+                            </div>
+                            <div class="col-sm-12 col-md-12 col-lg-12">
+                                
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <!--{END CONTACT SECTION}-->
-            <div class="row">
-                <div class="col-md-12 col-sm-12 col-xs-12 mainBtn">
-                    <button class="btn btn-lg btn-success btn-block" type="submit">Submit</button>
-                </div>
-            </div>
-        </form>
+                <div class="frmFooter">
+                    <div class="row">
+                        <div class="col-md-12">                   
+                            <div class="btn4 btn btn-success center-block"><a href="#">Next Section</a></div>                         
+                        </div>
+                    </div>
+                </div>  
+                </div><!--{end 2nd form}-->
+            </form> 
+        </div><!--{End Main Wrapper}-->
 <!--{END INNER CONTAINER}......................................................................................... -->
 
 <!--{lOAD JAVASCRIPT}............................................................................................. -->
@@ -327,6 +301,7 @@ INFO
         <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
         <script src="js/bootstrap.js"></script> 
         <script src="js/landi.js"></script> 
+        <script src="js/contentSlider.js"></script>
 <!--{END JAVASCRIPT}.............................................................................................. -->        
     </body>
 </html>
