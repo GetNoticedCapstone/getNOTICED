@@ -24,6 +24,26 @@ and open the template in the editor.
 <!--{GLOBAL PHP}............................................................ -->
     <?php
         
+        $message = '';
+            if ( ! isset($_SESSION['login']) ) {
+                echo '<p>Makes login session false</p>';
+                $_SESSION['login'] = false;
+            }
+            if ( Util::isPostRequest() ) {
+                $checkCredentials = new Passcode();
+                if ( $checkCredentials->isValidLogin($checkCredentials) ) {                    
+                    $_SESSION['login'] = true;
+                    echo '<p>Logged In</p>';
+                    //Util::redirect('admin');                   
+                } else {                         
+                    $msg = 'Login Failed';
+                    $_SESSION['userID'] = 0;
+                }
+            }
+
+            if ( !empty($msg)) {
+                echo '<p>', $msg, '</p>';
+            }
     ?>
 <!--{End PHP}............................................................... -->
 
@@ -53,7 +73,7 @@ and open the template in the editor.
 
 <!--{MAIN CONTENT}.......................................................... -->
         <div class="container"><!--{main wrapper}-->
-            <form class="frmLogin center-block">
+            <form class="frmLogin center-block" method="post">
                 <div class="frmHeader">
                     <div class="row">
                         <div class="col-md-6">
@@ -69,10 +89,10 @@ and open the template in the editor.
                     <div class="row">
                         <div class="col-md-12">
                             <div class="form-group">
-                                <input type="email" class="form-control" placeholder="Email" required="true">
+                                <input type="email" name="email" class="form-control" placeholder="Email" required="true">
                             </div>
                             <div class="form-group">
-                                <input type="password" class="form-control" placeholder="Password" required="true">                   
+                                <input type="password" name="password" class="form-control" placeholder="Password" required="true">                   
                             </div>
                         </div>
                     </div>
@@ -80,7 +100,7 @@ and open the template in the editor.
                 <div class="frmFooter">
                     <div class="row">
                         <div class="col-md-12">
-                            <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>                   
+                            <button class="btn btn-lg btn-primary btn-block" type="submit" value="login">Login</button>                   
                             <a class="btn btn-lg btn-primary btn-block" href="loginPage.php">Forgot password?</a>
                             <a class="btn btn-lg btn-primary btn-block" href="signupPage.php">Not a member?</a>
                         </div>

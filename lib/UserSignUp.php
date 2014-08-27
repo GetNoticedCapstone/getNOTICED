@@ -20,23 +20,20 @@ class UserSignUp extends DB {
      * @param UserSignUpModel $dataModel
      * @return type
      */
-    public function create(UserSignUpModel $dataModel){
-        $result = false;
-        
-        $website = $dataModel->getWebsite();
-        $email = $dataModel->getEmail();
-        $password = sha1($dataModel->getPassword());
+    public function createMember(UserSignUpModel $dataModel){
+        $result = 0;
 
         if(null !== $this->getDB() && $dataModel instanceof UserSignUpModel){
-            $dbs = $this->getDB()->prepare('insert into users set website = :website, email = :email, password = :password');
-            $dbs ->bindParam(':website', $website, PDO::PARAM_STR);
-            $dbs ->bindParam(':email', $email, PDO::PARAM_STR);
-            $dbs ->bindParam(':password', $password, PDO::PARAM_STR);
+            $dbs = $this->getDB()->prepare('insert into signin set email = :email, password = :password');
+            $dbs ->bindParam(':email', $dataModel->email, PDO::PARAM_STR);
+            $dbs ->bindParam(':password', $dataModel->password, PDO::PARAM_STR);
             
             if($dbs->execute() && $dbs->rowCount() > 0){
                 $result = intval($this->getDB()->lastInsertId());
+                echo '<P>Created</p>';
             }
             else{
+                echo '<P>Failed</p>';
                 $error = $dbs->errorInfo();
                 error_log($error[2], 3, "logs/errors.log");
             }
@@ -63,4 +60,3 @@ class UserSignUp extends DB {
         return $result;
     }
 }
-   
