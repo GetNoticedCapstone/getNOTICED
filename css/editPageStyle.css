@@ -21,3 +21,14 @@ body{
     padding:5px;
     max-width: 245px;
 }
+.label .label-warning{
+    font-size: 14px;
+    padding:5px;
+}
+a,
+a:active,
+a:hover {
+  outline: 0;
+  text-decoration: none;
+  color: whitesmoke;
+}

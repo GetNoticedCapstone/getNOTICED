@@ -62,12 +62,13 @@ INFO
                 </div>
                 <div class="row">
                     <div class="col-md-12">
-                        <div class="progress">
-                            <div class="progress-bar progress-bar-info" style="width: 20%">
-                                <span class="sr-only">20% complete</span>
+                        <div class="progress progress-striped active">
+                            <div id="pBar" class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 5%">
+                                
                             </div>
+                            
                         </div>
-                       
+                        <p class="label label-warning text-center" id="pbText"></p>
                     </div>
                 </div>
             </div>
@@ -132,8 +133,8 @@ INFO
                     </div>
                 <div class="frmFooter">
                     <div class="row">
-                        <div class="col-md-12">                   
-                            <div class="btn1 btn btn-success center-block"><a href="#">Next Section</a></div>                          
+                        <div class="col-md-offset-9 col-md-3">                   
+                            <a href="#"><div class="btn1 btn btn-success center-block">Next Section</a></div>                           
                         </div>
                     </div>
                 </div>  
@@ -176,8 +177,8 @@ INFO
                     </div>
                 <div class="frmFooter">
                     <div class="row">
-                        <div class="col-md-12">                   
-                            <div class="btn2 btn btn-success center-block"><a href="#">Next Section</a></div>                          
+                        <div class="col-md-offset-9 col-md-3">                   
+                            <a href="#"><div class="btn2 btn btn-success center-block">Next Section</a></div>                            
                         </div>
                     </div>
                 </div>  
@@ -242,8 +243,8 @@ INFO
                     </div>
                 <div class="frmFooter">
                     <div class="row">
-                        <div class="col-md-12">                   
-                            <div class="btn3 btn btn-success center-block"><a href="#">Next Section</a></div>                         
+                        <div class="col-md-offset-9 col-md-3">                   
+                            <a href="#"><div class="btn3 btn btn-success center-block">Next Section</a></div>                           
                         </div>
                     </div>
                 </div>  
@@ -270,28 +271,145 @@ INFO
                                     <input type="text" class="form-control" placeholder="Skill Three" required="true">                   
                                 </div>
                                 <div class="form-group">
-                                    <input type="email" class="form-control" placeholder="Email" required="true">                   
+                                    <input type="email" class="form-control" placeholder="Most recent job title" required="true">                   
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="City" required="true">                   
+                                    <input type="text" class="form-control" placeholder="start date & end date " required="true">                   
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="State" required="true">                   
+                                    <textarea class="form-control" placeholder="Breifly describe your job responsibilites" row="3" required="true"></textarea>                   
                                 </div>
                             </div>
-                            <div class="col-sm-12 col-md-12 col-lg-12">
-                                
+                            <div class="col-sm-6 col-md-6 col-lg-6">
+                                <p>With in this section please enter your top 3 skills and most resent position.<br>
+                                    We recommend entering content that relates to the type of position you are looking for.</p>
                             </div>
                         </div>
                     </div>
                 <div class="frmFooter">
                     <div class="row">
-                        <div class="col-md-12">                   
-                            <div class="btn4 btn btn-success center-block"><a href="#">Next Section</a></div>                         
+                        <div class="col-md-offset-9 col-md-3">                   
+                            <a href="#"><div class="btn4 btn btn-success center-block">Next Section</a></div>                           
                         </div>
                     </div>
                 </div>  
-                </div><!--{end 2nd form}-->
+                </div><!--{end 4th form}-->
+                <div id="screen5"><!--{5th form}-->
+                    <div class="frmHeader text-center">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h2>Summary & Objective</h2>
+                            </div>
+                        </div>
+                        <hr/>
+                    </div>
+                    <div class="frmCore">
+                        <div class="row">
+                            <div class="col-md-6 col-lg-6 col-sm-6">
+                                
+                                <div class="form-group">
+                                    <textarea class="form-control" placeholder="Objective" row="3" required="true"></textarea>                   
+                                </div>
+                                <div class="form-group">
+                                    <textarea class="form-control" placeholder="Summary" row="3" required="true"></textarea>                   
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-md-6 col-lg-6">
+                                <p>With in the summary section provide a brief description about your professional background.<br>
+                                   If you are still in school and have little experience this would be a good section for you to highlight 
+                                   why you believe that you are a good candidate for any potential company's that may be viewing your webpage.</p>
+                                <p>With in the objective section provide a brief explanation about the type of position you are looking for.</p>
+                                <p>Please limit your text with in the Responsibilities section to 150 characters.</p>
+                            </div>
+                        </div>
+                    </div>                 
+                <div class="frmFooter">
+                    <div class="row">
+                        <div class="col-md-offset-9 col-md-3">
+                            
+                            <a href="#"><div class="btn5 btn btn-success center-block">Next Section</a>                        
+                        </div>
+                        </div>
+                    </div>
+                </div>  
+                </div><!--{end 5th form}-->
+                <div id="screen6"><!--{6th form}-->
+                    <div class="frmHeader text-center">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h2>Education</h2>
+                            </div>
+                        </div>
+                        <hr/>
+                    </div>
+                    <div class="frmCore">
+                        <div class="row">
+                            <div class="col-md-6 col-lg-6 col-sm-6">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="School Name" required="true">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Degree Program" required="true">                   
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Degree Type" required="true">                   
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Enter Date of Attendence" required="true">                   
+                                </div>
+                                
+                                <div class="form-group">
+                                    <textarea class="form-control" placeholder="Additional Detail" row="3" required="true"></textarea>                   
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-md-6 col-lg-6">
+                                
+                                <p>Enter your education information.<br>
+                                   With in the additional detail section you can enter major projects you have completed, 
+                                   classes that you have taken, or you can leave it blank.<br>
+                                   Please limit your text with in the Responsibilities section to 150 characters.</p>
+                            </div>
+                        </div>
+                    </div>                 
+                <div class="frmFooter">
+                    <div class="row">
+                        <div class="col-md-offset-9 col-md-3">                   
+                            <a href="#"><div class="btn6 btn btn-success center-block">Next Section</a></div>                          
+                        </div>
+                    </div>
+                </div>  
+                </div><!--{end 6th form}-->
+                <div id="screen7">
+                    <div class="frmHeader text-center">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h2>Publish</h2>
+                            </div>
+                        </div>
+                        <hr/>
+                    </div>
+                    <div class="frmCore">
+                        <div class="row">
+                            <div class="col-md-6 col-lg-6 col-sm-6">
+                                
+                            </div>
+                            <div class="col-sm-6 col-md-6 col-lg-6">
+                                
+                                <p>Enter your education information.<br>
+                                   With in the additional detail section you can enter major projects you have completed, 
+                                   classes that you have taken, or you can leave it blank.<br>
+                                   Please limit your text with in the Responsibilities section to 150 characters.</p>
+                            </div>
+                        </div>
+                    </div>                 
+                <div class="frmFooter">
+                    <div class="row">
+                        <div class="col-md-offset-9 col-md-3">                   
+                            <a href="#"><div class="btn7 btn btn-success center-block">Back</a></div>                          
+                        </div>
+                    </div>
+                </div>
+                </div>
             </form> 
         </div><!--{End Main Wrapper}-->
 <!--{END INNER CONTAINER}......................................................................................... -->
@@ -301,7 +419,7 @@ INFO
         <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
         <script src="js/bootstrap.js"></script> 
         <script src="js/landi.js"></script> 
-        <script src="js/contentSlider.js"></script>
+        <script src="js/formSlider.js"></script>
 <!--{END JAVASCRIPT}.............................................................................................. -->        
     </body>
 </html>
