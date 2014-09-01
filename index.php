@@ -43,8 +43,8 @@ Designed developed and managed by David landi, Terri Gaskell, and Justin Barreir
                             <li><a href="#" class="gnScroll" data-id="about">About</a></li>
                             <li><a href="#" class="gnScroll" data-id="team">Team</a></li>
                             <li><a href="#" class="gnScroll" data-id="contact">Contact</a></li>
-                            <li><a href="#" class="gnScroll">Sign up</a></li>
-                            <li><a href="#" class="gnScroll">Login</a></li>
+                            <li><a href="signupPage.php">Sign up</a></li>
+                            <li><a href="loginPage.php">Login</a></li>
                         </ul>
                     </div>
                 </nav>
@@ -59,7 +59,7 @@ Designed developed and managed by David landi, Terri Gaskell, and Justin Barreir
                     <div class="col-md-12">
                         <h1 class="title">get<i>N</i>OTICED</h1>
                         <p class="introText">Create your own signal page mobile friendly web portfolio to help set you apart from other candidates.</p>
-                        <p><a class="btn btnStarted  btn-success" href="signUp.php">Get Started!</a></p>
+                        <p><a class="btn btnStarted  btn-success" href="signupPage.php">Get Started!</a></p>
                         <a href="#" class="btn btnCircle gnScroll" data-id="about">
                             <i class="fa fa-angle-double-down animated"></i>
                         </a>
@@ -71,7 +71,7 @@ Designed developed and managed by David landi, Terri Gaskell, and Justin Barreir
         <div id="about" class="contentSection"><!--{about section}-->
             <div class="container aboutSection">
                 <div class="row">
-                    <div class="co-md-12">
+                    <div id="screen1" class="co-md-12">
                         <div class="transAboutBox center-block img-responsive">
                             <h2>About</h2>
                             <p>
@@ -82,7 +82,61 @@ Designed developed and managed by David landi, Terri Gaskell, and Justin Barreir
                             where all of your qualification will easily be accessible with a simple mouse click. GetNOTICED 
                             today.
                             </p>
-                            <p><a class="btn btnNext btn-success" href="#">Next Page</a></p>
+                            <p><div class="btn1 btn btnNext btn-success gnScroll" data-id="about"><a href="#">Next Page</a></div></p>
+                        </div>
+                    </div>
+                    <div id="screen2" class="co-md-12">
+                        <div class="transAboutBox center-block img-responsive">
+                            <h2>Design and functionality</h2>
+                            <p>
+                            Our entire web based saas application incorporates responsive design making it mobile friendly 
+                            on all devises. In order to accomplish this we will be using the Twitter Bootstrap framework which 
+                            has the development philosophy of mobile first design, emphasizing responsive design by default. This 
+                            framework will allow us to rapidly develop our application because it offers a robust set of css classes 
+                            that can be easily modified to fit our style and it incorporates a column and row structure which is easy 
+                            to understand and easy to implement throughout out our entire site. Every page of this site will be 
+                            developed and designed by our team, no templates, no huge sections of copy & pasted code, so we feel 
+                            strongly that you will not find another site that functions or looks like ours. 
+                            During the development of our application we will be be focusing on creating a user friendly 
+                            application that looks great and performs even better. Custom javaScript & PHP solutions will be 
+                            developed to make the features we are looking to have in our application work. Some of these features 
+                            are content filtering, Image Verification, signal page scrolling effects, form validation, and content 
+                            sliders. We also will be developing a database that will do more than just store data. While developing 
+                            this database our focus will be on creating features for a admin to get all the statics and data they will 
+                            need as efficiently as possible. Successful implementation of the features, design and a useful database 
+                            that have been specified will result a great product.
+                            </p>
+                            <p><div class="btn2 btn btnNext btn-success gnScroll" data-id="about"><a href="#">Next Page</a></div></p>
+                        </div>
+                    </div>
+                    <div id="screen3" class="co-md-12">
+                        <div class="transAboutBox center-block img-responsive">
+                            <h2>PHP Summary</h2>
+                            <p>
+                            The visual aesthetics of the front-end will be the first thing the user see’s and we will be
+                            focused on making that an appealing sight. But the visually inviting and responsive front-end needs an 
+                            efficient back-end to really make it a web application the user will want to continually return to use. 
+                            When designing the php for the getNOTICED application, efficient and effective code will be the main 
+                            goal. We will be using object oriented programming methodologies to make this happen. Each part of 
+                            the interaction with the server-side database will be divided up into smaller tasks. These tasks will have 
+                            one purpose and keep the code simple and easy to understand.By using object oriented programming, the application will be easy to maintain and ensure it 
+                            provides a good user experience. Chunking out each piece of the application will make it easier to 
+                            expand by creating new themes, designs and features for the user. Each part of the php will be designed 
+                            specifically for the getNOTICED web application guaranteeing it fits into and works how it’s supposed
+                            to.
+                            </p>
+                            <p><div class="btn3 btn btnNext btn-success gnScroll" data-id="about"><a href="#">Next Page</a></div></p>
+                        </div>
+                    </div>
+                    <div id="screen4" class="co-md-12">
+                        <div class="transAboutBox center-block img-responsive">
+                            <h2>Sql Summary</h2>
+                            <p>
+                            We will be utilizing MySql for the database. The database will be in third normal form with
+                            primary and foreign keys to establish relationships within the database. This will be based upon the 
+                            established EER diagram.
+                            </p>
+                            <p><div class="btn4 btn btnNext btn-success gnScroll" data-id="about"><a href="#">Next Page</a></div></p>
                         </div>
                     </div>
                 </div>
@@ -113,8 +167,12 @@ Designed developed and managed by David landi, Terri Gaskell, and Justin Barreir
                             <a class="carousel-control right" href="#slideShow" data-slide="next"> 
                             <span class="icon-next"></span></a>
                         </div>
+                        <a href="#" class="btn btnCircle gnScroll center-block" data-id="team">
+                            <i class="fa fa-angle-double-down animated"></i>
+                        </a>
                     </div>
                 </div>
+              
             </div>
         </div><!--{about section}-->
         
@@ -123,7 +181,7 @@ Designed developed and managed by David landi, Terri Gaskell, and Justin Barreir
                 <div class="row">
                     <div class="col-md-4 col-lg-4 extSpaceTop"><!--{justin bio}-->
                         <div class="center-block">
-                            <img src="img/justin1.png" alt="" class="img-circle img-responsive">
+                            <img src="img/justin1.png" width="300" height="300" alt="" class="img-circle img-responsive">
                             <div class="captionBox text-center">
                                 <h2 class="captionTitle">Justin Barreira</h2>
                                 <h4 class="captionTitle">Lead PHP Developer</h4>
@@ -139,7 +197,7 @@ Designed developed and managed by David landi, Terri Gaskell, and Justin Barreir
                     </div><!--{end justin bio}-->
                     <div class="col-md-4 col-lg-4 extSpaceTop"><!--{terry bio}-->
                         <div class="img-responsive center-block">
-                            <img src="img/justin1.png" alt="" class="img-circle img-responsive">
+                            <img src="img/terri.png" alt="" width="300" height="300" class="img-circle img-responsive">
                             <div class="captionBox text-center img-responsive">
                                 <h2 class="captionTitle">Terri Gaskell</h2>
                                 <h4 class="captionTitle">Project Manager & sql Developer</h4>
@@ -157,7 +215,7 @@ Designed developed and managed by David landi, Terri Gaskell, and Justin Barreir
                     </div><!--{end terry bio}-->
                     <div class="col-md-4 col-lg-4 extSpaceTop"><!--{david bio}-->
                         <div class="img-responsive center-block">
-                            <img src="img/david1.jpg" alt="" class="img-circle img-responsive">
+                            <img src="img/david1.jpg" width="300" height="300" alt="" class="img-circle img-responsive">
                             <div class="captionBox text-center img-responsive">
                                 <h2 class="captionTitle">David Landi</h2>
                                 <h4 class="captionTitle">Lead Front-End Developer</h4>
@@ -174,6 +232,9 @@ Designed developed and managed by David landi, Terri Gaskell, and Justin Barreir
                         </div>
                     </div><!--{end david bio}-->
                 </div><!--{end row}-->
+                <a href="#" class="btn btnCircle gnScroll center-block" data-id="contact">
+                    <i class="fa fa-angle-double-down animated"></i>
+                </a>
             </div><!--{end container}-->
         </div><!--{end team section}-->
         <div id="contact" class="contentSection"><!--{contact section}-->
@@ -200,20 +261,20 @@ Designed developed and managed by David landi, Terri Gaskell, and Justin Barreir
                                         <h2>David Landi</h2>
                                         <p>djlandi@email.neit.edu</p>
                                         <p>
-                                            <img src="img/githubIcon.png" alt="" height="45px" width="45px" title="gitHub">
-                                            <img src="img/linkedinIcon.png" alt="" title="LinkedIn">
+                                            <a href="https://github.com/davidlandi" target="_blank" title=""><img src="img/githubIcon.png" alt="" height="45px" width="45px" title="gitHub"></a>
+                                            <a href="https://linkedin.com/pub/david-landi/51/838/b4b/" target="_blank" title=""><img src="img/linkedinIcon.png" alt="" title="LinkedIn"></a>
                                         </p>
                                         
                                         <h2>Terri Gaskell</h2>
                                         <p>tlgaskell@email.neit.edu</p>
                                         <p>
-                                            <img src="img/githubIcon.png" alt="" height="45px" width="45px" title="gitHub">
-                                            <img src="img/linkedinIcon.png" alt="" title="LinkedIn">
+                                            <a href="https://github.com/JustinBarreira" target="_blank" title=""><img src="img/githubIcon.png" alt="" height="45px" width="45px" title="gitHub"></a>
+                                            <a href="#" target="_blank" title=""><img src="img/linkedinIcon.png" alt="" title="LinkedIn"></a>
                                         </p>
                                         <h2>Justin Barreira</h2>
                                         <p>jabarreira@email.neit.edu</p>
                                         <p>
-                                            <img src="img/githubIcon.png" alt="" height="45px" width="45px" title="gitHub">
+                                            <a href="https://github.com/TGaskell" target="_blank" title=""><img src="img/githubIcon.png" alt="" height="45px" width="45px" title="gitHub"></a>
                                             <img src="img/linkedinIcon.png" alt="" title="LinkedIn">
                                         </p>
                                     </div>
@@ -269,6 +330,7 @@ Designed developed and managed by David landi, Terri Gaskell, and Justin Barreir
         <script src="js/bootstrap.js"></script> 
         <script src="js/pageScroll.js"></script>
         <script src="js/googleMaps.js"></script>
+        <script src="js/contentSlider.js"></script>
 <!--{END JAVASCRIPT}........................................................ -->        
     </body>
 </html>

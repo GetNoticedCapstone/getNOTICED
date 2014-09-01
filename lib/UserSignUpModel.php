@@ -12,32 +12,31 @@
  * @author David
  */
 class UserSignUpModel {
-    private $website;
-    private $email;
-    private $password;
+    
+    public $email;
+    public $password;
     
     
     function __construct($paramArr = array()) {
         $this->map($paramArr);
     }
     
-    public function map($paramArr){
-        if(! is_array($paramArr)){
-            return false;
-        }
-        if(array_key_exists('website', $paramArr)){
-            $this->setWebsite($paramArr['website']);
-        }
-        if(array_key_exists('email', $paramArr)){
-            $this->setEmail($paramArr['email']);
-        }
-        if(array_key_exists('password', $paramArr)){
-            $this->setPassword($paramArr['password']);
-        }
-       
-    }
-    public function getWebsite() {
-        return $this->website;
+    /**
+    * A public method to map all the variables to a value
+    *
+    * @param Array $paramArr
+    *
+    * @return Void
+    */ 
+    public function map($paramArr) {        
+        if ( is_array($paramArr) && count($paramArr) ) {                   
+            foreach ($paramArr as $key => $value) {
+                $method = 'set'.ucfirst($key);
+                if( method_exists($this, $method) ) {
+                    $this->$method($value);
+                }
+            }
+        }       
     }
 
     public function getEmail() {
@@ -46,13 +45,6 @@ class UserSignUpModel {
 
     public function getPassword() {
         return $this->password;
-    }
-
-    public function getUser_id() {
-        return $this->user_id;
-    }
-    public function setWebsite($website) {
-        $this->website = $website;
     }
 
     public function setEmail($email) {

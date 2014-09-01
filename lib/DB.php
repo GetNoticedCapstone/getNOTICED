@@ -17,11 +17,9 @@ class DB {
    public function setDb(){
        try {
             $this->db = new PDO(Config::DB_DNS, Config::DB_USER, Config::DB_PASSWORD);
-        } catch (Exception $ex) {
-            
+        } catch (Exception $ex) {            
            $this->closeDB();
         }
-        return $this->db;//check this could be a issue 
    }
    
    /**

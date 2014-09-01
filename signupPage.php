@@ -14,9 +14,7 @@ and open the template in the editor.
         <link href="css/bootstrap.css" rel="stylesheet">
         <link href="css/loginSignupStyle.css" rel="stylesheet" media="all">
         <link href="font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-        <title>get<i>N</i>OTICED</title>
-        
-    
+        <title>getNOTICED</title>
     </head>
     <body>
 <!--{END CSS & GOOGLE FONTS}................................................ -->
@@ -24,26 +22,22 @@ and open the template in the editor.
 <!--{GLOBAL PHP}............................................................ -->
     <?php
         
-        $message = '';
-            if ( ! isset($_SESSION['login']) ) {
-                echo '<p>Makes login session false</p>';
-                $_SESSION['login'] = false;
-            }
-            if ( Util::isPostRequest() ) {
-                $checkCredentials = new Passcode();
-                if ( $checkCredentials->isValidLogin($checkCredentials) ) {                    
-                    $_SESSION['login'] = true;
-                    echo '<p>Logged In</p>';
-                    //Util::redirect('admin');                   
-                } else {                         
-                    $msg = 'Login Failed';
-                    $_SESSION['userID'] = 0;
-                }
-            }
-
-            if ( !empty($msg)) {
-                echo '<p>', $msg, '</p>';
-            }
+        $member = new UserSignUp();  
+         
+         if ( Util::isPostRequest() ) {
+             
+              $memberModel = new UserSignUpModel(filter_input_array(INPUT_POST));
+              $_SESSION['userID'] = $member->createMember($memberModel);
+              
+              if ( null !== $_SESSION['userID'] ) {  
+                  $_SESSION['login'] = true;
+                  echo '<p>User Created</p>';
+                  //Util::redirect('userWebpage');
+              } else {
+                  echo '<p>User could not be created</p>';
+              }
+          }
+          
     ?>
 <!--{End PHP}............................................................... -->
 
@@ -63,7 +57,7 @@ and open the template in the editor.
             </div>
             <div id="mainNav" class="collapse navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">                                                 
-                    <li><a href="signupPage.php">Sign up</a></li>
+                    <li><a href="loginPage.php">login</a></li>
                     <li><a href="signupPage.php">Help</a></li> 
                 </ul>
             </div>                  
@@ -77,10 +71,10 @@ and open the template in the editor.
                 <div class="frmHeader">
                     <div class="row">
                         <div class="col-md-6">
-                            <img class="profile-img" src="img/login_img.png" alt="">
+                            <img class="profile-img" src="img/signUp_img.png" alt="">
                         </div>
                         <div class="col-md-6">
-                            <h2 class="text-center">Welcome Back</h2>
+                            <h2 class="text-center">Free Membership</h2>
                         </div>
                     </div>
                     <hr/>
@@ -89,10 +83,10 @@ and open the template in the editor.
                     <div class="row">
                         <div class="col-md-12">
                             <div class="form-group">
-                                <input type="email" name="email" class="form-control" placeholder="Email" required="true">
+                                <input id="email" type="email" name="email" class="form-control" placeholder="Email" required="true">
                             </div>
                             <div class="form-group">
-                                <input type="password" name="password" class="form-control" placeholder="Password" required="true">                   
+                                <input id="password" type="password" name="password" class="form-control" placeholder="Password" required="true">                   
                             </div>
                         </div>
                     </div>
@@ -100,9 +94,8 @@ and open the template in the editor.
                 <div class="frmFooter">
                     <div class="row">
                         <div class="col-md-12">
-                            <button class="btn btn-lg btn-primary btn-block" type="submit" value="login">Login</button>                   
-                            <a class="btn btn-lg btn-primary btn-block" href="loginPage.php">Forgot password?</a>
-                            <a class="btn btn-lg btn-primary btn-block" href="signupPage.php">Not a member?</a>
+                            <button class="btn btn-lg btn-primary btn-block" type="submit" value="Submit">Submit</button>                 
+                            <a class="btn btn-lg btn-primary btn-block" href="loginPage.php">Already a member?</a> 
                         </div>
                     </div>
                 </div>            
@@ -117,6 +110,3 @@ and open the template in the editor.
 <!--{END JAVASCRIPT}........................................................ -->  
     </body>
 </html>
-
-
-
