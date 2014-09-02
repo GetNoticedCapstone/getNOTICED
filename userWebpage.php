@@ -225,9 +225,9 @@ This page also is 100% responsive and works on all major browsers.
             </div>
     </div><!--{END FOOTER SECTION}########################################## -->
 <!--{lOAD JAVASCRIPT}####################################################### -->
-        <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-        <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-        <script src="js/bootstrap.js"></script>  
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script src="js/bootstrap.js"></script>  
 <!--{END JAVASCRIPT}######################################################## -->        
 </body>
 </html>
