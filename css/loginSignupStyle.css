@@ -1,0 +1,14 @@
+/*
+all style for login page
+*/
+body{
+    background: url(../img/bgLogin.jpg);
+}
+.frmLogin{
+    margin-top: 50px;
+    background-color: #ebe8e6;
+    max-width: 500px;
+    padding: 20px;
+    box-shadow: 2px 2px 5px #000;
+}
+

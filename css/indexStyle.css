@@ -1,0 +1,252 @@
+//style sheet for the index page 
+// 8/5/14
+
+* {
+	margin: 0;
+	padding: 0;
+	font-family: 'Helvetica Neue', arial, sans-serif;
+        
+}
+body{
+    background: #DADFE1;
+}
+.header{
+    position: fixed;
+    width: 100%;
+    background: #222;
+    z-index: 10;
+    
+}
+
+.header .navbar-brand{
+    font-weight: 900;
+}
+.header .navbar{
+    margin: 0;
+    border: none;
+}
+.introText{
+    text-shadow: 1px 1px 2px black;
+}
+.contentSection{
+    width: 100%;
+    min-height: 960px;
+    padding:50px 0;
+    margin-bottom: 20px;
+    box-shadow: 0px 2px 2px #222
+}
+.landSection{
+    margin-top:250px;   
+}
+.title{
+    text-shadow: 2px 2px 5px black;
+    font-family: 'Raleway', sans-serif;
+    color: black; 
+    font-size: 40px;
+}
+.introText{
+    text-shadow: 1px 1px 2px black;
+    font-size: 15px;
+    margin-bottom: 50px;
+}
+.btnStarted{
+    margin-bottom: 100px;
+}
+@media(min-width:767px){
+    .landSection{
+        height: 100%
+    }
+    .title{
+        font-size: 90px;
+    }
+    .introText{
+        font-size: 25px;
+    }
+}
+.contentSection#landing{
+    background: url(../img/landingBG.jpg)bottom center no-repeat;
+    margin-bottom: 0;
+    
+}
+.contentSection#about{
+    background: url(../img/aboutsectionBG.jpg)bottom center no-repeat;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-top: 50px;
+}
+.contentSection#team{
+    background: url(../img/teamBG.jpg)top center no-repeat;
+    background-color: #9f877b;
+}
+.contentSection#contact{
+    background-color:#BDC3C7
+}
+.contactText{
+    margin-top: 100px;
+    text-shadow: 2px 2px 2px #22313F;
+    font-size: 50px;
+}
+
+@media(min-width: 768px){
+    .header .navbar-brand{
+        padding-left: 0;
+    }
+    .navbar-nav{
+        float: right;
+    }
+}
+@media (max-width: 480px){
+    .contentSection h1{
+        font-size: 3em;
+    }
+    .contectSection p{
+        font-size: 1em;
+        margin: 0 0 20px;
+    }
+}
+.btnCircle {
+    width: 70px;
+    height: 70px;
+    margin-top: 15px;
+    padding: 7px 16px;
+    border: 2px solid #fff;
+    border-radius: 35px;
+    font-size: 40px;
+    color: #fff;
+    background: 0 0;
+    -webkit-transition: background .3s ease-in-out;
+    -moz-transition: background .3s ease-in-out;
+    transition: background .3s ease-in-out;
+}
+.btnCircle:hover,
+.btnCircle:focus {
+    outline: 0;
+    color: #fff;
+    background: rgba(255,255,255,.1);
+}
+.btnCircle i.animated {
+    -webkit-transition-property: -webkit-transform;
+    -webkit-transition-duration: 1s;
+    -moz-transition-property: -moz-transform;
+    -moz-transition-duration: 1s;
+}
+.btnCircle:hover i.animated {
+    -webkit-animation-name: pulse;
+    -moz-animation-name: pulse;
+    -webkit-animation-duration: 1.5s;
+    -moz-animation-duration: 1.5s;
+    -webkit-animation-iteration-count: infinite;
+    -moz-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+    -moz-animation-timing-function: linear;
+}
+@-webkit-keyframes pulse {    
+    0% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+
+    50% {
+        -webkit-transform: scale(1.2);
+        transform: scale(1.2);
+    }
+
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}
+
+@-moz-keyframes pulse {    
+    0 {
+        -moz-transform: scale(1);
+        transform: scale(1);
+    }
+
+    50% {
+        -moz-transform: scale(1.2);
+        transform: scale(1.2);
+    }
+
+    100% {
+        -moz-transform: scale(1);
+        transform: scale(1);
+    }
+}
+.teamSection{
+    margin-top:20px;
+    max-width: 940px;
+}
+.captionBox{
+    padding: 10px;
+    background: url(../img/contentBG.png);
+    box-shadow: 0px 2px 5px #000;
+    color: #fff;
+    font-weight:bolder;
+    font-family: 'Open Sans Condensed', sans-serif;
+    text-shadow: 1px 1px 1px #000;
+    font-size: 15px;
+    margin-top: 10px;
+}
+.captionTitle{
+    color: #fff;
+    font-weight:bolder;
+    text-shadow: 2px 2px 3px #000; 
+}
+
+.transAboutBox{
+    width: 600px;
+    
+    background-color: #ffffff;
+/*    border: 1px solid black;*/
+    opacity: 0.7;
+    padding-left: 10px;
+    padding-right: 10px;
+    
+    box-shadow: 0px 2px 5px;
+}
+
+.aboutSection{
+    
+}
+.extSpaceTop{
+   margin-top: 20px; 
+}
+.carouselSize{
+    max-width: 600px;
+    min-height: 250px;
+    
+}
+.carousel{
+    margin-top: 90px;
+    margin-bottom: 90px;
+}
+@media (max-width: 480px){
+    .carouselSize{
+/*        min-width: 250px; */
+    }
+    .carousel{
+        margin-top: 30px;
+    }
+    .aboutSection{
+/*        margin-top: 50px;*/
+    }
+}
+.btnNext{
+    margin-bottom: 20px;
+    margin-top: 20px;
+    margin-left: 225px;
+}
+
+footer{
+
+    
+}
+.copyRight{
+    margin-top: 60px;
+}
+#googleMap{
+width:100%;
+height:400px;
+margin-top: 20px;
+}
