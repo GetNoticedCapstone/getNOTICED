@@ -8,208 +8,226 @@ page all a person would have to do is enter the url in their browser.
 This page also is 100% responsive and works on all major browsers.
 -->
 <html lang="en">
-<!--{LOAD CSS & GOOGLE FONTS}............................................... -->
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="css/bootstrap.css" rel="stylesheet">
-        <link href="css/userThemeOne.css" rel="stylesheet" media="all">
-        <link href='http://fonts.googleapis.com/css?family=Racing+Sans+One' rel='stylesheet' type='text/css'>
-        <link href='http://fonts.googleapis.com/css?family=Yellowtail' rel='stylesheet' type='text/css'>
-        <link href='http://fonts.googleapis.com/css?family=Limelight' rel='stylesheet' type='text/css'>
-        <link href='http://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
-        <title>Home</title>
-    </head>
-    <body>
-<!--{END CSS & GOOGLE FONTS}................................................ -->
-        
-<!--{GLOBAL PHP}............................................................ -->
-    <?php
-        // put your code here
-    ?>
-<!--{END PHP}............................................................... -->
-
-<!--{NAVIGATION}............................................................ -->
-        <div class="navbar navbar-inverse ">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="index.php">get<i>N</i>OTICED</a>
-                </div>
-                <div class="collapse navbar-collapse">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#">Experience</a></li>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Contact</a></li>
-                    </ul>
-                </div>
+<head><!--{LOAD CSS & GOOGLE FONTS}######################################### -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/userThemeTwo.css" rel="stylesheet" media="all">
+    <link href='http://fonts.googleapis.com/css?family=Titillium+Web' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Yellowtail' rel='stylesheet' type='text/css'>
+    <title>Home</title>
+</head><!--{END CSS & GOOGLE FONTS}##########################################-->
+<body>
+    <div class="navbar navbar-inverse"><!--{NAVIGATION}##################### -->
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>                        
+                </button>
+                <a class="navbar-brand" href="index.php">get<i>N</i>OTICED</a>
+            </div>
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#">Experience</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
             </div>
         </div>
-<!--{End NAVIGATION}........................................................ -->
-
-<!--{MAIN CONTENT}.......................................................... -->
-        <div class="container"><!-- main wrapper -->
-            <div class="header"><!-- header wrapper -->
-                <div class="row">
-                    <div class="col-md-8">
-                        <h1 class="nameFont">Your Name</h1>
-                        <p class="titleFont">Your Title</p>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="social">
-                            <img src="img/github.png" alt="" class="pLeft">
-                            <img src="img/linkedin.png" alt="" class="">
-                            <img src="img/facebook.png" alt="" class="">
-                        </div>
+    </div><!--{END NAVIGATION}############################################## -->
+    <div class="container"><!--{MAIN WRAPPER}############################### -->
+        <div id="header"><!--{HEADER SECTION}############################### -->
+            <div class="row">
+                <div class="col-md-8 col-xs-12 col-sm-12">
+                    <div class="nameAndTitle pull-left">
+                        <h1 class="shadow">Your Name</h1>
+                        <p>Your Title</p>
                     </div>
                 </div>
-            </div><!-- end header wrapper -->
-            <div class="container innerCore"><!-- inner content wrapper -->
-                <div class="row">
-                    <div class="col-md-4"><!-- exp section -->
-                        <div class="box img-responsive text-center tPad">
-                            <h2 class="boxLable">EXPERIENCE</h2>
-                            <a href="#expModal" role="button" data-toggle="modal"><img class="" src="img/skills.png" alt=""></a>
-                            <div id="expModal" class="modal fade">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                            <h4 class="modal-title">Qualifications</h4>
-                                        </div>
-                                        <div class="modal-body">
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    <h4>Education</h4>
-                                                </div>
-                                                <div class="col-md-6">
-                                                
-                                                </div>
-                                            </div>
-                                            <hr>
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    <h4>Skills</h4>
-                                                </div>
-                                                <div class="col-md-6">
-                                                
-                                                </div>                                            
-                                            </div>
-                                            <hr>
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    <h4>Related Work History</h4>
-                                                </div>
-                                                <div class="col-md-6">
-                                                
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>                               
-                                </div>
-                            </div>
-                        </div>
-                    </div><!-- end exp section -->
-                    <div class="col-md-4"><!--{ABOUT SECTION}-->
-                    <div class="box img-responsive text-center tPad">
-                        <h2 class="boxLable">ABOUT</h2>
-                        <a href="#aboutModal" role="button" data-toggle="modal"><img class="" src="img/Contact.png" alt=""></a>
-                        <div id="aboutModal" class="modal fade">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                        <h4 class="modal-title">Your Name</h4>
-                                    </div>
-                                    <div class="modal-body">
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <h4>contact info</h4>
-                                                <?php echo $email;?>
-                                                <?php echo $address;?>
-                                                <?php echo $phone;?>
-                                                <?php echo $content; ?>
-                                            </div>
-                                            <div class="col-md-6">
-                                                
-                                            </div>
-                                        </div>
-                                        <hr>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <h4>Objective</h4>
-                                            </div>
-                                            <div class="col-md-6">
-                                                
-                                            </div>                                          
-                                        </div>                                       
-                                    </div>
-                                </div>                              
-                            </div>
-                        </div>                        
+                <div class="col-md-4 col-xs-12 col-sm-12">
+                    <div class="socialIcons">
+                        <ul><!-- php add user url to href="" -->
+                            <a href="#"><img src="img/github.png" class="iconResponsive" width="65" height="65" alt=""></a>
+                            <a href="#"><img src="img/linkedin.png" class="iconResponsive" width="65" height="65" alt=""></a>
+                            <a href="#"><img src="img/facebook.png" class="iconResponsive" width="65" height="65" alt=""></a>
+                        </ul> 
                     </div>
-                </div><!--{END ABOUT SECTION}-->
-                <div class="col-md-4"><!--{CONTACT SECTION}-->
-                    <div class="box img-responsive text-center tPad">
-                        <h2 class="boxLable">CONTACT</h2>
-                        <a href="#contactModal" role="button" data-toggle="modal"><img class="" src="img/VoIP.png" alt=""></a>
-                        <div id="contactModal" class="modal fade">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                        <h4 class="modal-title">Contact Information</h4>
-                                    </div>
-                                    <div class="modal-body">
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <h4>Phone</h4>
-                                            </div>
-                                            <div class="col-md-6">                                               
-                                            </div>
-                                        </div>
-                                        <hr>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <h4>Email</h4>
-                                            </div>
-                                            <div class="col-md-6">   
-                                            </div>  
-                                        </div>
-                                        <hr>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <h4>Address</h4>
-                                            </div>
-                                            <div class="col-md-6">
-                                                
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>                         
-                            </div>
-                        </div>
-                    </div>
-                </div><!--{end contact section}-->
                 </div>
-                
-            </div><!-- end inner content wrapper -->
-        </div><!-- end main wrapper -->
-        <div class="footer"><!--{FOOTER SECTION}-->
-            <p class="text-center footerText"> &copy; get<i>N</i>OTICED all rights reserved</p>  
-        </div><!--{END FOOTER SECTION}-->
+            </div>
+        </div><!--{END HEADER SECTION}###################################### -->
+        <div id="innerContent"><!--{CONTENT SECTION}######################## -->
+            <div class="row">
+                <div class="col-md-4"><!-- experience section -->
+                    <div class="experienceIcon img-responsive text-center">
+                        <div class="row">
+                            <div class="col-md-12 col-sm-12 col-lg-12">
+                                <h2>Experience</h2>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 col-sm-12 col-lg-12">
+                                <a href="#expModal" role="button" data-toggle="modal"><img class="innerIcon" src="img/skills.png" alt=""></a>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- end experience section -->
+                <div class="col-md-4"><!-- about section -->
+                    <div class="aboutIcon img-responsive text-center">
+                        <div class="row">
+                            <div class="col-md-12 col-sm-12 col-lg-12">
+                                <h2>About</h2>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 col-sm-12 col-lg-12">
+                                <a href="#aboutModal" role="button" data-toggle="modal"><img class="innerIcon" src="img/Contact.png" alt=""></a>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- end about modal -->
+                <div class="col-md-4"><!-- contact section -->
+                    <div class="contactIcon img-responsive text-center">
+                        <div class="row">
+                            <div class="col-md-12 col-sm-12 col-lg-12">
+                                <h2>Contact</h2>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 col-sm-12 col-lg-12">
+                                <a href="#contactModal" role="button" data-toggle="modal"><img class="innerIcon" src="img/VoIP.png" alt=""></a>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- end contact section -->
+            </div>
+        </div><!--{END CONTENT SECTION}##################################### -->
+        <!--{MODAL'S}########################################################-->
+        <div id="expModal" class="modal fade"><!-- exp modal -->
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title">Qualifications</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h4>Education</h4>
+                            </div>
+                            <div class="col-md-6">
 
-<!--{END MAIN CONTENT}...................................................... -->
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h4>Skills</h4>
+                            </div>
+                            <div class="col-md-6">
 
-<!--{lOAD JAVASCRIPT}....................................................... -->
+                            </div>                                            
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h4>Related Work History</h4>
+                            </div>
+                            <div class="col-md-6">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>                               
+            </div>
+        </div><!-- end exp modal -->
+        <div id="aboutModal" class="modal fade"><!-- about modal -->
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title">Your Name</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h4>contact info</h4>
+                                <?php echo $email;?>
+                                <?php echo $address;?>
+                                <?php echo $phone;?>
+                                <?php echo $content; ?>
+                            </div>
+                            <div class="col-md-6">
+
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h4>Objective</h4>
+                            </div>
+                            <div class="col-md-6">
+
+                            </div>                                          
+                        </div>                                       
+                    </div>
+                </div>                              
+            </div>
+        </div><!-- end about modal -->
+        <div id="contactModal" class="modal fade"><!-- contact modal -->
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title">Contact Information</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h4>Phone</h4>
+                            </div>
+                            <div class="col-md-6">                                               
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h4>Email</h4>
+                            </div>
+                            <div class="col-md-6">   
+                            </div>  
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h4>Address</h4>
+                            </div>
+                            <div class="col-md-6">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>                         
+            </div>
+        </div><!-- end contact modal -->
+        <!--{ END MODAL'S}###################################################-->
+    </div><!--{END MAIN WRAPPER}############################################ -->
+    <div id="footer"><!--{FOOTER SECTION}################################### -->
+            <div class="row">
+                <div class="col-md-12">
+                    <hr>
+                    <div class="container">
+                        <p class="label label-danger pull-right">&COPY; 2014 get<i>N</i>OTICED. All rights reserved</p>
+                    </div>
+                    
+                </div>
+            </div>
+    </div><!--{END FOOTER SECTION}########################################## -->
+<!--{lOAD JAVASCRIPT}####################################################### -->
         <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
         <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
         <script src="js/bootstrap.js"></script>  
-<!--{END JAVASCRIPT}........................................................ -->        
-    </body>
+<!--{END JAVASCRIPT}######################################################## -->        
+</body>
 </html>
