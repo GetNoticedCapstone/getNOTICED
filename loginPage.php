@@ -28,7 +28,7 @@ $message = '';
         if ( $checkCredentials->isValidLogin($checkCredentials) ) {                    
             $_SESSION['login'] = true;
             echo '<p>Logged In</p>';
-            //Util::redirect('admin');                   
+            Util::redirect('userEditPage');                   
         } else {                         
             $msg = 'Login Failed';
             $_SESSION['userID'] = 0;

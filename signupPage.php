@@ -22,12 +22,13 @@ $member = new UserSignUp();
  if ( Util::isPostRequest() ) {
 
       $memberModel = new UserSignUpModel(filter_input_array(INPUT_POST));
-      $_SESSION['userID'] = $member->createMember($memberModel);
+      $_SESSION['userID'] = $member->createSignIn($memberModel);
 
       if ( null !== $_SESSION['userID'] ) {  
+          $member->createMembers($_SESSION['userID']);
           $_SESSION['login'] = true;
           echo '<p>User Created</p>';
-          //Util::redirect('userWebpage');
+          Util::redirect('userEditPage');
       } else {
           echo '<p>User could not be created</p>';
       }
@@ -70,10 +71,10 @@ $member = new UserSignUp();
                 <div class="row">
                     <div class="col-md-12">
                         <div class="form-group">
-                            <input id="email" type="email" name="email" class="form-control" placeholder="Email" required="true">
+                            <input id="email" name="email" type="email" class="form-control" placeholder="Email" required="true">
                         </div>
                         <div class="form-group">
-                            <input id="password" type="password" name="password" class="form-control" placeholder="Password" required="true">                   
+                            <input id="password" name="password" type="password" class="form-control" placeholder="Password" required="true">                   
                         </div>
                     </div>
                 </div>

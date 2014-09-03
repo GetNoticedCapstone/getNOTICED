@@ -4,16 +4,42 @@ CREATE TABLE IF NOT EXISTS Admin (
     AdminPassword VARCHAR(15) NULL,
     PRIMARY KEY (AdminID),
     UNIQUE INDEX AdminID_UNIQUE (AdminID ASC)
-)
+);
+
+CREATE TABLE IF NOT EXISTS SignIn (
+  MemberID INT NOT NULL AUTO_INCREMENT,
+  Email VARCHAR(45) NULL,
+  Password VARCHAR(45) NULL,
+  ResetPhrase VARCHAR(255) NULL,
+  ResetAnswer VARCHAR(100) NULL,
+  INDEX MemberID_idx (MemberID ASC),
+  PRIMARY KEY (MemberID),
+  UNIQUE INDEX MemberID_UNIQUE (MemberID ASC)  
+);
 
 CREATE TABLE IF NOT EXISTS Members (
-  MemberID INT NOT NULL AUTO_INCREMENT,
+  MemberID INT NOT NULL,
   FirstName VARCHAR(45) NULL,
   LastName VARCHAR(45) NULL,
-  MInitial VARCHAR(2) NULL,
-  Email VARCHAR(45) NULL,
+  JobTitle VARCHAR(45) NULL,
+  GitHub VARCHAR(45) NULL,
+  Facebook VARCHAR(45) NULL,
+  LinkedIn VARCHAR(45) NULL,
+  Skill1 VARCHAR(45) NULL,
+  Skill2 VARCHAR(45) NULL,
+  Skill3 VARCHAR(45) NULL,
+  MostRecentJob VARCHAR(45) NULL,
+  StartDate VARCHAR(45) NULL,
+  EndDate VARCHAR(45) NULL,
+  JobResponsibilities VARCHAR(45) NULL,
+  Objective VARCHAR(45) NULL,
+  Summary VARCHAR(45) NULL,
+  SchoolName VARCHAR(45) NULL,
+  DegreeProgram VARCHAR(45) NULL,
+  DegreeType VARCHAR(45) NULL,
+  EnterDate VARCHAR(45) NULL,
+  AditionalDetail VARCHAR(45) NULL,
   PrimaryPhone VARCHAR(15) NULL,
-  CellPhone VARCHAR(15) NULL,
   Address1 VARCHAR(100) NULL,
   Address2 VARCHAR(100) NULL,
   City VARCHAR(100) NULL,
@@ -21,8 +47,12 @@ CREATE TABLE IF NOT EXISTS Members (
   ZipCode VARCHAR(10) NULL,
   WebsiteURL VARCHAR(45) NULL,
   PRIMARY KEY (MemberID),
-  UNIQUE INDEX MemberID_UNIQUE (MemberID ASC)
-)
+  CONSTRAINT m_MemberID
+      FOREIGN KEY (MemberID)
+      REFERENCES getnoticed.SignIn (MemberID)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION
+);
 
 CREATE TABLE IF NOT EXISTS MemberStatus (
   MemberID INT NOT NULL,
@@ -32,26 +62,12 @@ CREATE TABLE IF NOT EXISTS MemberStatus (
   DateRenewed DATE NULL,
   INDEX MemberID_idx (MemberID ASC),
   PRIMARY KEY (MemberID),
-  CONSTRAINT MemberID
+  CONSTRAINT ms_MemberID
     FOREIGN KEY (MemberID)
-    REFERENCES getnoticed.Members (MemberID)
+    REFERENCES getnoticed.SignIn (MemberID)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION
-)
-
-CREATE TABLE IF NOT EXISTS SignIn (
-  MemberID INT NOT NULL,
-  Password VARCHAR(45) NULL,
-  ResetPhrase VARCHAR(255) NULL,
-  ResetAnswer VARCHAR(100) NULL,
-  INDEX MemberID_idx (MemberID ASC),
-  PRIMARY KEY (MemberID),
-  CONSTRAINT MemberID
-    FOREIGN KEY (MemberID)
-    REFERENCES getnoticed.Members (MemberID)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION
-)
+);
 
 CREATE TABLE IF NOT EXISTS Themes (
   ThemeID INT NOT NULL AUTO_INCREMENT,
@@ -59,9 +75,9 @@ CREATE TABLE IF NOT EXISTS Themes (
   ThemeName VARCHAR(45) NULL,
   INDEX MemberID_idx (MemberID ASC),
   PRIMARY KEY (ThemeID, MemberID),
-  CONSTRAINT MemberID
+  CONSTRAINT t_MemberID
     FOREIGN KEY (MemberID)
-    REFERENCES getnoticed.Members (MemberID)
+    REFERENCES getnoticed.SignIn (MemberID)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION
-)
+);

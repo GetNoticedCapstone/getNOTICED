@@ -11,59 +11,86 @@
  *
  * @author David
  */
-class UserContent {
+class UserContent extends DB {
     
   function __construct() {
         $this->setDb();
     }
     
-    public function getWebsite()
-    {
-        if ( null !== $this->getDB() ) {
-            $dbs = $this->getDB()->prepare('select website from users where user_id = :user_id limit 1');
-            $dbs->bindParam(':user_id', $_SESSION['id'], PDO::PARAM_INT);
-            
-            if ( $dbs->execute() && $dbs->rowCount() > 0 ) {
-                $result = $dbs->fetch(PDO::FETCH_ASSOC);
-                $name = $result['website'];
-            }
-            
-        }
-        return $name;
-    }
-    
-    public function getContent()
-    {
-        if ( null !== $this->getDB() ) {
-            $dbs = $this->getDB()->prepare('select title, theme, address, phone, email, content from about_page where user_id = :user_id limit 1');
-            $dbs->bindParam(':user_id', $_SESSION['id'], PDO::PARAM_INT);
-            
-            if ( $dbs->execute() && $dbs->rowCount() > 0 ) {
-                $result = $dbs->fetch(PDO::FETCH_ASSOC);
-            }
-            
-        }
-        return $result;
-    }
-    
-    public function newSite(array $site)
-    {
+    /**
+     * Updates user info in the members table
+     * @param UserContentModel $contentModel
+     * @return type bool
+     */
+    public function updateMember(UserContentModel $contentModel){
         $result = false;
-        
-        if (null !== $this->getDB() ){
-            $dbs = $this->getDB()->prepare('update about_page set title = :title, theme = :theme, address = :address, phone = :phone, email = :email, content = :content where user_id = :user_id');
-            $dbs->bindParam(':user_id', $_SESSION['id'], PDO::PARAM_INT);
-            $dbs->bindParam(':title', $site['title'], PDO::PARAM_STR);
-            $dbs->bindParam(':theme', $site['theme'], PDO::PARAM_STR);
-            $dbs->bindParam(':address', $site['address'], PDO::PARAM_STR);
-            $dbs->bindParam(':phone', $site['phone'], PDO::PARAM_STR);
-            $dbs->bindParam(':email', $site['email'], PDO::PARAM_STR);
-            $dbs->bindParam(':content', $site['content'], PDO::PARAM_STR);
+
+        if(null !== $this->getDB() && $contentModel instanceof UserContentModel){
+            $dbs = $this->getDB()->prepare('update members set'
+                    .' theme = :theme,'
+                    .' firstName = :firstName,'
+                    .' lastName = :lastName,'
+                    .' jobTitle = :jobTitle,'
+                    .' gitHub = :gitHub,'
+                    .' faceBook = :faceBook,'
+                    .' linkedIn = :linkedIn,'
+                    .' skill1 = :skill1,'
+                    .' skill2 = :skill2,'
+                    .' skill3 = :skill3,'
+                    .' mostRecentJob = :mostRecentJob,'
+                    .' startDate = :startDate,'
+                    .' endDate = :endDate,'
+                    .' jobResponse = :jobResponse,'
+                    .' objective = :objective,'
+                    .' summary = :summary,'
+                    .' schoolName = :schoolName,'
+                    .' degreeProgram = :degreeProgram,'
+                    .' degreeType = :degreeType,'
+                    .' enterDate = :enterDate,'
+                    .' additionalDetail = :additionalDetail,'
+                    .' phone = :phone,'
+                    .' address = :address,'
+                    .' city = :city,'
+                    .' state = :state,'
+                    .' zip :zip'
+                    .' where memberID = :memberID');
+            $dbs ->bindParam(':theme', $contentModel->theme, PDO::PARAM_STR);
+            $dbs ->bindParam(':firstName', $contentModel->firstName, PDO::PARAM_STR);
+            $dbs ->bindParam(':lastName', $contentModel->lastName, PDO::PARAM_STR);
+            $dbs ->bindParam(':jobTitle', $contentModel->jobTitle, PDO::PARAM_STR);
+            $dbs ->bindParam(':gitHub', $contentModel->gitHub, PDO::PARAM_STR);
+            $dbs ->bindParam(':faceBook', $contentModel->faceBook, PDO::PARAM_STR);
+            $dbs ->bindParam(':linkedIn', $contentModel->linkedIn, PDO::PARAM_STR);
+            $dbs ->bindParam(':skill1', $contentModel->skill1, PDO::PARAM_STR);
+            $dbs ->bindParam(':skill2', $contentModel->skill2, PDO::PARAM_STR);
+            $dbs ->bindParam(':skill3', $contentModel->skill3, PDO::PARAM_STR);
+            $dbs ->bindParam(':mostRecentJob', $contentModel->mostRecentJob, PDO::PARAM_STR);
+            $dbs ->bindParam(':startDate', $contentModel->startDate, PDO::PARAM_STR);
+            $dbs ->bindParam(':endDate', $contentModel->endDate, PDO::PARAM_STR);
+            $dbs ->bindParam(':jobResponse', $contentModel->jobResponse, PDO::PARAM_STR);
+            $dbs ->bindParam(':objective', $contentModel->objective, PDO::PARAM_STR);
+            $dbs ->bindParam(':summary', $contentModel->summary, PDO::PARAM_STR);
+            $dbs ->bindParam(':schoolName', $contentModel->schoolName, PDO::PARAM_STR);
+            $dbs ->bindParam(':degreeProgram', $contentModel->degreeProgram, PDO::PARAM_STR);
+            $dbs ->bindParam(':degreeType', $contentModel->degreeType, PDO::PARAM_STR);
+            $dbs ->bindParam(':enterDate', $contentModel->enterDate, PDO::PARAM_STR);
+            $dbs ->bindParam(':additionalDetail', $contentModel->additionalDetail, PDO::PARAM_STR);
+            $dbs ->bindParam(':phone', $contentModel->phone, PDO::PARAM_STR);
+            $dbs ->bindParam(':address', $contentModel->address, PDO::PARAM_STR);            
+            $dbs ->bindParam(':city', $contentModel->city, PDO::PARAM_STR);
+            $dbs ->bindParam(':state', $contentModel->state, PDO::PARAM_STR);
+            $dbs ->bindParam(':zip', $contentModel->zip, PDO::PARAM_STR);
             
-            if ( $dbs->execute() && $dbs->rowCount() > 0 ) {
+            var_dump($contentModel);
+            if($dbs->execute() && $dbs->rowCount() > 0){
                 $result = true;
+                echo '<P>Updated</p>';
             }
-            
+            else{
+                echo '<P>Failed</p>';
+                $error = $dbs->errorInfo();
+                error_log($error[2], 3, "logs/errors.log");
+            }
         }
         return $result;
     }

@@ -21,7 +21,22 @@ Admin Page
 
 <!--{GLOBAL PHP}.................................................................................................. -->
         <?php
+        var_dump($_SESSION['userID']);
+        $userContent = new UserContent();
+        
+        if ( Util::isPostRequest() ) {
 
+        $userContentModel = new UserContentModel(filter_input_array(INPUT_POST));
+        $userContentModel->memberID = $_SESSION['userID'];
+        
+            if ( null !== $_SESSION['userID'] && $userContent->updateMember($userContentModel) ) {
+                echo '<p>Member Updated</p>';
+                Util::redirect('userWebpage');
+            } else {
+                echo '<p>User could not be updated</p>';
+            }
+        }
+        
         ?>
 <!--{END PHP}..................................................................................................... -->
 
@@ -72,7 +87,7 @@ INFO
                     </div>
                 </div>
             </div>
-            <form class="frmLogin center-block">
+            <form class="frmLogin center-block" method="post">
                 <div id="screen1"><!--{1st form}-->
                     <div class="frmHeader text-center">
                         <div class="row">
@@ -125,7 +140,7 @@ INFO
                                         <span class="input-group-addon">
                                             <input type="radio">
                                         </span>
-                                        <input type="text" class="form-control" id="theme2">
+                                        <input type="text" class="form-control" id="theme3">
                                     </div>
                                 </div>
                             </div>
@@ -152,22 +167,25 @@ INFO
                         <div class="row">
                             <div class="col-md-6 col-lg-6 col-sm-6">
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="First & Last Name" required="true">
+                                    <input id="firstName" name="firstName" type="text" class="form-control" placeholder="First Name">
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Job Title" required="true">                   
+                                    <input id="lastName" name="lastName" type="text" class="form-control" placeholder="Last Name">                   
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Phone Number" required="true">                   
+                                    <input id="jobTitle" name="jobTitle" type="text" class="form-control" placeholder="Job Title">                   
                                 </div>
                                 <div class="form-group">
-                                    <input type="email" class="form-control" placeholder="Email" required="true">                   
+                                    <input id="phone" name="phone" type="text" class="form-control" placeholder="Phone Number">                   
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="City" required="true">                   
+                                    <input id="city" name="city" type="text" class="form-control" placeholder="City">                   
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="State" required="true">                   
+                                    <input id="state" name="state" type="text" class="form-control" placeholder="State">                   
+                                </div>
+                                <div class="form-group">
+                                    <input id="zip" name="zip" type="text" class="form-control" placeholder="Zip">                   
                                 </div>
                             </div>
                             <div class="col-sm-12 col-md-12 col-lg-12">
@@ -205,7 +223,7 @@ INFO
                                         <span class="input-group-addon">
                                             <input type="radio">
                                         </span>
-                                        <input type="text" class="form-control" placeholder="Enter Url" id="gitHub">
+                                        <input id="gitHub" name="gitHub" type="text" class="form-control" placeholder="Enter Url">
                                     </div>
                                 </div>                              
                             </div>
@@ -220,7 +238,7 @@ INFO
                                         <span class="input-group-addon">
                                             <input type="radio">
                                         </span>
-                                        <input type="text" class="form-control" placeholder="Enter Url" id="faceBook">
+                                        <input id="facebook" name="facebook" type="text" class="form-control" placeholder="Enter Url">
                                     </div>
                                 </div>
                             </div>
@@ -235,7 +253,7 @@ INFO
                                         <span class="input-group-addon">
                                             <input type="radio">
                                         </span>
-                                        <input type="text" class="form-control" placeholder="Enter Url" id="linkedIn">
+                                        <input id="linkedIn" name="linkedIn" type="text" class="form-control" placeholder="Enter Url">
                                     </div>
                                 </div>
                             </div>
@@ -262,22 +280,25 @@ INFO
                         <div class="row">
                             <div class="col-md-6 col-lg-6 col-sm-6">
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Skill One" required="true">
+                                    <input id="skill1" name="skill1" type="text" class="form-control" placeholder="Skill One">
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Skill Two" required="true">                   
+                                    <input id="skill2" name="skill2" type="text" class="form-control" placeholder="Skill Two">                   
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Skill Three" required="true">                   
+                                    <input id="skill3" name="skill3" type="text" class="form-control" placeholder="Skill Three">                   
                                 </div>
                                 <div class="form-group">
-                                    <input type="email" class="form-control" placeholder="Most recent job title" required="true">                   
+                                    <input id="mostRecentJob" name="mostRecentJob" type="text" class="form-control" placeholder="Most recent job title">                   
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="start date & end date " required="true">                   
+                                    <input id="startDate" name="startDate" type="text" class="form-control" placeholder="Start Date">                   
                                 </div>
                                 <div class="form-group">
-                                    <textarea class="form-control" placeholder="Breifly describe your job responsibilites" row="3" required="true"></textarea>                   
+                                    <input id="endDate" name="endDate" type="text" class="form-control" placeholder="End Date">                   
+                                </div>
+                                <div class="form-group">
+                                    <input id="jobResponse" name="jobResponse" class="form-control" placeholder="Breifly describe your job responsibilites">                 
                                 </div>
                             </div>
                             <div class="col-sm-6 col-md-6 col-lg-6">
@@ -308,10 +329,10 @@ INFO
                             <div class="col-md-6 col-lg-6 col-sm-6">
                                 
                                 <div class="form-group">
-                                    <textarea class="form-control" placeholder="Objective" row="3" required="true"></textarea>                   
+                                    <input id="objective" name="objective" class="form-control" placeholder="Objective">                 
                                 </div>
                                 <div class="form-group">
-                                    <textarea class="form-control" placeholder="Summary" row="3" required="true"></textarea>                   
+                                    <input id="summary" name="summary" class="form-control" placeholder="Summary">                 
                                 </div>
                             </div>
                             <div class="col-sm-6 col-md-6 col-lg-6">
@@ -346,20 +367,19 @@ INFO
                         <div class="row">
                             <div class="col-md-6 col-lg-6 col-sm-6">
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="School Name" required="true">
+                                    <input id="schoolName" name="schoolName" type="text" class="form-control" placeholder="School Name">
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Degree Program" required="true">                   
+                                    <input id="degreeProgram" name="degreeProgram" type="text" class="form-control" placeholder="Degree Program">                   
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Degree Type" required="true">                   
+                                    <input id="degreeType" name="degreeType" type="text" class="form-control" placeholder="Degree Type">                   
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Enter Date of Attendence" required="true">                   
-                                </div>
-                                
+                                    <input id="enterDate" name="enterDate" type="text" class="form-control" placeholder="Enter Date of Attendence">                   
+                                </div>                                
                                 <div class="form-group">
-                                    <textarea class="form-control" placeholder="Additional Detail" row="3" required="true"></textarea>                   
+                                    <input id="additionalDetail" name="additionalDetail" class="form-control" placeholder="Additional Detail">                  
                                 </div>
                             </div>
                             <div class="col-sm-6 col-md-6 col-lg-6">
@@ -404,7 +424,8 @@ INFO
                     </div>                 
                 <div class="frmFooter">
                     <div class="row">
-                        <div class="col-md-offset-9 col-md-3">                   
+                        <div class="col-md-offset-9 col-md-3">
+                            <button class="btn btn-primary btn-block" type="submit" value="Submit">Submit</button>
                             <a href="#"><div class="btn7 btn btn-success center-block">Back</a></div>                          
                         </div>
                     </div>

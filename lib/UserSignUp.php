@@ -17,16 +17,16 @@ class UserSignUp extends DB {
 
     /**
      * putting user sign up data in the data base
-     * @param UserSignUpModel $dataModel
+     * @param UserSignUpModel $signUpModel
      * @return type
      */
-    public function createMember(UserSignUpModel $dataModel){
+    public function createSignIn(UserSignUpModel $signUpModel){
         $result = 0;
 
-        if(null !== $this->getDB() && $dataModel instanceof UserSignUpModel){
+        if(null !== $this->getDB() && $signUpModel instanceof UserSignUpModel){
             $dbs = $this->getDB()->prepare('insert into signin set email = :email, password = :password');
-            $dbs ->bindParam(':email', $dataModel->email, PDO::PARAM_STR);
-            $dbs ->bindParam(':password', $dataModel->password, PDO::PARAM_STR);
+            $dbs ->bindParam(':email', $signUpModel->email, PDO::PARAM_STR);
+            $dbs ->bindParam(':password', $signUpModel->password, PDO::PARAM_STR);
             
             if($dbs->execute() && $dbs->rowCount() > 0){
                 $result = intval($this->getDB()->lastInsertId());
@@ -38,6 +38,30 @@ class UserSignUp extends DB {
                 error_log($error[2], 3, "logs/errors.log");
             }
         }
+        return $result;
+    }
+    
+    /**
+    * A public method to create a new entry into the members
+    * table.
+    *
+    * @param int $id
+    *
+    * @return boolean
+    */  
+    public function createMembers( $id ) {
+        $result = false;
+                
+        //INSERT INTO ABOUT_PAGE VALUES
+         if ( null !== $this->getDB() ) {
+            
+            $dbs = $this->getDB()->prepare('insert into members set memberID = :memberID');
+            $dbs->bindParam(':memberID', $id, PDO::PARAM_INT);            
+                        
+            if ( $dbs->execute() && $dbs->rowCount()) {
+                $result = true;
+            }                
+         }           
         return $result;
     }
     
