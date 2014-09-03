@@ -12,9 +12,10 @@ This page also is 100% responsive and works on all major browsers.
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="css/bootstrap.css" rel="stylesheet">
-    <link href="css/userThemeTwo.css" rel="stylesheet" media="all">
+    <link href="css/userThemeThree.css" rel="stylesheet" media="all">
     <link href='http://fonts.googleapis.com/css?family=Titillium+Web' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Yellowtail' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Courgette' rel='stylesheet' type='text/css'>
     <title>Home</title>
 </head><!--{END CSS & GOOGLE FONTS}##########################################-->
 <body>
@@ -49,9 +50,9 @@ This page also is 100% responsive and works on all major browsers.
                 <div class="col-md-4 col-xs-12 col-sm-12">
                     <div class="socialIcons">
                         <ul><!-- php add user url to href="" -->
-                            <a href="#"><img src="img/github.png" class="iconResponsive" width="65" height="65" alt=""></a>
-                            <a href="#"><img src="img/linkedin.png" class="iconResponsive" width="65" height="65" alt=""></a>
-                            <a href="#"><img src="img/facebook.png" class="iconResponsive" width="65" height="65" alt=""></a>
+                            <a href="#"><img src="img/t3Git.png" class="iconResponsive" width="65" height="65" alt=""></a>
+                            <a href="#"><img src="img/t3Linked.png" class="iconResponsive" width="65" height="65" alt=""></a>
+                            <a href="#"><img src="img/t3Facebook.png" class="iconResponsive" width="65" height="65" alt=""></a>
                         </ul> 
                     </div>
                 </div>
@@ -219,8 +220,7 @@ This page also is 100% responsive and works on all major browsers.
                     <hr>
                     <div class="container">
                         <p class="label label-danger pull-right">&COPY; 2014 get<i>N</i>OTICED. All rights reserved</p>
-                    </div>
-                    
+                    </div>                    
                 </div>
             </div>
     </div><!--{END FOOTER SECTION}########################################## -->
