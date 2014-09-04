@@ -1,1 +1,22 @@
 /* all styles for admin page*/
+.navbar{
+    border-radius: 0;
+}
+.panelLightningYello{
+    background-color: #f5ab35;
+}
+.panelPictonBlue{
+    background-color: #22A7F0;
+}
+.panelShamrock{
+    background-color: #2ECC71;
+}
+.panelRed{
+    background-color: #FF0000;
+}
+.panelOrange{
+    background-color: #F9690E;
+}
+.panelStudio{
+    background-color: #8E44AD;
+}
