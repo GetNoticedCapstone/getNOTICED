@@ -66,21 +66,43 @@ class UserSignUp extends DB {
     }
     
     /**
-     * getting user id 
-     * @param type $user_id
-     * @return type
-     */
-    public function readByID($user_id){
-        $result = "";
+    * A public method to return a members
+    * info from the signin table.    * 
+    *
+    * @param int $id 
+    *
+    * @return array
+    */
+    public function read($id = 0) {
+       if ($id !== 0) {
+           return $this->readByID($id);
+       } else {
+           return $this->readAll();
+       }
         
-        if(null !== $this->getDB()){
-            $dbs = $this->getDB()->prepare('select website from users where user_id = :user_id limit 1');
-            $dbs->bindParam(':user_id', $user_id, PDO::PARAM_INT);
-            
-            if($dbs->execute() && $dbs->rowCount()> 0 ){
-                $result = $dbs->fetch(PDO::FETCH_ASSOC);
-            }
-        }
-        return $result;
     }
+    
+    /**
+    * A private method to return a members
+    * data from the signin table by their memberID
+    *
+    * @param int $memberID
+    * 
+    * @return array
+    */
+     private function readByID($id){
+           $results = array();
+           
+            if ( null !== $this->getDB() ) {
+            $dbs = $this->getDB()->prepare('select * from signin where memberID = :memberID limit 1');
+            $dbs->bindParam(':memberID', $id, PDO::PARAM_INT);
+            
+            if ( $dbs->execute() && $dbs->rowCount() > 0 ) {
+                $results = $dbs->fetch(PDO::FETCH_ASSOC);
+            }
+        
+         }   
+           
+           return $results;
+     }
 }

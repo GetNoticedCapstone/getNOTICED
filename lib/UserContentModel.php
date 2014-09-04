@@ -27,7 +27,7 @@ class UserContentModel {
     public $mostRecentJob;
     public $startDate;
     public $endDate;
-    public $jobResponse;
+    public $JobResponsibilities;
     public $objective;
     public $summary;
     public $schoolName;
@@ -119,8 +119,8 @@ class UserContentModel {
         return $this->endDate;
     }
 
-    public function getJobResponse() {
-        return $this->jobResponse;
+    public function getJobResponsibilities() {
+        return $this->JobResponsibilities;
     }
 
     public function getObjective() {
@@ -227,8 +227,8 @@ class UserContentModel {
         $this->endDate = $endDate;
     }
 
-    public function setJobResponse($jobResponse) {
-        $this->jobResponse = $jobResponse;
+    public function setJobResponsibilities($JobResponsibilities) {
+        $this->JobResponsibilities = $JobResponsibilities;
     }
 
     public function setObjective($objective) {

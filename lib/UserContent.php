@@ -27,7 +27,6 @@ class UserContent extends DB {
 
         if(null !== $this->getDB() && $contentModel instanceof UserContentModel){
             $dbs = $this->getDB()->prepare('update members set'
-                    .' theme = :theme,'
                     .' firstName = :firstName,'
                     .' lastName = :lastName,'
                     .' jobTitle = :jobTitle,'
@@ -40,7 +39,7 @@ class UserContent extends DB {
                     .' mostRecentJob = :mostRecentJob,'
                     .' startDate = :startDate,'
                     .' endDate = :endDate,'
-                    .' jobResponse = :jobResponse,'
+                    .' JobResponsibilities = :JobResponsibilities,'
                     .' objective = :objective,'
                     .' summary = :summary,'
                     .' schoolName = :schoolName,'
@@ -52,9 +51,9 @@ class UserContent extends DB {
                     .' address = :address,'
                     .' city = :city,'
                     .' state = :state,'
-                    .' zip :zip'
+                    .' zip = :zip'
                     .' where memberID = :memberID');
-            $dbs ->bindParam(':theme', $contentModel->theme, PDO::PARAM_STR);
+            $dbs ->bindParam(':memberID', $contentModel->memberID, PDO::PARAM_STR);
             $dbs ->bindParam(':firstName', $contentModel->firstName, PDO::PARAM_STR);
             $dbs ->bindParam(':lastName', $contentModel->lastName, PDO::PARAM_STR);
             $dbs ->bindParam(':jobTitle', $contentModel->jobTitle, PDO::PARAM_STR);
@@ -67,7 +66,7 @@ class UserContent extends DB {
             $dbs ->bindParam(':mostRecentJob', $contentModel->mostRecentJob, PDO::PARAM_STR);
             $dbs ->bindParam(':startDate', $contentModel->startDate, PDO::PARAM_STR);
             $dbs ->bindParam(':endDate', $contentModel->endDate, PDO::PARAM_STR);
-            $dbs ->bindParam(':jobResponse', $contentModel->jobResponse, PDO::PARAM_STR);
+            $dbs ->bindParam(':JobResponsibilities', $contentModel->JobResponsibilities, PDO::PARAM_STR);
             $dbs ->bindParam(':objective', $contentModel->objective, PDO::PARAM_STR);
             $dbs ->bindParam(':summary', $contentModel->summary, PDO::PARAM_STR);
             $dbs ->bindParam(':schoolName', $contentModel->schoolName, PDO::PARAM_STR);
@@ -94,4 +93,44 @@ class UserContent extends DB {
         }
         return $result;
     }
+    
+    /**
+    * A public method to return a members
+    * info from the members table.    * 
+    *
+    * @param int $id 
+    *
+    * @return array
+    */
+    public function read($id = 0) {
+       if ($id !== 0) {
+           return $this->readByID($id);
+       } else {
+           return $this->readAll();
+       }
+        
+    }
+    
+    /**
+    * A private method to return a members data from the members table by their memberID
+    *
+    * @param int $memberID
+    * 
+    * @return array
+    */
+     private function readByID($id){
+           $results = array();
+           
+            if ( null !== $this->getDB() ) {
+            $dbs = $this->getDB()->prepare('select * from members where memberID = :memberID limit 1');
+            $dbs->bindParam(':memberID', $id, PDO::PARAM_INT);
+            
+            if ( $dbs->execute() && $dbs->rowCount() > 0 ) {
+                $results = $dbs->fetch(PDO::FETCH_ASSOC);
+            }
+        
+         }   
+           
+           return $results;
+     }
 }

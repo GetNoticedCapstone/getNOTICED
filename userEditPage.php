@@ -21,21 +21,25 @@ Admin Page
 
 <!--{GLOBAL PHP}.................................................................................................. -->
         <?php
-        var_dump($_SESSION['userID']);
-        $userContent = new UserContent();
-        
-        if ( Util::isPostRequest() ) {
+            
+            var_dump($_SESSION['userID']);
+            $userContent = new UserContent();
+            $userSignIn = new UserSignUp();
+            $userInfo = $userContent->read($_SESSION['userID']);
+            $signinInfo = $userSignIn->read($_SESSION['userID']);
+            
+            if ( Util::isPostRequest() ) {
 
-        $userContentModel = new UserContentModel(filter_input_array(INPUT_POST));
-        $userContentModel->memberID = $_SESSION['userID'];
-        
-            if ( null !== $_SESSION['userID'] && $userContent->updateMember($userContentModel) ) {
-                echo '<p>Member Updated</p>';
-                Util::redirect('userWebpage');
-            } else {
-                echo '<p>User could not be updated</p>';
+            $userContentModel = new UserContentModel(filter_input_array(INPUT_POST));
+            $userContentModel->memberID = $_SESSION['userID'];
+
+                if ( null !== $_SESSION['userID'] && $userContent->updateMember($userContentModel) ) {
+                    echo '<p>Member Updated</p>';
+                    Util::redirect('userWebpage');
+                } else {
+                    echo '<p>User could not be updated</p>';
+                }
             }
-        }
         
         ?>
 <!--{END PHP}..................................................................................................... -->
@@ -57,7 +61,8 @@ INFO
                 <a href="index.php" class="navbar-brand">get<i>N</i>OTICED</a>
             </div>
             <div id="mainNav" class="collapse navbar-collapse">
-                <ul class="nav navbar-nav navbar-right">                                                 
+                <ul class="nav navbar-nav navbar-right">    
+                    <li><a href="userWebpage.php">View Page</a></li>
                     <li><a href="signupPage.php">Inspiration</a></li>
                     <li><a href="signupPage.php">Help</a></li> 
                 </ul>
@@ -110,7 +115,7 @@ INFO
                                         <span class="input-group-addon">
                                             <input type="radio">
                                         </span>
-                                        <input type="text" class="form-control" id="theme1">
+                                        <input id="theme" name="theme" type="text" class="form-control">
                                     </div>
                                 </div>                              
                             </div>
@@ -125,7 +130,7 @@ INFO
                                         <span class="input-group-addon">
                                             <input type="radio">
                                         </span>
-                                        <input type="text" class="form-control" id="theme2">
+                                        <input type="text" class="form-control">
                                     </div>
                                 </div>
                             </div>
@@ -140,7 +145,7 @@ INFO
                                         <span class="input-group-addon">
                                             <input type="radio">
                                         </span>
-                                        <input type="text" class="form-control" id="theme3">
+                                        <input type="text" class="form-control">
                                     </div>
                                 </div>
                             </div>
@@ -167,25 +172,28 @@ INFO
                         <div class="row">
                             <div class="col-md-6 col-lg-6 col-sm-6">
                                 <div class="form-group">
-                                    <input id="firstName" name="firstName" type="text" class="form-control" placeholder="First Name">
+                                    <input id="firstName" name="firstName" type="text" class="form-control" placeholder="First Name" value="<?php echo $userInfo['FirstName'] ?>">
                                 </div>
                                 <div class="form-group">
-                                    <input id="lastName" name="lastName" type="text" class="form-control" placeholder="Last Name">                   
+                                    <input id="lastName" name="lastName" type="text" class="form-control" placeholder="Last Name" value="<?php echo $userInfo['LastName'] ?>">                   
                                 </div>
                                 <div class="form-group">
-                                    <input id="jobTitle" name="jobTitle" type="text" class="form-control" placeholder="Job Title">                   
+                                    <input id="jobTitle" name="jobTitle" type="text" class="form-control" placeholder="Job Title" value="<?php echo $userInfo['JobTitle'] ?>">                   
                                 </div>
                                 <div class="form-group">
-                                    <input id="phone" name="phone" type="text" class="form-control" placeholder="Phone Number">                   
+                                    <input id="phone" name="phone" type="text" class="form-control" placeholder="Phone Number" value="<?php echo $userInfo['Phone'] ?>">                   
                                 </div>
                                 <div class="form-group">
-                                    <input id="city" name="city" type="text" class="form-control" placeholder="City">                   
+                                    <input id="adress" name="address" type="text" class="form-control" placeholder="Address" value="<?php echo $userInfo['Address'] ?>">                   
                                 </div>
                                 <div class="form-group">
-                                    <input id="state" name="state" type="text" class="form-control" placeholder="State">                   
+                                    <input id="city" name="city" type="text" class="form-control" placeholder="City" value="<?php echo $userInfo['City'] ?>">                   
                                 </div>
                                 <div class="form-group">
-                                    <input id="zip" name="zip" type="text" class="form-control" placeholder="Zip">                   
+                                    <input id="state" name="state" type="text" class="form-control" placeholder="State" value="<?php echo $userInfo['State'] ?>">                   
+                                </div>
+                                <div class="form-group">
+                                    <input id="zip" name="zip" type="text" class="form-control" placeholder="Zip" value="<?php echo $userInfo['Zip'] ?>">                   
                                 </div>
                             </div>
                             <div class="col-sm-12 col-md-12 col-lg-12">
@@ -223,7 +231,7 @@ INFO
                                         <span class="input-group-addon">
                                             <input type="radio">
                                         </span>
-                                        <input id="gitHub" name="gitHub" type="text" class="form-control" placeholder="Enter Url">
+                                        <input id="gitHub" name="gitHub" type="text" class="form-control" placeholder="Enter Url" value="<?php echo $userInfo['GitHub'] ?>">
                                     </div>
                                 </div>                              
                             </div>
@@ -238,7 +246,7 @@ INFO
                                         <span class="input-group-addon">
                                             <input type="radio">
                                         </span>
-                                        <input id="facebook" name="facebook" type="text" class="form-control" placeholder="Enter Url">
+                                        <input id="facebook" name="facebook" type="text" class="form-control" placeholder="Enter Url" value="<?php echo $userInfo['Facebook'] ?>">
                                     </div>
                                 </div>
                             </div>
@@ -253,7 +261,7 @@ INFO
                                         <span class="input-group-addon">
                                             <input type="radio">
                                         </span>
-                                        <input id="linkedIn" name="linkedIn" type="text" class="form-control" placeholder="Enter Url">
+                                        <input id="linkedIn" name="linkedIn" type="text" class="form-control" placeholder="Enter Url" value="<?php echo $userInfo['LinkedIn'] ?>">
                                     </div>
                                 </div>
                             </div>
@@ -280,25 +288,25 @@ INFO
                         <div class="row">
                             <div class="col-md-6 col-lg-6 col-sm-6">
                                 <div class="form-group">
-                                    <input id="skill1" name="skill1" type="text" class="form-control" placeholder="Skill One">
+                                    <input id="skill1" name="skill1" type="text" class="form-control" placeholder="Skill One" value="<?php echo $userInfo['Skill1'] ?>">
                                 </div>
                                 <div class="form-group">
-                                    <input id="skill2" name="skill2" type="text" class="form-control" placeholder="Skill Two">                   
+                                    <input id="skill2" name="skill2" type="text" class="form-control" placeholder="Skill Two" value="<?php echo $userInfo['Skill2'] ?>">                   
                                 </div>
                                 <div class="form-group">
-                                    <input id="skill3" name="skill3" type="text" class="form-control" placeholder="Skill Three">                   
+                                    <input id="skill3" name="skill3" type="text" class="form-control" placeholder="Skill Three" value="<?php echo $userInfo['Skill3'] ?>">                   
                                 </div>
                                 <div class="form-group">
-                                    <input id="mostRecentJob" name="mostRecentJob" type="text" class="form-control" placeholder="Most recent job title">                   
+                                    <input id="mostRecentJob" name="mostRecentJob" type="text" class="form-control" placeholder="Most recent job title" value="<?php echo $userInfo['MostRecentJob'] ?>">                   
                                 </div>
                                 <div class="form-group">
-                                    <input id="startDate" name="startDate" type="text" class="form-control" placeholder="Start Date">                   
+                                    <input id="startDate" name="startDate" type="text" class="form-control" placeholder="Start Date" value="<?php echo $userInfo['StartDate'] ?>">                   
                                 </div>
                                 <div class="form-group">
-                                    <input id="endDate" name="endDate" type="text" class="form-control" placeholder="End Date">                   
+                                    <input id="endDate" name="endDate" type="text" class="form-control" placeholder="End Date" value="<?php echo $userInfo['EndDate'] ?>">                   
                                 </div>
                                 <div class="form-group">
-                                    <input id="jobResponse" name="jobResponse" class="form-control" placeholder="Breifly describe your job responsibilites">                 
+                                    <input id="jobResponsibilities" name="jobResponsibilities" class="form-control" placeholder="Breifly describe your job responsibilites" value="<?php echo $userInfo['JobResponsibilities'] ?>">                 
                                 </div>
                             </div>
                             <div class="col-sm-6 col-md-6 col-lg-6">
@@ -329,10 +337,10 @@ INFO
                             <div class="col-md-6 col-lg-6 col-sm-6">
                                 
                                 <div class="form-group">
-                                    <input id="objective" name="objective" class="form-control" placeholder="Objective">                 
+                                    <input id="objective" name="objective" class="form-control" placeholder="Objective" value="<?php echo $userInfo['Objective'] ?>">                 
                                 </div>
                                 <div class="form-group">
-                                    <input id="summary" name="summary" class="form-control" placeholder="Summary">                 
+                                    <input id="summary" name="summary" class="form-control" placeholder="Summary" value="<?php echo $userInfo['Summary'] ?>">                 
                                 </div>
                             </div>
                             <div class="col-sm-6 col-md-6 col-lg-6">
@@ -367,19 +375,19 @@ INFO
                         <div class="row">
                             <div class="col-md-6 col-lg-6 col-sm-6">
                                 <div class="form-group">
-                                    <input id="schoolName" name="schoolName" type="text" class="form-control" placeholder="School Name">
+                                    <input id="schoolName" name="schoolName" type="text" class="form-control" placeholder="School Name" value="<?php echo $userInfo['SchoolName'] ?>">
                                 </div>
                                 <div class="form-group">
-                                    <input id="degreeProgram" name="degreeProgram" type="text" class="form-control" placeholder="Degree Program">                   
+                                    <input id="degreeProgram" name="degreeProgram" type="text" class="form-control" placeholder="Degree Program" value="<?php echo $userInfo['DegreeProgram'] ?>">                   
                                 </div>
                                 <div class="form-group">
-                                    <input id="degreeType" name="degreeType" type="text" class="form-control" placeholder="Degree Type">                   
+                                    <input id="degreeType" name="degreeType" type="text" class="form-control" placeholder="Degree Type" value="<?php echo $userInfo['DegreeType'] ?>">                   
                                 </div>
                                 <div class="form-group">
-                                    <input id="enterDate" name="enterDate" type="text" class="form-control" placeholder="Enter Date of Attendence">                   
+                                    <input id="enterDate" name="enterDate" type="text" class="form-control" placeholder="Enter Date of Attendence" value="<?php echo $userInfo['EnterDate'] ?>">                   
                                 </div>                                
                                 <div class="form-group">
-                                    <input id="additionalDetail" name="additionalDetail" class="form-control" placeholder="Additional Detail">                  
+                                    <input id="additionalDetail" name="additionalDetail" class="form-control" placeholder="Additional Detail" value="<?php echo $userInfo['AdditionalDetail'] ?>">                  
                                 </div>
                             </div>
                             <div class="col-sm-6 col-md-6 col-lg-6">
