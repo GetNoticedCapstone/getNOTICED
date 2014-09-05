@@ -1,3 +1,4 @@
+<?php include 'dependency.php';?>
 <!DOCTYPE html>
 <!--
 This is the page that will be populated using php with the users data that has
@@ -7,6 +8,20 @@ Each page will have a unique url that can be shared with anyone. To access the
 page all a person would have to do is enter the url in their browser. 
 This page also is 100% responsive and works on all major browsers.
 -->
+<?php
+    if ( $_SESSION['userID'] <= 0 ) {               
+                session_destroy();
+                header('Location: loginPage.php');
+                exit;
+            }
+    logout::checkLogout();
+    logout::confirmAccess();
+    
+    $userContent = new UserContent();
+    $userSignin = new UserSignUp();
+    $memberInfo = $userContent->read($_SESSION['userID']);
+    $memberSignin = $userSignin->read($_SESSION['userID']);
+?>
 <html lang="en">
 <head><!--{LOAD CSS & GOOGLE FONTS}######################################### -->
     <meta charset="UTF-8">
@@ -34,6 +49,7 @@ This page also is 100% responsive and works on all major browsers.
                     <li><a href="#">Experience</a></li>
                     <li><a href="#">About</a></li>
                     <li><a href="#">Contact</a></li>
+                    <li><a href="?logout=1">Log Out</a></li>
                 </ul>
             </div>
         </div>
@@ -43,16 +59,16 @@ This page also is 100% responsive and works on all major browsers.
             <div class="row">
                 <div class="col-md-8 col-xs-12 col-sm-12">
                     <div class="nameAndTitle pull-left">
-                        <h1 class="shadow">Your Name</h1>
-                        <p>Your Title</p>
+                        <h1 class="shadow"><?php echo $memberInfo['FirstName'] . ' ' . $memberInfo['LastName'] ?></h1>
+                        <p><?php echo $memberInfo['JobTitle'] ?></p>
                     </div>
                 </div>
                 <div class="col-md-4 col-xs-12 col-sm-12">
                     <div class="socialIcons">
                         <ul><!-- php add user url to href="" -->
-                            <a href="#"><img src="img/t3Git.png" class="iconResponsive" width="65" height="65" alt=""></a>
-                            <a href="#"><img src="img/t3Linked.png" class="iconResponsive" width="65" height="65" alt=""></a>
-                            <a href="#"><img src="img/t3Facebook.png" class="iconResponsive" width="65" height="65" alt=""></a>
+                            <a href="<?php echo $memberInfo['GitHub'] ?>"  title="<?php echo $memberInfo['GitHub'] ?>"><img src="img/t3Git.png" class="iconResponsive" width="65" height="65" alt=""></a>
+                            <a href="<?php echo $memberInfo['LinkedIn'] ?>" title="<?php echo $memberInfo['LinkedIn'] ?>"><img src="img/t3Linked.png" class="iconResponsive" width="65" height="65" alt=""></a>
+                            <a href="<?php echo $memberInfo['Facebook'] ?>" title="<?php echo $memberInfo['Facebook'] ?>"><img src="img/t3Facebook.png" class="iconResponsive" width="65" height="65" alt=""></a>
                         </ul> 
                     </div>
                 </div>
@@ -115,7 +131,11 @@ This page also is 100% responsive and works on all major browsers.
                     <div class="modal-body">
                         <div class="row">
                             <div class="col-md-6">
-                                <h4>Education</h4>
+                                <h4><?php echo "School Name: " . $memberInfo['SchoolName']
+                                       . "<br />Degree Program: " . $memberInfo['DegreeProgram']
+                                       . "<br />Degree Type: " . $memberInfo['DegreeType'] 
+                                       . "<br />Enter Date: " . $memberInfo['EnterDate']
+                                       . "<br />Additional Detail: " . $memberInfo['AdditionalDetail'] ?></h4>
                             </div>
                             <div class="col-md-6">
 
@@ -124,7 +144,9 @@ This page also is 100% responsive and works on all major browsers.
                         <hr>
                         <div class="row">
                             <div class="col-md-6">
-                                <h4>Skills</h4>
+                                <h4><?php echo "Skills: <br />" . $memberInfo['Skill1']
+                                        . ", ". $memberInfo['Skill2']
+                                        . ", ". $memberInfo['Skill3']?></h4>
                             </div>
                             <div class="col-md-6">
 
@@ -133,7 +155,10 @@ This page also is 100% responsive and works on all major browsers.
                         <hr>
                         <div class="row">
                             <div class="col-md-6">
-                                <h4>Related Work History</h4>
+                                <h4><?php echo "Most Recent Position: " . $memberInfo['MostRecentJob']
+                                        . "<br />Start Date: ". $memberInfo['StartDate']
+                                        . "<br />End Date: ". $memberInfo['EndDate']
+                                        . "<br />Job Responsibilities: ". $memberInfo['JobResponsibilities']?></h4>
                             </div>
                             <div class="col-md-6">
 
@@ -148,16 +173,12 @@ This page also is 100% responsive and works on all major browsers.
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                        <h4 class="modal-title">Your Name</h4>
+                        <h4 class="modal-title"><?php echo $memberInfo['FirstName'] . ' ' . $memberInfo['LastName'] ?></h4>
                     </div>
                     <div class="modal-body">
                         <div class="row">
                             <div class="col-md-6">
-                                <h4>contact info</h4>
-                                <?php echo $email;?>
-                                <?php echo $address;?>
-                                <?php echo $phone;?>
-                                <?php echo $content; ?>
+                                <h4><?php echo "Objective: <br />" . $memberInfo['Objective'] ?></h4>                                
                             </div>
                             <div class="col-md-6">
 
@@ -166,7 +187,7 @@ This page also is 100% responsive and works on all major browsers.
                         <hr>
                         <div class="row">
                             <div class="col-md-6">
-                                <h4>Objective</h4>
+                                <h4><?php echo "Summary: <br />" . $memberInfo['Summary'] ?></h4>
                             </div>
                             <div class="col-md-6">
 
@@ -186,7 +207,7 @@ This page also is 100% responsive and works on all major browsers.
                     <div class="modal-body">
                         <div class="row">
                             <div class="col-md-6">
-                                <h4>Phone</h4>
+                                <h4><?php echo "Phone: " . $memberInfo['Phone'] ?></h4>
                             </div>
                             <div class="col-md-6">                                               
                             </div>
@@ -194,7 +215,7 @@ This page also is 100% responsive and works on all major browsers.
                         <hr>
                         <div class="row">
                             <div class="col-md-6">
-                                <h4>Email</h4>
+                                <h4><?php echo "Email: " . $memberSignin['Email'] ?></h4>
                             </div>
                             <div class="col-md-6">   
                             </div>  
@@ -202,7 +223,7 @@ This page also is 100% responsive and works on all major browsers.
                         <hr>
                         <div class="row">
                             <div class="col-md-6">
-                                <h4>Address</h4>
+                                <h4><?php echo "Address: " . $memberInfo['Address'] ?></h4>
                             </div>
                             <div class="col-md-6">
 

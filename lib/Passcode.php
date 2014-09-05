@@ -64,11 +64,9 @@ class Passcode extends DB{
                     $isValid = true;
                 } 
                 else{
-                    echo '<p>Failing validation</p>';
                     $error = $dbs->errorInfo();
                     error_log($error[2], 3, "logs/errors.log");
                 }
-                    var_dump($_SESSION['userID']);
              }
          
          return $isValid;

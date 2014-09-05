@@ -19,23 +19,18 @@ If user not found alert user ask if they forgot password or need to signup
 <?php
 /* {Global PHP}############################################################## */
 $message = '';
-    if ( ! isset($_SESSION['login']) ) {
-        echo '<p>Makes login session false</p>';
+    if ( !isset($_SESSION['login']) ) {
         $_SESSION['login'] = false;
     }
     if ( Util::isPostRequest() ) {
         $checkCredentials = new Passcode();
         if ( $checkCredentials->isValidLogin($checkCredentials) ) {                    
             $_SESSION['login'] = true;
-            echo '<p>Logged In</p>';
             Util::redirect('userEditPage');                   
         } else {                         
             $msg = 'Login Failed';
             $_SESSION['userID'] = 0;
         }
-    }
-    if ( !empty($msg)) {
-        echo '<p>', $msg, '</p>';
     }
 /* {End Global PHP}########################################################## */        
 ?>        
@@ -78,7 +73,8 @@ $message = '';
                             <input type="email" name="email" class="form-control" placeholder="Email" required="true">
                         </div>
                         <div class="form-group">
-                            <input type="password" name="password" class="form-control" placeholder="Password" required="true">                   
+                            <input type="password" name="password" class="form-control" placeholder="Password" required="true">
+                            <?php if ( !empty($msg)) {echo '<p>', $msg, '</p>';}?>
                         </div>
                     </div>
                 </div>
