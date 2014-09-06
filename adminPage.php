@@ -49,113 +49,175 @@ customers data if they are having issues.
         </div>                  
         </div>              
     </nav><!--{END NAVIGATION}###############################################-->
-    <div class="container"><!--{MAIN WRAPPER}################################-->
+    <div class="container "><!--{MAIN WRAPPER}################################-->
+        <div class="centerAll clearfix ">
         <!--{Section contains 2 rows 3 panels per row}-->
         <div class="row">
             <div class="col-sm-4 col-md-4 col-lg-4">
-                <div class="panel panelPictonBlue">
+                <div class="panel panelPictonBlue"><!--{new members}-->
                     <div class="panel-heading">
                         <div class="row">
                             <div class="col-xs-3">
                                 <i class="fa fa-user fa-5x"></i>
                             </div>
                             <div class="col-xs-9">
-                                
+                                <div class="counter text-center">                                     
+                                    <h1>1</h1>
+                                    <?php#print_r($resultsnm);?>                                                                  
+                                </div>
+                                <div class="boxTitle text-center">
+                                    <p>New Members</p>
+                                </div>                              
                             </div>
                         </div>
                     </div>
-                    <div class="panel-footer">
-                    
+                    <div class="panel-footer text-center">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <a href="#">View Details</a>
+                            </div>
+                        </div>
                     </div>
-                </div>
+                </div><!--{end new members}-->
             </div>
             <div class="col-sm-4 col-md-4 col-lg-4">
-                <div class="panel panelShamrock">
+                <div class="panel panelShamrock "><!--{Active members}-->
                     <div class="panel-heading">
                         <div class="row">
                             <div class="col-xs-3">
                                 <i class="fa fa-users fa-5x"></i>
                             </div>
                             <div class="col-xs-9">
-                                
+                                <div class="counter text-center">                                     
+                                    <h1>1</h1>
+                                    <?php#print_r($resultsnm);?>                                                                  
+                                </div>
+                                <div class="boxTitle text-center">
+                                    <p>Active Members</p>
+                                </div> 
                             </div>
                         </div>
                     </div>
-                    <div class="panel-footer">
-                    
+                    <div class="panel-footer text-center">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <a href="#">View Details</a>
+                            </div>
+                        </div>
                     </div>
-                </div>
+                </div><!--{end Active members}-->
             </div>
             <div class="col-sm-4 col-md-4 col-lg-4">
-                <div class="panel panelRed">
+                <div class="panel panelRed"><!--{Canceled members}-->
                     <div class="panel-heading">
                         <div class="row">
                             <div class="col-xs-3">
                                 <i class="fa fa-trash-o fa-5x"></i>
                             </div>
                             <div class="col-xs-9">
-                                
+                                <div class="counter text-center">                                     
+                                    <h1>1</h1>
+                                    <?php#print_r($resultsnm);?>                                                                  
+                                </div>
+                                <div class="boxTitle text-center">
+                                    <p>Canceled Members</p>
+                                </div> 
                             </div>
                         </div>
                     </div>
-                    <div class="panel-footer">
-                    
+                    <div class="panel-footer text-center">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <a href="#">View Details</a>
+                            </div>
+                        </div>
                     </div>
-                </div>
+                </div><!--{end Canceled members}-->
             </div>
         </div>
         <div class="row">
             <div class="col-sm-4 col-md-4 col-lg-4">
-                <div class="panel panelLightningYello">
+                <div class="panel panelLightningYello marginTop"><!--{Registered Admins}-->
                     <div class="panel-heading">
                         <div class="row">
                             <div class="col-xs-3">
                                 <i class="fa fa-support fa-5x"></i>
                             </div>
                             <div class="col-xs-9">
-                                
+                                <div class="counter text-center">                                     
+                                    <h1>1</h1>
+                                    <?php#print_r($resultsnm);?>                                                                  
+                                </div>
+                                <div class="boxTitle text-center">
+                                    <p>Registered Admins</p>
+                                </div> 
                             </div>
                         </div>
                     </div>
-                    <div class="panel-footer">
-                    
+                    <div class="panel-footer text-center">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <a href="#">View Details</a>
+                            </div>
+                        </div>
                     </div>
-                </div>
+                </div><!--{End Registered Admins}-->
             </div>
             <div class="col-sm-4 col-md-4 col-lg-4">
-                <div class="panel panelOrange">
+                <div class="panel panelOrange marginTop"><!--{new members}-->
                     <div class="panel-heading">
                         <div class="row">
                             <div class="col-xs-3">
                                 
                             </div>
                             <div class="col-xs-9">
-                                
+                                <div class="counter text-center">                                     
+                                    <h1>1</h1>
+                                    <?php#print_r($resultsnm);?>                                                                  
+                                </div>
+                                <div class="boxTitle text-center">
+                                    <p>New Members</p>
+                                </div> 
                             </div>
                         </div>
                     </div>
-                    <div class="panel-footer">
-                    
+                    <div class="panel-footer text-center">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <a href="#">View Details</a>
+                            </div>
+                        </div>
                     </div>
-                </div>
+                </div><!--{new members}-->
             </div>
             <div class="col-sm-4 col-md-4 col-lg-4">
-                <div class="panel panelStudio">
+                <div class="panel panelStudio marginTop"><!--{new members}-->
                     <div class="panel-heading">
                         <div class="row">
                             <div class="col-xs-3">
                                 
                             </div>
                             <div class="col-xs-9">
-                                
+                                <div class="counter text-center">                                     
+                                    <h1>1</h1>
+                                    <?php#print_r($resultsnm);?>                                                                  
+                                </div>
+                                <div class="boxTitle text-center">
+                                    <p>New Members</p>
+                                </div> 
                             </div>
                         </div>
                     </div>
-                    <div class="panel-footer">
-                    
+                    <div class="panel-footer text-center">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <a href="#">View Details</a>
+                            </div>
+                        </div>
                     </div>
-                </div>
+                </div><!--{new members}-->
             </div>
+        </div>
         </div>
     </div><!--{END MAIN WRAPPER}#############################################-->
 <!--{lOAD JAVASCRIPT}########################################################-->

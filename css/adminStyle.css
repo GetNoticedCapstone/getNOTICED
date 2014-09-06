@@ -1,22 +1,47 @@
 /* all styles for admin page*/
+
+
+body{
+    background: url(../img/adminBG.jpg);
+}
 .navbar{
     border-radius: 0;
 }
 .panelLightningYello{
     background-color: #f5ab35;
+    box-shadow: 0px 1px 8px #fff;
 }
 .panelPictonBlue{
     background-color: #22A7F0;
+    box-shadow: 0px 1px 8px #fff;
 }
 .panelShamrock{
     background-color: #2ECC71;
+    box-shadow: 0px 1px 8px #fff;
 }
 .panelRed{
     background-color: #FF0000;
+    box-shadow: 0px 1px 8px #fff;
 }
 .panelOrange{
     background-color: #F9690E;
+    box-shadow: 0px 1px 8px #fff;
 }
 .panelStudio{
     background-color: #8E44AD;
+    box-shadow: 0px 1px 8px #fff;
 }
+@media (min-width: 960px){
+    .centerAll{
+        width: 960px;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .marginTop{
+        margin-top: 30px;
+    }
+    
+}
+
