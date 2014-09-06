@@ -72,12 +72,13 @@ INFO
 <!--{End NAVIGATION CONTAINER}.................................................................................... -->
 
 <!--{INNER CONTAINER}............................................................................................. -->
-        <div class="container"><!--{Main Wrapper}-->
-            <div class="jumbotron text-center">
+        <div class="container centerAll"><!--{Main Wrapper}-->
+            <div class="page-header text-center">
                 <div class="row">
                     <div class="col-md-12">
                         <h1 class="title">get<i>N</i>OTICED</h1>
-                        <p>Just fill in the required fields, click publish and your personal web portfolio will be instantly created!</p>
+                        
+                        <p class="mes">Just fill in the required fields, click publish and your personal web portfolio will be instantly created.</p>
                     </div>
                 </div>
                 <div class="row">
