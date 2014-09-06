@@ -54,7 +54,7 @@ $message = '';
         </div>                  
         </div>              
     </nav><!--{END NAVIGATION}############################################## -->
-    <div class="container centerAll"><!--{MAIN WRAPPER}############################### -->      
+    <div class="container centerAll"><!--{MAIN WRAPPER}##################### -->      
         <form class="frmLogin center-block" method="post">
             <div class="frmHeader">
                 <div class="row">
