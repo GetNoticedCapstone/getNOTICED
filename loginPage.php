@@ -13,7 +13,8 @@ If user not found alert user ask if they forgot password or need to signup
     <link href="css/bootstrap.css" rel="stylesheet">
     <link href="css/loginSignupStyle.css" rel="stylesheet" media="all">
     <link href="font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <title>get<i>N</i>OTICED</title> 
+    <link href='http://fonts.googleapis.com/css?family=Nothing+You+Could+Do' rel='stylesheet' type='text/css'>
+    <title>getNOTICED</title> 
 </head><!--{END CSS & GOOGLE FONTS}##########################################-->
 <body>
 <?php
@@ -53,7 +54,7 @@ $message = '';
         </div>                  
         </div>              
     </nav><!--{END NAVIGATION}############################################## -->
-    <div class="container"><!--{MAIN WRAPPER}############################### -->
+    <div class="container centerAll"><!--{MAIN WRAPPER}############################### -->      
         <form class="frmLogin center-block" method="post">
             <div class="frmHeader">
                 <div class="row">
@@ -61,7 +62,7 @@ $message = '';
                         <img class="profile-img" src="img/login_img.png" alt="">
                     </div>
                     <div class="col-md-6">
-                        <h2 class="text-center">Welcome Back</h2>
+                        <h2 class="text-center titleFont">Welcome Back</h2>
                     </div>
                 </div>
                 <hr/>

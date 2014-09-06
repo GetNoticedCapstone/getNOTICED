@@ -12,6 +12,7 @@ new user then create new record, and redirect to userContent page
     <link href="css/bootstrap.css" rel="stylesheet">
     <link href="css/loginSignupStyle.css" rel="stylesheet" media="all">
     <link href="font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Nothing+You+Could+Do' rel='stylesheet' type='text/css'>
     <title>getNOTICED</title>
 </head><!--{END CSS & GOOGLE FONTS}##########################################-->
 <body>
@@ -54,7 +55,7 @@ $member = new UserSignUp();
         </div>                  
         </div>              
     </nav><!--{END NAVIGATION}############################################## -->
-    <div class="container"><!--{MAIN WRAPPER}############################### -->
+    <div class="container centerAll"><!--{MAIN WRAPPER}############################### -->
         <form class="frmLogin center-block" method="post">
             <div class="frmHeader">
                 <div class="row">
@@ -62,7 +63,7 @@ $member = new UserSignUp();
                         <img class="profile-img" src="img/signUp_img.png" alt="">
                     </div>
                     <div class="col-md-6">
-                        <h2 class="text-center">Free Membership</h2>
+                        <h2 class="text-center titleFont">Free Membership</h2>
                     </div>
                 </div>
                 <hr/>
