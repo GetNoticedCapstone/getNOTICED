@@ -3,57 +3,43 @@
 Designed developed and managed by David landi, Terri Gaskell, and Justin Barreira.
 2014 NEIT Capstone Project
 -->
-<html lang="en">
-<!--{LOAD CSS & GOOGLE FONTS}............................................... -->    
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="css/bootstrap.css" rel="stylesheet">
-        <link href="css/indexStyle.css" rel="stylesheet" media="all">
-        <link href="font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-        <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
-        <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
-        
-        <title>getNOTICED</title>
-    </head>
-    <body>
-<!--{END CSS & GOOGLE FONTS}................................................ -->
-
-<!--{GLOBAL PHP}............................................................ -->
-        <?php
-            
-        ?>
-<!--{End PHP}............................................................... -->
-
-<!--{Main Navigation}....................................................... -->          
-        <div class="header">
-            <div class="container">
-                <nav class="navbar navbar-inverse" role="navigation">
-                    <div class="navbar-header">
-                        <button type="button" id="nav-toggle" class="navbar-toggle" data-toggle="collapse" data-target="#mainNav">
-                            <span class="sr-only">Toggle</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                        <a href="#" class="navbar-brand scrollTop">get<i>N</i>OTICED</a>
-                    </div>
-                    <div id="mainNav" class="collapse navbar-collapse">
-                        <ul class="nav navbar-nav">                           
-                            <li><a href="#" class="gnScroll" data-id="about">About</a></li>
-                            <li><a href="#" class="gnScroll" data-id="team">Team</a></li>
-                            <li><a href="#" class="gnScroll" data-id="contact">Contact</a></li>
-                            <li><a href="signupPage.php">Sign up</a></li>
-                            <li><a href="loginPage.php">Login</a></li>
-                        </ul>
-                    </div>
-                </nav>
-            </div>
+<html lang="en">  
+<head><!--{LOAD CSS & GOOGLE FONTS}######################################### -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/indexStyle.css" rel="stylesheet" media="all">
+    <link href="font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>      
+    <title>getNOTICED</title>
+</head><!--{END CSS & GOOGLE FONTS}##########################################-->
+<body>          
+    <div class="header"><!--{NAVIGATION}#####################################-->
+        <div class="container">
+            <nav class="navbar navbar-inverse" role="navigation">
+                <div class="navbar-header">
+                    <button type="button" id="nav-toggle" class="navbar-toggle" data-toggle="collapse" data-target="#mainNav">
+                        <span class="sr-only">Toggle</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a href="#" class="navbar-brand scrollTop">get<i>N</i>OTICED</a>
+                </div>
+                <div id="mainNav" class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">                           
+                        <li><a href="#" class="gnScroll" data-id="about">About</a></li>
+                        <li><a href="#" class="gnScroll" data-id="team">Team</a></li>
+                        <li><a href="#" class="gnScroll" data-id="contact">Contact</a></li>
+                        <li><a href="signupPage.php">Sign up</a></li>
+                        <li><a href="loginPage.php">Login</a></li>
+                    </ul>
+                </div>
+            </nav>
         </div>
-<!--{END NAVIGATION}........................................................ -->
-
-<!--{MAIN CONTENT}.......................................................... -->
-        <div id="landing" class="contentSection"><!--{Landing section}-->
+    </div><!--{END NAVIGATION}############################################## -->
+        <div id="landing" class="contentSection"><!--{Landing section}#######-->
             <div class="container text-center landSection">
                 <div class="row">
                     <div class="col-md-12">
@@ -66,9 +52,8 @@ Designed developed and managed by David landi, Terri Gaskell, and Justin Barreir
                     </div>
                 </div>
             </div>
-        </div><!--{end landing section}-->
-        
-        <div id="about" class="contentSection"><!--{about section}-->
+        </div><!--{end landing section}######################################-->        
+        <div id="about" class="contentSection"><!--{about section}###########-->
             <div class="container aboutSection">
                 <div class="row">
                     <div id="screen1" class="co-md-12">
@@ -171,12 +156,10 @@ Designed developed and managed by David landi, Terri Gaskell, and Justin Barreir
                             <i class="fa fa-angle-double-down animated"></i>
                         </a>
                     </div>
-                </div>
-              
+                </div>            
             </div>
-        </div><!--{about section}-->
-        
-        <div id="team" class="contentSection"><!--{team section}-->
+        </div><!--{about section}############################################-->     
+        <div id="team" class="contentSection"><!--{team section}#############-->
             <div class="container teamSection">
                 <div class="row">
                     <div class="col-md-4 col-lg-4 extSpaceTop"><!--{justin bio}-->
@@ -236,8 +219,8 @@ Designed developed and managed by David landi, Terri Gaskell, and Justin Barreir
                     <i class="fa fa-angle-double-down animated"></i>
                 </a>
             </div><!--{end container}-->
-        </div><!--{end team section}-->
-        <div id="contact" class="contentSection"><!--{contact section}-->
+        </div><!--{end team section}#########################################-->
+        <div id="contact" class="contentSection"><!--{contact section}#######-->
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
@@ -308,29 +291,24 @@ Designed developed and managed by David landi, Terri Gaskell, and Justin Barreir
                                          <a href="http://php.net/">php</a><br/>
                                          <a href="http://www.w3schools.com/js/">JavaScript</a>  
                                      </p>
-                                </div>
-                               
+                                </div>                               
                                 <div class="col-md-4">
                                     <p class="copyRight text-right">&COPY; 2014 get<i>N</i>OTICED. All rights reserved</p>
-                                </div>
-                               
+                                </div>                             
                             </div>
                         </footer>
                     </div>
                 </div>
             </div>
-        </div><!--{contact about section}-->  
-        
-<!--{END MAIN CONTENT}...................................................... -->
-
-<!--{lOAD JAVASCRIPT}....................................................... -->
-        <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-        <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-        <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
-        <script src="js/bootstrap.js"></script> 
-        <script src="js/pageScroll.js"></script>
-        <script src="js/googleMaps.js"></script>
-        <script src="js/contentSlider.js"></script>
-<!--{END JAVASCRIPT}........................................................ -->        
-    </body>
+        </div><!--{contact about section}####################################-->  
+<!--{lOAD JAVASCRIPT}########################################################-->
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+<script src="js/bootstrap.js"></script> 
+<script src="js/pageScroll.js"></script>
+<script src="js/googleMaps.js"></script>
+<script src="js/contentSlider.js"></script>
+<!--{END JAVASCRIPT}#########################################################-->        
+</body>
 </html>

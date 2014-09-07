@@ -14,13 +14,47 @@
 class Login extends DB {
     //put your code here
         
-   public static function processLogin(){
-        $_SESSION["allowAccess"] = false;
-        if (isset($_POST["password"]) && $_POST["password"] == $_POST["password"]){
-         $_SESSION["allowAccess"] = true;
-         $_session["email"] = $_POST["email"];
-         header("Location:index.php");
+    private $email;
+    private $password;
+    
+    function __construct() {
+        $this->setDb();
+        $this->setPassword(filter_input(INPUT_POST, 'password'));
+        $this->setEmail(filter_input(INPUT_POST, 'email'));
+    }
+    
+    public function getEmail() {
+        return $this->email;
+    }
+
+    public function getPassword() {
+        return $this->password;
+    }
+
+    public function setEmail($email) {
+        $this->email = $email;
+    }
+
+    public function setPassword($password) {
+        $this->password = $password;
+    }
+        
+   public static function processLogin(Login $loginModel){
+        $allowAccess = false;
+        
+        if( null != $this->getDB() && $loginModel instanceof Login ){
+            $dbs = $this->getDB()->prepare('select * from members where email = :email AND password = :password limit 1');
+            $dbs->bindParam(':email', $loginModel->getEmail(), PDO::PARAM_STR);
+            $dbs->bindParam(':password', $loginModel->getPassword(), PDO::PARAM_STR);
+            
+            if ( $dbs->execute() && $dbs->rowCount() > 0 ) {                    
+                    $result = $dbs->fetch(PDO::FETCH_ASSOC);
+                    $_SESSION['userID'] = $result['user_id'];
+                    $allowAccess = true;
+                }
         }
+        
+        return $allowAccess;
 }
     /*function that confirms youre login process if
      *  not confirmed you stay on the login page*/

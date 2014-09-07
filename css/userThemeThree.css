@@ -1,99 +1,130 @@
+/*Theme Three*/
+
 body{
-    background-color: #dadfe1;
-    padding-bottom: 150px;
+    background: url(../img/themeThreeBG.png); 
+    padding-bottom: 70px;
 }
-.header{
-    margin-top: 50px;
-    margin-bottom: 50px;
+@media (max-width: 480px){
+    body{
+       padding-bottom: 75px;
+    }
 }
 .navbar{
     border-radius: 0px;
 }
-.nameFont{
-    font-family: 'Racing Sans One', cursive;
-    color:#e67e22;
-    font-size:90px;
-    text-shadow: 1px 1px 2px black;
-}
-.titleFont{
-    font-family: 'Racing Sans One', cursive;
-    color:#e67e22;
-    font-size:40px;
-    text-shadow: 1px 1px 2px black;
-}
-.social{
-    margin-left: 60px;
-    margin-top: 30px;
-}
-.padLeft{
-    padding-left: 10px;
-}
-@media (max-width: 480px){
-    .header{
-        margin-top: 0px;
-        margin-bottom: 10px;
-    }
-    .nameFont{
-        font-size: 50px;
-        text-align: center;
-    }
-    .titleFont{
-        font-size: 30px;
-        text-align: center;
-    } 
-    .social{
-        margin-left:0px;
-        margin-top: 10px;
-    }
-    
-}
-.innerCore{
+/*{Header Style}--------------------------------------------------------------*/
+#header{
     margin-top: 50px;
-    margin-bottom: 50px;
-}
-.box{
-    width:300px;
-    height:300px;
-    background-color: #e67e22;
-    box-shadow: 2px 2px 6px black;
-    padding-left: 10px;
-    margin-top: 20px;
-}
-.boxLable{ 
-    font-family: 'Racing Sans One', cursive;
-    font-weight: bolder;
-    font-size: 30px;
-}
-.pLeft{
-    margin-left: 30px;  
-}
-.tPad{
-    padding-top: 40px;
+    margin-bottom: 100px;
 }
 @media (max-width: 480px){
-    .box{
-        width:250px;
-        height:250px;
-    }
-    .boxLable{
-        font-size: 20px;
+    #header{
+        margin-top: 10px;
+        margin-bottom: 20px;
     }
 }
+.iconResponsive{
+    width: 80px;
+    height:80px;
+}
+.nameAndTitle{
+   
+}
+.nameAndTitle > h1{
+    font-size: 80px;
+    text-shadow: 1px 1px 6px #000;
+    color: #000;
+    text-shadow: -1px -1px 1px #fff, 1px 1px 1px #000 , 0 6px 10px #19B5FE;
+    font-family: 'Courgette', cursive;
+}
+.nameAndTitle > p{
+    font-size: 25px;
+    text-shadow: -1px -1px 1px #fff, 1px 1px 1px #000 , 0 4px 6px #19B5FE;
+    color: #000;
+    font-family: 'Courgette', cursive;
+}
+@media (max-width: 480px){
+    .nameAndTitle{
+        width: 100%;
+        padding: 5px;
+    }
+    .nameAndTitle > h1{
+        font-size: 50px;
+        text-align: center;  
+    }
+    .nameAndTitle > p{
+        font-size: 20px;
+        text-align: center;
+    }
+    .iconResponsive{
+        margin-top: 10px;
+        margin-bottom: 0;
+        margin-right: 15px;
+        width: 50px;
+        height: 50px;
+    }
+}
+/*{End Header Style}----------------------------------------------------------*/
 
-.footer{
-    bottom: 0;
-    margin-bottom: 0;
-    border-width: 1px 0 0;
-    min-height: 100px;
-    background-color: #222;
-    border-color: #080808;
+/*{ContentBox Style}----------------------------------------------------------*/
+.experienceIcon, .aboutIcon, .contactIcon{
+    max-width:300px;
+    max-height:300px;
+    min-height: 300px;
+    border-radius: 150px;
+    background-color: #19B5FE;
+    box-shadow: 2px 2px 6px black inset;
+    font-family: 'Titillium Web', sans-serif;
+    text-shadow: -1px -1px 1px #fff, 1px 1px 1px #000;
+}
+.innerIcon{
+    margin-top:25px;
+    -webkit-transition: all 1.9s ease; transition: all 1.9s ease;
+}
+.innerIcon:hover{
+    -webkit-transform: rotate(360deg); transform: rotate(360deg);
+}
+@media (max-width: 480px){
+    .experienceIcon{
+        margin-top: 0;
+        min-height: 160px;
+    }
+    .aboutIcon{
+        margin-top: 15px;
+        min-height: 160px;
+    }
+    .contactIcon{
+        margin-top: 15px;
+        min-height: 160px;
+    }
+    .innerIcon{
+        margin-top:5px;
+        height: 80px;
+        width: 80px;
+    }
+}
+/*{End ContentBox Style}------------------------------------------------------*/
+
+/*{Footer Style}--------------------------------------------------------------*/
+hr{
+    height: 12px;
+    border: 0;
+    box-shadow: inset 0 12px 12px -12px rgba(0,0,0,0.5);
+    margin-bottom: 20px;
+}
+#footer{
+    margin-top: 100px;
     position: fixed;
     right: 0;
     left: 0;
     z-index: 1030;
-    color: white;
+    bottom: 0;
+    margin-bottom: 0;
 }
-.footerText{
-    margin-top: 40px;
+@media (max-width: 480px){
+    .label{
+        margin-right: 15px;
+    }
 }
+/*{End Footer Style}----------------------------------------------------------*/
 

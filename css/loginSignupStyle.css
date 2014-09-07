@@ -2,13 +2,32 @@
 all style for login page
 */
 body{
-    background: url(../img/bgLogin.jpg);
+    background: url(../img/adminBG.jpg);
 }
 .frmLogin{
     margin-top: 50px;
+    background: url(../img/frmBG.png);
     background-color: #ebe8e6;
     max-width: 500px;
     padding: 20px;
-    box-shadow: 2px 2px 5px #000;
+    box-shadow: 0px 1px 7px #fff;
 }
-
+@media (min-width: 960px){
+    .centerAll{
+        width: 960px;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+.titleFont{
+    font-family: 'Nothing You Could Do', cursive;
+    text-shadow: 2px 2px 8px #3498DB, 2px 2px 8px #000;
+}
+hr{
+    height: 12px;
+    border: 0;
+    box-shadow: inset 0 6px 6px -6px rgba(0,0,0,0.5);
+    margin-bottom: 10px;
+}
