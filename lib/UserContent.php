@@ -133,4 +133,18 @@ class UserContent extends DB {
            
            return $results;
      }
+     
+    private function readAll(){
+        $results = array();
+
+        if ( null !== $this->getDB() ) {
+           $dbs = $this->getDB()->prepare('select * from members');
+
+            if ( $dbs->execute() && $dbs->rowCount() > 0 ) {
+                $results = $dbs->fetchAll(PDO::FETCH_ASSOC);
+            }
+
+        }        
+            return $results;
+    }
 }

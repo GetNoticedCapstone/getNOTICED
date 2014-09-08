@@ -1,3 +1,5 @@
+<?php include 'dependency.php'; ?>
+
 <!DOCTYPE html>
 <!--
 The admin page will be access by users who have a flag setup in the sql
@@ -21,6 +23,8 @@ customers data if they are having issues.
 <body><!--{END CSS & GOOGLE FONTS}###########################################-->
 <?php
 /* {Global PHP}############################################################## */
+    //connection string to open database
+    $db = new PDO(Config::DB_DNS, Config::DB_USER, Config::DB_PASSWORD);
 /* {End Global PHP}########################################################## */    
 ?>
     <nav class="navbar navbar-inverse" role="navigation"><!--{NAVIGATION}####-->
@@ -62,8 +66,15 @@ customers data if they are having issues.
                             </div>
                             <div class="col-xs-9">
                                 <div class="counter text-center">                                     
-                                    <h1>1</h1>
-                                    <?php#print_r($resultsnm);?>                                                                  
+                                    <h1>
+                                        <?php
+                                            $dbnm = $db->prepare
+                                                ('select * from memberstatus where StatusCode = "A" and DateNew = CURDATE()');
+                                            $dbnm->execute();
+                                            $resultsnm = $dbnm->rowCount();
+                                            print_r($resultsnm);
+                                        ?> 
+                                    </h1>                                                                 
                                 </div>
                                 <div class="boxTitle text-center">
                                     <p>New Members</p>
@@ -89,9 +100,16 @@ customers data if they are having issues.
                             </div>
                             <div class="col-xs-9">
                                 <div class="counter text-center">                                     
-                                    <h1>1</h1>
-                                    <?php#print_r($resultsnm);?>                                                                  
-                                </div>
+                                    <h1>
+                                        <?php
+                                            $dbnm = $db->prepare
+                                                ('select * from memberstatus where StatusCode = "A"');
+                                            $dbnm->execute();
+                                            $resultsnm = $dbnm->rowCount();
+                                            print_r($resultsnm);
+                                        ?> 
+                                    </h1>
+                                 </div>
                                 <div class="boxTitle text-center">
                                     <p>Active Members</p>
                                 </div> 
@@ -116,8 +134,15 @@ customers data if they are having issues.
                             </div>
                             <div class="col-xs-9">
                                 <div class="counter text-center">                                     
-                                    <h1>1</h1>
-                                    <?php#print_r($resultsnm);?>                                                                  
+                                    <h1>
+                                        <?php
+                                            $dbnm = $db->prepare
+                                                ('select * from memberstatus where StatusCode = "C"');
+                                            $dbnm->execute();
+                                            $resultsnm = $dbnm->rowCount();
+                                            print_r($resultsnm);
+                                        ?>
+                                    </h1>
                                 </div>
                                 <div class="boxTitle text-center">
                                     <p>Canceled Members</p>
@@ -145,8 +170,15 @@ customers data if they are having issues.
                             </div>
                             <div class="col-xs-9">
                                 <div class="counter text-center">                                     
-                                    <h1>1</h1>
-                                    <?php#print_r($resultsnm);?>                                                                  
+                                    <h1>
+                                        <?php
+                                            $dbnm = $db->prepare
+                                                ('select * from admin');
+                                            $dbnm->execute();
+                                            $resultsnm = $dbnm->rowCount();
+                                            print_r($resultsnm);
+                                        ?>
+                                    </h1>                                                                 
                                 </div>
                                 <div class="boxTitle text-center">
                                     <p>Registered Admins</p>
@@ -220,6 +252,63 @@ customers data if they are having issues.
         </div>
         </div>
     </div><!--{END MAIN WRAPPER}#############################################-->
+<?php
+    //close the database
+    $db = null;
+?>
+    
+<!--{TABLES}#################################################################-->
+<!-- First Table -->
+<?php        
+    $newMembers = new UserContent();
+    $newMemberResults = $newMembers->read();
+?>        
+
+<div class="col-lg-6">
+    <div class="panel panel-default">
+        <div class="panel-heading">Active Members</div>
+        <!-- Table Data -->
+        <div class="panel-body">
+            <div class="table-responsive">
+                <table class="table table-striped table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>City</th>
+                            <th>State</th>
+                            <th>Website</th>
+                            <th>Phone</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+                        
+                            foreach ($newMemberResults as $key => $value) {
+                               
+                                 echo '<td>', $key ,'</td>';
+                                 echo '<td>', $value['firstName'] ,'</td>';
+                                 echo '<td>', $value['lastName'] ,'</td>';
+                                 echo '<td>', $value['city'] ,'</td>';
+                                 echo '<td>', $value['state'] ,'</td>';          
+                                 echo '<td>', $value['website'] ,'</td>';
+                                 echo '<td>', $value['phone'] ,'</td>';
+                                 //echo '<td><a href="updateaddress.php?id=', $value['id'] ,'">Edit</a> </td>';         
+                                 //echo '<td><form name="mainform" action="updateaddress.php" method="get"><input name="id" type="hidden" value="', $value['id'] ,'" /><input type="submit" value="Edit" /></form> </td>';     
+                            }
+                        ?>
+                    </tbody>
+                </table>
+            </div>
+            <!-- /.table-responsive -->
+        </div>
+        <!-- /.panel-body -->
+    </div>
+    <!-- /.panel -->
+</div>
+<!--{END TABLES}#################################################################-->
+
 <!--{lOAD JAVASCRIPT}########################################################-->
 <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
