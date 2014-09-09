@@ -134,6 +134,15 @@ class UserContent extends DB {
            return $results;
      }
      
+     /**
+    * A public method to return the members
+    * info from the members table.    * 
+    *
+    * @param int $id 
+    *
+    * @return array
+    */
+     
     private function readAll(){
         $results = array();
 

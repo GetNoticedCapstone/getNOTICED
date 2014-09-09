@@ -263,12 +263,12 @@ customers data if they are having issues.
     $newMembers = new UserContent();
     $newMemberResults = $newMembers->read();
 ?>        
-
+<!--
 <div class="col-lg-6">
     <div class="panel panel-default">
         <div class="panel-heading">Active Members</div>
         <!-- Table Data -->
-        <div class="panel-body">
+       <!-- <div class="panel-body">
             <div class="table-responsive">
                 <table class="table table-striped table-bordered table-hover">
                     <thead>
@@ -282,7 +282,7 @@ customers data if they are having issues.
                             <th>Phone</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody> -->
                         <?php
                         
                             foreach ($newMemberResults as $key => $value) {
@@ -298,10 +298,11 @@ customers data if they are having issues.
                                  //echo '<td><form name="mainform" action="updateaddress.php" method="get"><input name="id" type="hidden" value="', $value['id'] ,'" /><input type="submit" value="Edit" /></form> </td>';     
                             }
                         ?>
-                    </tbody>
+                 <!--   </tbody>
                 </table>
             </div>
-            <!-- /.table-responsive -->
+            <!--table-responsive -->
+            
         </div>
         <!-- /.panel-body -->
     </div>
