@@ -21,12 +21,12 @@ new user then create new record, and redirect to userContent page
 $member = new UserSignUp();  
 
  if ( Util::isPostRequest() ) {
-
+      
       $memberModel = new UserSignUpModel(filter_input_array(INPUT_POST));
       $_SESSION['userID'] = $member->createSignIn($memberModel);
-
+      var_dump(['userID']);
       if ( null !== $_SESSION['userID'] ) {  
-          $member->createMembers($_SESSION['userID']);
+          $member->createMembers($memberModel);
           $_SESSION['login'] = true;
           echo '<p>User Created</p>';
           Util::redirect('userEditPage');
@@ -76,6 +76,9 @@ $member = new UserSignUp();
                         </div>
                         <div class="form-group">
                             <input id="password" name="password" type="password" class="form-control" placeholder="Password" required="true">                   
+                        </div>
+                        <div class="form-group">
+                            <input id="websiteURL" name="websiteURL" type="text" class="form-control" placeholder="Website URL" required="true">                   
                         </div>
                     </div>
                 </div>

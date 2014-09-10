@@ -54,6 +54,7 @@ class AdminTables extends DB {
         }        
             return $results;
     }
+
     
     public function countNewMembers(){
         

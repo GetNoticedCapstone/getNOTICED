@@ -15,6 +15,7 @@ class UserSignUpModel {
     
     public $email;
     public $password;
+    public $websiteURL;
     
     
     function __construct($paramArr = array()) {
@@ -38,13 +39,17 @@ class UserSignUpModel {
             }
         }       
     }
-
+        
     public function getEmail() {
         return $this->email;
     }
 
     public function getPassword() {
         return $this->password;
+    }
+    
+    public function getWebsiteURL() {
+        return $this->websiteURL;
     }
 
     public function setEmail($email) {
@@ -55,5 +60,8 @@ class UserSignUpModel {
         $this->password = $password;
     }
 
-   
+    public function setWebsiteURL($websiteURL) {
+        $this->websiteURL = $websiteURL;
+    }
+
 }

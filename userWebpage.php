@@ -21,13 +21,14 @@ This page also is 100% responsive and works on all major browsers.
     $userSignin = new UserSignUp();
     $memberInfo = $userContent->read($_SESSION['userID']);
     $memberSignin = $userSignin->read($_SESSION['userID']);
+    
 ?>
 <html lang="en">
 <head><!--{LOAD CSS & GOOGLE FONTS}######################################### -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="css/bootstrap.css" rel="stylesheet">
-    <link href="css/userThemeThree.css" rel="stylesheet" media="all">
+    <link href="css/userThemeOne.css" rel="stylesheet" media="all">
     <link href='http://fonts.googleapis.com/css?family=Titillium+Web' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Yellowtail' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Courgette' rel='stylesheet' type='text/css'>
@@ -46,9 +47,10 @@ This page also is 100% responsive and works on all major browsers.
             </div>
             <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#">Experience</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="userEditPage.php">Edit Page</a></li>
+                    <li><a href="#expModal" role="button" data-toggle="modal">Experience</a></li>
+                    <li><a href="#aboutModal" role="button" data-toggle="modal">About</a></li>
+                    <li><a href="#contactModal" role="button" data-toggle="modal">Contact</a></li>                    
                     <li><a href="?logout=1">Log Out</a></li>
                 </ul>
             </div>
@@ -134,8 +136,9 @@ This page also is 100% responsive and works on all major browsers.
                                 <h4><?php echo "School Name: " . $memberInfo['SchoolName']
                                        . "<br />Degree Program: " . $memberInfo['DegreeProgram']
                                        . "<br />Degree Type: " . $memberInfo['DegreeType'] 
-                                       . "<br />Enter Date: " . $memberInfo['EnterDate']
-                                       . "<br />Additional Detail: " . $memberInfo['AdditionalDetail'] ?></h4>
+                                       . "<br />Enter Date: " . $memberInfo['DegreeStart']
+                                       . "<br />Finish Date: " . $memberInfo['DegreeFinish']
+                                       . "<br />Degree Detail: " . $memberInfo['DegreeDetail'] ?></h4>
                             </div>
                             <div class="col-md-6">
 
@@ -158,7 +161,7 @@ This page also is 100% responsive and works on all major browsers.
                                 <h4><?php echo "Most Recent Position: " . $memberInfo['MostRecentJob']
                                         . "<br />Start Date: ". $memberInfo['StartDate']
                                         . "<br />End Date: ". $memberInfo['EndDate']
-                                        . "<br />Job Responsibilities: ". $memberInfo['JobResponsibilities']?></h4>
+                                        . "<br />Job Responsibilities: ". $memberInfo['JobResp']?></h4>
                             </div>
                             <div class="col-md-6">
 
