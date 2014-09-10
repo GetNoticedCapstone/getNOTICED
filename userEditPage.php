@@ -18,6 +18,7 @@ This is the main page where users can add and edit personal info that will build
 
 $userContent = new UserContent();
 $userSignIn = new UserSignUp();
+var_dump($_SESSION['userID']);
 $userInfo = $userContent->read($_SESSION['userID']);
 $signinInfo = $userSignIn->read($_SESSION['userID']);
 
