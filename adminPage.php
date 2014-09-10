@@ -1,4 +1,6 @@
-<?php include 'dependency.php'; ?>
+
+ <?php #include 'dependency.php'; ?>
+ <?php include 'tables.php'; ?>
 
 <!DOCTYPE html>
 <!--
@@ -24,7 +26,7 @@ customers data if they are having issues.
 <?php
 /* {Global PHP}############################################################## */
     //connection string to open database
-    $db = new PDO(Config::DB_DNS, Config::DB_USER, Config::DB_PASSWORD);
+    #$db = new PDO(Config::DB_DNS, Config::DB_USER, Config::DB_PASSWORD);
 /* {End Global PHP}########################################################## */    
 ?>
     <nav class="navbar navbar-inverse" role="navigation"><!--{NAVIGATION}####-->
@@ -53,7 +55,7 @@ customers data if they are having issues.
         </div>                  
         </div>              
     </nav><!--{END NAVIGATION}###############################################-->
-    <div class="container "><!--{MAIN WRAPPER}################################-->
+    <div class="container "><!--{MAIN WRAPPER}###############################-->
         <div class="centerAll clearfix ">
         <!--{Section contains 2 rows 3 panels per row}-->
         <div class="row">
@@ -68,11 +70,14 @@ customers data if they are having issues.
                                 <div class="counter text-center">                                     
                                     <h1>
                                         <?php
+                                        /*
                                             $dbnm = $db->prepare
                                                 ('select * from memberstatus where StatusCode = "A" and DateNew = CURDATE()');
                                             $dbnm->execute();
                                             $resultsnm = $dbnm->rowCount();
                                             print_r($resultsnm);
+                                         * 
+                                         */
                                         ?> 
                                     </h1>                                                                 
                                 </div>
@@ -85,7 +90,7 @@ customers data if they are having issues.
                     <div class="panel-footer text-center">
                         <div class="row">
                             <div class="col-xs-12">
-                                <a href="#">View Details</a>
+                                <a href="#newMemberModal" role="button" data-toggle="modal">View Details</a>
                             </div>
                         </div>
                     </div>
@@ -102,11 +107,14 @@ customers data if they are having issues.
                                 <div class="counter text-center">                                     
                                     <h1>
                                         <?php
+                                        /*
                                             $dbnm = $db->prepare
                                                 ('select * from memberstatus where StatusCode = "A"');
                                             $dbnm->execute();
                                             $resultsnm = $dbnm->rowCount();
                                             print_r($resultsnm);
+                                         * 
+                                         */
                                         ?> 
                                     </h1>
                                  </div>
@@ -119,7 +127,7 @@ customers data if they are having issues.
                     <div class="panel-footer text-center">
                         <div class="row">
                             <div class="col-xs-12">
-                                <a href="#">View Details</a>
+                                <a href="#activeMemberModal" role="button" data-toggle="modal">View Details</a>
                             </div>
                         </div>
                     </div>
@@ -136,11 +144,15 @@ customers data if they are having issues.
                                 <div class="counter text-center">                                     
                                     <h1>
                                         <?php
+                                        /*
+                                       
                                             $dbnm = $db->prepare
                                                 ('select * from memberstatus where StatusCode = "C"');
                                             $dbnm->execute();
                                             $resultsnm = $dbnm->rowCount();
                                             print_r($resultsnm);
+                                         * 
+                                         */
                                         ?>
                                     </h1>
                                 </div>
@@ -172,11 +184,14 @@ customers data if they are having issues.
                                 <div class="counter text-center">                                     
                                     <h1>
                                         <?php
+                                        /*
                                             $dbnm = $db->prepare
                                                 ('select * from admin');
                                             $dbnm->execute();
                                             $resultsnm = $dbnm->rowCount();
                                             print_r($resultsnm);
+                                         * 
+                                         */
                                         ?>
                                     </h1>                                                                 
                                 </div>
@@ -252,111 +267,110 @@ customers data if they are having issues.
         </div>
         </div>
     </div><!--{END MAIN WRAPPER}#############################################-->
-<?php
-    //close the database
-    $db = null;
-?>
-    
-<!--{TABLES}#################################################################-->
-<!-- Active Members Table -->
-<?php        
-    $activeMembers = new AdminTables();
-    $activeMemberResults = $activeMembers->readActiveMembers();
-?>        
-<div class="col-lg-6">
-    <div class="panel panel-default">
-        <div class="panel-heading">Active Members</div>
-        <!-- Table Data -->
-        <div class="panel-body">
-            <div class="table-responsive">
-                <table class="table table-striped table-bordered table-hover">
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>First Name</th>
-                            <th>Last Name</th>
-                            <th>City</th>
-                            <th>State</th>
-                            <th>Website</th>
-                            <th>Phone</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php
-                        
-                            foreach ($activeMemberResults as $key => $value) {
-                               
-                                 echo '<td>', $key ,'</td>';
-                                 echo '<td>', $value['FirstName'] ,'</td>';
-                                 echo '<td>', $value['LastName'] ,'</td>';
-                                 echo '<td>', $value['City'] ,'</td>';
-                                 echo '<td>', $value['State'] ,'</td>';          
-                                 echo '<td>', $value['WebsiteURL'] ,'</td>';
-                                 echo '<td>', $value['PrimaryPhone'] ,'</td>';
-                                 //echo '<td><a href="updateaddress.php?id=', $value['id'] ,'">Edit</a> </td>';         
-                                 //echo '<td><form name="mainform" action="updateaddress.php" method="get"><input name="id" type="hidden" value="', $value['id'] ,'" /><input type="submit" value="Edit" /></form> </td>';     
-                            }
-                        ?>
-                 </tbody>
-                </table>
+<!--{MODAL'S}################################################################-->
+<div id="newMemberModal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h3 class="modal-title">New Members</h3>
             </div>
-            <!--table-responsive -->
-            
-        </div>
-        <!-- /.panel-body -->
-    </div>
-    <!-- /.panel -->
-</div>
-
-<!-- New Members Table -->
-<?php        
-    $newMembers = new AdminTables();
-    $newMemberResults = $newMembers->readNewMembers();
-?>        
-<div class="col-lg-6">
-    <div class="panel panel-default">
-        <div class="panel-heading">New Members</div>
-        <!-- Table Data -->
-        <div class="panel-body">
-            <div class="table-responsive">
-                <table class="table table-striped table-bordered table-hover">
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>First Name</th>
-                            <th>Last Name</th>
-                            <th>Date New</th>
-                            <th>Website</th>
-                            <th>Phone</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php
-                        
-                            foreach ($newMemberResults as $key => $value) {
-                               
-                                 echo '<td>', $key ,'</td>';
-                                 echo '<td>', $value['FirstName'] ,'</td>';
-                                 echo '<td>', $value['LastName'] ,'</td>';
-                                 echo '<td>', $value['DateNew'] ,'</td>';
-                                 echo '<td>', $value['WebsiteURL'] ,'</td>';
-                                 echo '<td>', $value['PrimaryPhone'] ,'</td>';
-                                 //echo '<td><a href="updateaddress.php?id=', $value['id'] ,'">Edit</a> </td>';         
-                                 //echo '<td><form name="mainform" action="updateaddress.php" method="get"><input name="id" type="hidden" value="', $value['id'] ,'" /><input type="submit" value="Edit" /></form> </td>';     
-                            }
-                        ?>
-                 </tbody>
-                </table>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <?php newMemberTable();?>
+                    </div>
+                </div>
             </div>
-            <!--table-responsive -->
-            
         </div>
-        <!-- /.panel-body -->
     </div>
-    <!-- /.panel -->
 </div>
-<!--{END TABLES}#################################################################-->
-
+<div id="activeMemberModal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h3 class="modal-title">Active Members</h3>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <?php activeMemberTable();?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="canceledMemberModal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h3 class="modal-title">Canceled Members</h3>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="registerdAdminModal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h3 class="modal-title">Registered Admins</h3>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="comingSoonOneModal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h3 class="modal-title">Coming Soon</h3>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="comingSoonTwoModal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h3 class="modal-title">Coming Soon</h3>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--{END MODAL'S}############################################################-->
 <!--{lOAD JAVASCRIPT}########################################################-->
 <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
