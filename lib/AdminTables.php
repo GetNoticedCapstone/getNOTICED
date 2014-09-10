@@ -54,5 +54,4 @@ class AdminTables extends DB {
         }        
             return $results;
     }
-        
 }

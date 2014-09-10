@@ -134,5 +134,28 @@ class UserContent extends DB {
            
            return $results;
      }
-    
+  
+     
+     /**
+    * A public method to return the members
+    * info from the members table.    * 
+    *
+    * @param int $id 
+    *
+    * @return array
+    */
+     
+    private function readAll(){
+        $results = array();
+
+        if ( null !== $this->getDB() ) {
+           $dbs = $this->getDB()->prepare('select * from members');
+
+            if ( $dbs->execute() && $dbs->rowCount() > 0 ) {
+                $results = $dbs->fetchAll(PDO::FETCH_ASSOC);
+            }
+
+        }        
+            return $results;
+    }
 }
