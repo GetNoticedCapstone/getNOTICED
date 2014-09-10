@@ -26,7 +26,9 @@ customers data if they are having issues.
 <?php
 /* {Global PHP}############################################################## */
     //connection string to open database
-    #$db = new PDO(Config::DB_DNS, Config::DB_USER, Config::DB_PASSWORD);
+    //$db = new PDO(Config::DB_DNS, Config::DB_USER, Config::DB_PASSWORD);
+    $tables = new AdminTables();
+
 /* {End Global PHP}########################################################## */    
 ?>
     <nav class="navbar navbar-inverse" role="navigation"><!--{NAVIGATION}####-->
@@ -70,14 +72,8 @@ customers data if they are having issues.
                                 <div class="counter text-center">                                     
                                     <h1>
                                         <?php
-                                        /*
-                                            $dbnm = $db->prepare
-                                                ('select * from memberstatus where StatusCode = "A" and DateNew = CURDATE()');
-                                            $dbnm->execute();
-                                            $resultsnm = $dbnm->rowCount();
-                                            print_r($resultsnm);
-                                         * 
-                                         */
+                                        $countNew = $tables->countNewMembers();
+                                        echo $countNew;
                                         ?> 
                                     </h1>                                                                 
                                 </div>
@@ -107,14 +103,8 @@ customers data if they are having issues.
                                 <div class="counter text-center">                                     
                                     <h1>
                                         <?php
-                                        /*
-                                            $dbnm = $db->prepare
-                                                ('select * from memberstatus where StatusCode = "A"');
-                                            $dbnm->execute();
-                                            $resultsnm = $dbnm->rowCount();
-                                            print_r($resultsnm);
-                                         * 
-                                         */
+                                            $countActive = $tables->countActiveMembers();
+                                            echo $countActive;
                                         ?> 
                                     </h1>
                                  </div>
@@ -144,15 +134,8 @@ customers data if they are having issues.
                                 <div class="counter text-center">                                     
                                     <h1>
                                         <?php
-                                        /*
-                                       
-                                            $dbnm = $db->prepare
-                                                ('select * from memberstatus where StatusCode = "C"');
-                                            $dbnm->execute();
-                                            $resultsnm = $dbnm->rowCount();
-                                            print_r($resultsnm);
-                                         * 
-                                         */
+                                            $countCanceled = $tables->countCanceledMembers();
+                                            echo $countCanceled;
                                         ?>
                                     </h1>
                                 </div>
@@ -184,14 +167,8 @@ customers data if they are having issues.
                                 <div class="counter text-center">                                     
                                     <h1>
                                         <?php
-                                        /*
-                                            $dbnm = $db->prepare
-                                                ('select * from admin');
-                                            $dbnm->execute();
-                                            $resultsnm = $dbnm->rowCount();
-                                            print_r($resultsnm);
-                                         * 
-                                         */
+                                            $countAdmin = $tables->countAdminMembers();
+                                            echo $countAdmin;
                                         ?>
                                     </h1>                                                                 
                                 </div>

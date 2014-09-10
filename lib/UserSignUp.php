@@ -27,7 +27,7 @@ class UserSignUp extends DB {
             $dbs = $this->getDB()->prepare('insert into signin set email = :email, password = :password');
             $dbs ->bindParam(':email', $signUpModel->email, PDO::PARAM_STR);
             $dbs ->bindParam(':password', $signUpModel->password, PDO::PARAM_STR);
-            
+                    
             if($dbs->execute() && $dbs->rowCount() > 0){
                 $result = intval($this->getDB()->lastInsertId());
                 echo '<P>Created</p>';
@@ -49,14 +49,15 @@ class UserSignUp extends DB {
     *
     * @return boolean
     */  
-    public function createMembers( $id ) {
+    public function createMembers(UserSignUpModel $signUpModel) {
         $result = false;
                 
         //INSERT INTO ABOUT_PAGE VALUES
          if ( null !== $this->getDB() ) {
             
-            $dbs = $this->getDB()->prepare('insert into members set memberID = :memberID');
-            $dbs->bindParam(':memberID', $id, PDO::PARAM_INT);            
+            $dbs = $this->getDB()->prepare('insert into members set memberID = :memberID, websiteURL = :websiteURL');
+            $dbs->bindParam(':memberID', $_SESSION['userID'], PDO::PARAM_INT);           
+            $dbs->bindParam(':websiteURL', $signUpModel->websiteURL, PDO::PARAM_INT);           
                         
             if ( $dbs->execute() && $dbs->rowCount()) {
                 $result = true;

@@ -54,6 +54,47 @@ class AdminTables extends DB {
         }        
             return $results;
     }
+
+    
+    public function countNewMembers(){
+        
+        $dbs = $this->getDB()->prepare
+            ('select * from memberstatus where StatusCode = "A" and DateNew = CURDATE()');
+        $dbs->execute();
+        $countNew = $dbs->rowCount();
+        
+        return $countNew;
+    }
+    
+    public function countActiveMembers(){
+        
+        $dbs = $this->getDB()->prepare
+            ('select * from memberstatus where StatusCode = "A"');
+        $dbs->execute();
+        $countActive = $dbs->rowCount();
+        
+        return $countActive;
+    }
+    
+    public function countCanceledMembers(){
+        
+        $dbs = $this->getDB()->prepare
+            ('select * from memberstatus where StatusCode = "C"');
+        $dbs->execute();
+        $countCanceled = $dbs->rowCount();
+        
+        return $countCanceled;
+    }
+    
+    public function countAdminMembers(){
+        
+        $dbs = $this->getDB()->prepare
+            ('select * from admin');
+        $dbs->execute();
+        $countAdmin = $dbs->rowCount();
+        
+        return $countAdmin;
+    }
         
 }
 
