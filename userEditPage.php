@@ -15,7 +15,7 @@ This is the main page where users can add and edit personal info that will build
 <body> 
 <?php
 /* {Global PHP}############################################################## */
-var_dump($_SESSION['userID']);
+
 $userContent = new UserContent();
 $userSignIn = new UserSignUp();
 $userInfo = $userContent->read($_SESSION['userID']);
@@ -284,13 +284,13 @@ $userContentModel->memberID = $_SESSION['userID'];
                                 <input id="mostRecentJob" name="mostRecentJob" type="text" class="form-control" placeholder="Most recent job title" value="<?php echo $userInfo['MostRecentJob'] ?>">                   
                             </div>
                             <div class="form-group">
-                                <input id="startDate" name="startDate" type="text" class="form-control" placeholder="Start Date" value="<?php echo $userInfo['StartDate'] ?>">                   
+                                <input id="startDate" name="startDate" type="datetime" class="form-control" placeholder="Start Date i.e. (YYYY-MM-DD)" value="<?php echo $userInfo['StartDate'] ?>">                   
                             </div>
                             <div class="form-group">
-                                <input id="endDate" name="endDate" type="text" class="form-control" placeholder="End Date" value="<?php echo $userInfo['EndDate'] ?>">                   
+                                <input id="endDate" name="endDate" type="datetime" class="form-control" placeholder="End Date i.e. (YYYY-MM-DD)" value="<?php echo $userInfo['EndDate'] ?>">                   
                             </div>
                             <div class="form-group">
-                                <input id="jobResponsibilities" name="jobResponsibilities" class="form-control" placeholder="Breifly describe your job responsibilites" value="<?php echo $userInfo['JobResponsibilities'] ?>">                 
+                                <input id="jobResp" name="jobResp" class="form-control" placeholder="Breifly describe your job responsibilites" value="<?php echo $userInfo['JobResp'] ?>">                 
                             </div>
                         </div>
                         <div class="col-sm-6 col-md-6 col-lg-6">
@@ -368,10 +368,13 @@ $userContentModel->memberID = $_SESSION['userID'];
                                 <input id="degreeType" name="degreeType" type="text" class="form-control" placeholder="Degree Type" value="<?php echo $userInfo['DegreeType'] ?>">                   
                             </div>
                             <div class="form-group">
-                                <input id="enterDate" name="enterDate" type="text" class="form-control" placeholder="Enter Date of Attendence" value="<?php echo $userInfo['EnterDate'] ?>">                   
-                            </div>                                
+                                <input id="degreeStart" name="degreeStart" type="datetime" class="form-control" placeholder="Enter Date of Attendence i.e. (YYYY-MM-DD)" value="<?php echo $userInfo['DegreeStart'] ?>">                   
+                            </div>
                             <div class="form-group">
-                                <input id="additionalDetail" name="additionalDetail" class="form-control" placeholder="Additional Detail" value="<?php echo $userInfo['AdditionalDetail'] ?>">                  
+                                <input id="degreeFinish" name="degreeFinish" type="datetime" class="form-control" placeholder="Finish Date of Attendence i.e. (YYYY-MM-DD)" value="<?php echo $userInfo['DegreeFinish'] ?>">                   
+                            </div>
+                            <div class="form-group">
+                                <input id="degreeDetail" name="degreeDetail" class="form-control" placeholder="Additional Detail" value="<?php echo $userInfo['DegreeDetail'] ?>">                  
                             </div>
                         </div>
                         <div class="col-sm-6 col-md-6 col-lg-6">

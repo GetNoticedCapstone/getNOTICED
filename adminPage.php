@@ -40,7 +40,7 @@ customers data if they are having issues.
         </div>
         <div id="mainNav" class="collapse navbar-collapse">
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="adminDashboard.php"><span class="glyphicon glyphicon-home"></span> Dashboard </a></li>
+                <li><a href="adminPage.php"><span class="glyphicon glyphicon-home"></span> Dashboard </a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-wrench"></span> Admin Tools <span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
@@ -258,12 +258,11 @@ customers data if they are having issues.
 ?>
     
 <!--{TABLES}#################################################################-->
-<!-- First Table -->
+<!-- Active Members Table -->
 <?php        
-    $newMembers = new UserContent();
-    $newMemberResults = $newMembers->read();
+    $activeMembers = new AdminTables();
+    $activeMemberResults = $activeMembers->readActiveMembers();
 ?>        
-
 <div class="col-lg-6">
     <div class="panel panel-default">
         <div class="panel-heading">Active Members</div>
@@ -285,23 +284,72 @@ customers data if they are having issues.
                     <tbody>
                         <?php
                         
-                            foreach ($newMemberResults as $key => $value) {
+                            foreach ($activeMemberResults as $key => $value) {
                                
                                  echo '<td>', $key ,'</td>';
-                                 echo '<td>', $value['firstName'] ,'</td>';
-                                 echo '<td>', $value['lastName'] ,'</td>';
-                                 echo '<td>', $value['city'] ,'</td>';
-                                 echo '<td>', $value['state'] ,'</td>';          
-                                 echo '<td>', $value['website'] ,'</td>';
-                                 echo '<td>', $value['phone'] ,'</td>';
+                                 echo '<td>', $value['FirstName'] ,'</td>';
+                                 echo '<td>', $value['LastName'] ,'</td>';
+                                 echo '<td>', $value['City'] ,'</td>';
+                                 echo '<td>', $value['State'] ,'</td>';          
+                                 echo '<td>', $value['WebsiteURL'] ,'</td>';
+                                 echo '<td>', $value['PrimaryPhone'] ,'</td>';
                                  //echo '<td><a href="updateaddress.php?id=', $value['id'] ,'">Edit</a> </td>';         
                                  //echo '<td><form name="mainform" action="updateaddress.php" method="get"><input name="id" type="hidden" value="', $value['id'] ,'" /><input type="submit" value="Edit" /></form> </td>';     
                             }
                         ?>
-                    </tbody>
+                 </tbody>
                 </table>
             </div>
-            <!-- /.table-responsive -->
+            <!--table-responsive -->
+            
+        </div>
+        <!-- /.panel-body -->
+    </div>
+    <!-- /.panel -->
+</div>
+
+<!-- New Members Table -->
+<?php        
+    $newMembers = new AdminTables();
+    $newMemberResults = $newMembers->readNewMembers();
+?>        
+<div class="col-lg-6">
+    <div class="panel panel-default">
+        <div class="panel-heading">New Members</div>
+        <!-- Table Data -->
+        <div class="panel-body">
+            <div class="table-responsive">
+                <table class="table table-striped table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Date New</th>
+                            <th>Website</th>
+                            <th>Phone</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+                        
+                            foreach ($newMemberResults as $key => $value) {
+                               
+                                 echo '<td>', $key ,'</td>';
+                                 echo '<td>', $value['FirstName'] ,'</td>';
+                                 echo '<td>', $value['LastName'] ,'</td>';
+                                 echo '<td>', $value['DateNew'] ,'</td>';
+                                 echo '<td>', $value['WebsiteURL'] ,'</td>';
+                                 echo '<td>', $value['PrimaryPhone'] ,'</td>';
+                                 //echo '<td><a href="updateaddress.php?id=', $value['id'] ,'">Edit</a> </td>';         
+                                 //echo '<td><form name="mainform" action="updateaddress.php" method="get"><input name="id" type="hidden" value="', $value['id'] ,'" /><input type="submit" value="Edit" /></form> </td>';     
+                            }
+                        ?>
+                 </tbody>
+                </table>
+            </div>
+            <!--table-responsive -->
+            
         </div>
         <!-- /.panel-body -->
     </div>

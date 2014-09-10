@@ -13,6 +13,7 @@
  */
 class UserContentModel {
     
+    
     public $memberID;
     public $theme;
     public $firstName;
@@ -27,20 +28,22 @@ class UserContentModel {
     public $mostRecentJob;
     public $startDate;
     public $endDate;
-    public $JobResponsibilities;
+    public $JobResp;
     public $objective;
     public $summary;
     public $schoolName;
     public $degreeProgram;
     public $degreeType;
-    public $enterDate;
-    public $additionalDetail;
+    public $degreeStart;
+    public $degreeFinish;
+    public $degreeDetail;
     public $phone;
     public $address;
     public $city;
     public $state;
     public $zip;
-    
+    public $websiteURL; 
+        
     function __construct($paramArr = array()) {
         $this->map($paramArr);
     }
@@ -82,6 +85,10 @@ class UserContentModel {
     public function getJobTitle() {
         return $this->jobTitle;
     }
+    
+    public function getWebsiteURL() {
+        return $this->websiteURL;
+    }
 
     public function getGitHub() {
         return $this->gitHub;
@@ -119,8 +126,8 @@ class UserContentModel {
         return $this->endDate;
     }
 
-    public function getJobResponsibilities() {
-        return $this->JobResponsibilities;
+    public function getJobResp() {
+        return $this->JobResp;
     }
 
     public function getObjective() {
@@ -143,12 +150,16 @@ class UserContentModel {
         return $this->degreeType;
     }
 
-    public function getEnterDate() {
-        return $this->enterDate;
+    public function getDegreeStart() {
+        return $this->degreeStart;
+    }
+    
+    public function getDegreeFinish() {
+        return $this->degreeFinish;
     }
 
-    public function getAdditionalDetail() {
-        return $this->additionalDetail;
+    public function getDegreeDetail() {
+        return $this->degreeDetail;
     }
     
     public function getPhone() {
@@ -190,6 +201,10 @@ class UserContentModel {
     public function setJobTitle($jobTitle) {
         $this->jobTitle = $jobTitle;
     }
+    
+    public function setWebsiteURL($websiteURL) {
+        $this->websiteURL = $websiteURL;
+    }
 
     public function setGitHub($gitHub) {
         $this->gitHub = $gitHub;
@@ -227,8 +242,8 @@ class UserContentModel {
         $this->endDate = $endDate;
     }
 
-    public function setJobResponsibilities($JobResponsibilities) {
-        $this->JobResponsibilities = $JobResponsibilities;
+    public function setJobResp($jobResp) {
+        $this->JobResp = $jobResp;
     }
 
     public function setObjective($objective) {
@@ -251,12 +266,22 @@ class UserContentModel {
         $this->degreeType = $degreeType;
     }
 
-    public function setEnterDate($enterDate) {
-        $this->enterDate = $enterDate;
+    public function setDegreeStart($degreeStart) {
+        if (DateTime::createFromFormat('Y-m-d', $degreeStart))
+        {
+            $this->degreeStart = $degreeStart;
+        }
+    }
+    
+    public function setDegreeFinish($degreeFinish) {
+        if (DateTime::createFromFormat('Y-m-d', $degreeFinish))
+        {
+            $this->degreeFinish = $degreeFinish;
+        }
     }
 
-    public function setAdditionalDetail($additionalDetail) {
-        $this->additionalDetail = $additionalDetail;
+    public function setDegreeDetail($degreeDetail) {
+        $this->degreeDetail = $degreeDetail;
     }
 
     public function setPhone($phone) {

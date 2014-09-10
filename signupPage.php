@@ -24,7 +24,7 @@ $member = new UserSignUp();
 
       $memberModel = new UserSignUpModel(filter_input_array(INPUT_POST));
       $_SESSION['userID'] = $member->createSignIn($memberModel);
-
+      var_dump(['userID']);
       if ( null !== $_SESSION['userID'] ) {  
           $member->createMembers($_SESSION['userID']);
           $_SESSION['login'] = true;
@@ -76,6 +76,9 @@ $member = new UserSignUp();
                         </div>
                         <div class="form-group">
                             <input id="password" name="password" type="password" class="form-control" placeholder="Password" required="true">                   
+                        </div>
+                        <div class="form-group">
+                            <input id="websiteURL" name="websiteURL" type="text" class="form-control" placeholder="Website URL" required="true">                   
                         </div>
                     </div>
                 </div>

@@ -39,14 +39,15 @@ class UserContent extends DB {
                     .' mostRecentJob = :mostRecentJob,'
                     .' startDate = :startDate,'
                     .' endDate = :endDate,'
-                    .' JobResponsibilities = :JobResponsibilities,'
+                    .' JobResp = :JobResp,'
                     .' objective = :objective,'
                     .' summary = :summary,'
                     .' schoolName = :schoolName,'
                     .' degreeProgram = :degreeProgram,'
                     .' degreeType = :degreeType,'
-                    .' enterDate = :enterDate,'
-                    .' additionalDetail = :additionalDetail,'
+                    .' degreeStart = :degreeStart,'
+                    .' degreeFinish = :degreeFinish,'
+                    .' degreeDetail = :degreeDetail,'
                     .' phone = :phone,'
                     .' address = :address,'
                     .' city = :city,'
@@ -66,21 +67,21 @@ class UserContent extends DB {
             $dbs ->bindParam(':mostRecentJob', $contentModel->mostRecentJob, PDO::PARAM_STR);
             $dbs ->bindParam(':startDate', $contentModel->startDate, PDO::PARAM_STR);
             $dbs ->bindParam(':endDate', $contentModel->endDate, PDO::PARAM_STR);
-            $dbs ->bindParam(':JobResponsibilities', $contentModel->JobResponsibilities, PDO::PARAM_STR);
+            $dbs ->bindParam(':JobResp', $contentModel->JobResp, PDO::PARAM_STR);
             $dbs ->bindParam(':objective', $contentModel->objective, PDO::PARAM_STR);
             $dbs ->bindParam(':summary', $contentModel->summary, PDO::PARAM_STR);
             $dbs ->bindParam(':schoolName', $contentModel->schoolName, PDO::PARAM_STR);
             $dbs ->bindParam(':degreeProgram', $contentModel->degreeProgram, PDO::PARAM_STR);
             $dbs ->bindParam(':degreeType', $contentModel->degreeType, PDO::PARAM_STR);
-            $dbs ->bindParam(':enterDate', $contentModel->enterDate, PDO::PARAM_STR);
-            $dbs ->bindParam(':additionalDetail', $contentModel->additionalDetail, PDO::PARAM_STR);
+            $dbs ->bindParam(':degreeStart', $contentModel->degreeStart, PDO::PARAM_STR);
+            $dbs ->bindParam(':degreeFinish', $contentModel->degreeFinish, PDO::PARAM_STR);
+            $dbs ->bindParam(':degreeDetail', $contentModel->degreeDetail, PDO::PARAM_STR);
             $dbs ->bindParam(':phone', $contentModel->phone, PDO::PARAM_STR);
             $dbs ->bindParam(':address', $contentModel->address, PDO::PARAM_STR);            
             $dbs ->bindParam(':city', $contentModel->city, PDO::PARAM_STR);
             $dbs ->bindParam(':state', $contentModel->state, PDO::PARAM_STR);
             $dbs ->bindParam(':zip', $contentModel->zip, PDO::PARAM_STR);
             
-            var_dump($contentModel);
             if($dbs->execute() && $dbs->rowCount() > 0){
                 $result = true;
                 echo '<P>Updated</p>';
