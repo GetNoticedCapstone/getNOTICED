@@ -56,7 +56,7 @@ class UserSignUp extends DB {
          if ( null !== $this->getDB() ) {
             
             $dbs = $this->getDB()->prepare('insert into members set memberID = :memberID, websiteURL = :websiteURL');
-            $dbs->bindParam(':memberID', $_SESSION['userID'], PDO::PARAM_INT);           
+            $dbs->bindParam(':memberID', $_SESSION['MemberID'], PDO::PARAM_INT);           
             $dbs->bindParam(':websiteURL', $signUpModel->websiteURL, PDO::PARAM_INT);           
                         
             if ( $dbs->execute() && $dbs->rowCount()) {
@@ -106,4 +106,23 @@ class UserSignUp extends DB {
            
            return $results;
      }
+     
+     public function websiteTaken(UserSignUpModel $signinModel) {
+        
+        $website = $signinModel->getWebsiteURL();
+        $isTaken = false;
+        
+            if ( null !== $this->getDB() ) {
+
+                $dbs = $this->getDB()->prepare('select websiteURL from members where website = :website limit 1');
+                $dbs->bindParam(':website', $website, PDO::PARAM_STR);
+
+                if ( $dbs->execute() && $dbs->rowCount() > 0 ) {
+                    $isTaken = true;
+                } 
+
+             }
+         
+         return $isTaken;
+    }
 }

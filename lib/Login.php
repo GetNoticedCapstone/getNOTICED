@@ -39,7 +39,7 @@ class Login extends DB {
         $this->password = $password;
     }
         
-   public static function processLogin(Login $loginModel){
+    public static function processLogin(Login $loginModel){
         $allowAccess = false;
         
         if( null != $this->getDB() && $loginModel instanceof Login ){
@@ -58,7 +58,7 @@ class Login extends DB {
 }
     /*function that confirms youre login process if
      *  not confirmed you stay on the login page*/
-public static function confirmAccess(){
+    public static function confirmAccess(){
         if ( ! isset($_SESSION["allowAccess"]) 
                 || $_SESSION["allowAccess"] != true){
             header("Location:login.php");

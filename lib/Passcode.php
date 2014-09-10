@@ -23,19 +23,19 @@ class Passcode extends DB{
     }
     
     /*
-     * A public function to set the passcode
-     */
-    public function setPassword($password) {
-        $this->password = $password;
-    }
-    
-    /*
      * A public function to get the email 
      */
     public function getEmail() {
         return $this->email;
     }
-
+    
+    /*
+     * A public function to set the passcode
+     */
+    public function setPassword($password) {
+        $this->password = $password;
+    }   
+    
     /*
      * A public function to set the email
      */
@@ -53,14 +53,13 @@ class Passcode extends DB{
         $isValid = false;
         
             if ( null !== $this->getDB() && $loginModel instanceof Passcode) {
-
                 $dbs = $this->getDB()->prepare('select * from signin where email = :email AND password = :password limit 1');
                 $dbs->bindParam(':email', $loginModel->getEmail(), PDO::PARAM_STR);
                 $dbs->bindParam(':password', $loginModel->getPassword(), PDO::PARAM_STR);
 
                 if ( $dbs->execute() && $dbs->rowCount() > 0 ) {                    
                     $result = $dbs->fetch(PDO::FETCH_ASSOC);
-                    $_SESSION['userID'] = $result['MemberID'];
+                    $_SESSION['MemberID'] = $result['MemberID'];
                     $isValid = true;
                 } 
                 else{

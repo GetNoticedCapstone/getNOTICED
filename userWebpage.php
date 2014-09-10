@@ -9,7 +9,7 @@ page all a person would have to do is enter the url in their browser.
 This page also is 100% responsive and works on all major browsers.
 -->
 <?php
-    if ( $_SESSION['userID'] <= 0 ) {               
+    if ( $_SESSION['MemberID'] <= 0 ) {               
                 session_destroy();
                 header('Location: loginPage.php');
                 exit;
@@ -19,8 +19,8 @@ This page also is 100% responsive and works on all major browsers.
     
     $userContent = new UserContent();
     $userSignin = new UserSignUp();
-    $memberInfo = $userContent->read($_SESSION['userID']);
-    $memberSignin = $userSignin->read($_SESSION['userID']);
+    $memberInfo = $userContent->read($_SESSION['MemberID']);
+    $memberSignin = $userSignin->read($_SESSION['MemberID']);
     
 ?>
 <html lang="en">
