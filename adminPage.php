@@ -1,6 +1,4 @@
-
- <?php #include 'dependency.php'; ?>
- <?php include 'tables.php'; ?>
+ <?php include 'dependency.php'; ?>
 
 <!DOCTYPE html>
 <!--
@@ -27,6 +25,13 @@ customers data if they are having issues.
 /* {Global PHP}############################################################## */
     //connection string to open database
     //$db = new PDO(Config::DB_DNS, Config::DB_USER, Config::DB_PASSWORD);
+    if ( $_SESSION['MemberID'] <= 0 ) {               
+                    session_destroy();
+                    header('Location: loginPage.php');
+                    exit;
+                }
+        logout::checkLogout();
+        logout::confirmAccess();
     $tables = new AdminTables();
 
 /* {End Global PHP}########################################################## */    
@@ -52,7 +57,7 @@ customers data if they are having issues.
                         <li><a href="#"><i class="fa fa-edit fa-fw"></i> Forms</a></li>
                     </ul>
                 </li>
-                <li><a href="signupPage.php">Logout</a></li>
+                <li><a href="?logout=1">Log Out</a></li>
             </ul>
         </div>                  
         </div>              

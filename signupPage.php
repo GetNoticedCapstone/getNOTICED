@@ -23,9 +23,9 @@ $member = new UserSignUp();
  if ( Util::isPostRequest() ) {
       
       $memberModel = new UserSignUpModel(filter_input_array(INPUT_POST));
-      $_SESSION['userID'] = $member->createSignIn($memberModel);
-      var_dump(['userID']);
-      if ( null !== $_SESSION['userID'] ) {  
+      $_SESSION['MemberID'] = $member->createSignIn($memberModel);
+      var_dump($_SESSION['MemberID']);
+      if ( null !== $_SESSION['MemberID'] ) {  
           $member->createMembers($memberModel);
           $_SESSION['login'] = true;
           echo '<p>User Created</p>';
@@ -72,13 +72,16 @@ $member = new UserSignUp();
                 <div class="row">
                     <div class="col-md-12">
                         <div class="form-group">
-                            <input id="email" name="email" type="email" class="form-control" placeholder="Email" required="true">
+                            <input id="email" name="email" type="email" class="form-control" placeholder="Email" required="true"/>
+                        </div>                        
+                        <div class="form-group">
+                            <input id="password" name="password" type="password" class="form-control" placeholder="Password" required="true"/>                   
                         </div>
                         <div class="form-group">
-                            <input id="password" name="password" type="password" class="form-control" placeholder="Password" required="true">                   
+                            <input id="websiteURL" name="websiteURL" type="text" class="form-control nameTaken" placeholder="Website URL" required="true"/>
                         </div>
                         <div class="form-group">
-                            <input id="websiteURL" name="websiteURL" type="text" class="form-control" placeholder="Website URL" required="true">                   
+                            <label class="nameTaken"></label>
                         </div>
                     </div>
                 </div>
@@ -96,7 +99,8 @@ $member = new UserSignUp();
 <!--{lOAD JAVASCRIPT}####################################################### -->
         <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
         <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-        <script src="js/bootstrap.js"></script>         
+        <script src="js/bootstrap.js"></script>  
+        <script src="js/signupValidation.js.js"></script>
 <!--{END JAVASCRIPT}######################################################## -->  
 </body>
 </html>

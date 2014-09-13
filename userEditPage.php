@@ -16,18 +16,26 @@ This is the main page where users can add and edit personal info that will build
 <?php
 /* {Global PHP}############################################################## */
 
+if ( $_SESSION['MemberID'] <= 0 ) {               
+                session_destroy();
+                header('Location: loginPage.php');
+                exit;
+            }
+    logout::checkLogout();
+    logout::confirmAccess();
+    
 $userContent = new UserContent();
 $userSignIn = new UserSignUp();
-var_dump($_SESSION['userID']);
-$userInfo = $userContent->read($_SESSION['userID']);
-$signinInfo = $userSignIn->read($_SESSION['userID']);
+
+$userInfo = $userContent->read($_SESSION['MemberID']);
+$signinInfo = $userSignIn->read($_SESSION['MemberID']);
 
 if ( Util::isPostRequest() ) {
 
 $userContentModel = new UserContentModel(filter_input_array(INPUT_POST));
-$userContentModel->memberID = $_SESSION['userID'];
+$userContentModel->memberID = $_SESSION['MemberID'];
 
-    if ( null !== $_SESSION['userID'] && $userContent->updateMember($userContentModel) ) {
+    if ( null !== $_SESSION['MemberID'] && $userContent->updateMember($userContentModel) ) {
         echo '<p>Member Updated</p>';
         Util::redirect('userWebpage');
     } else {
@@ -51,7 +59,8 @@ $userContentModel->memberID = $_SESSION['userID'];
             <ul class="nav navbar-nav navbar-right">    
                 <li><a href="userWebpage.php">View Page</a></li>
                 <li><a href="signupPage.php">Inspiration</a></li>
-                <li><a href="signupPage.php">Help</a></li> 
+                <li><a href="signupPage.php">Help</a></li>
+                <li><a href="?logout=1">Log Out</a></li>
             </ul>
         </div>                  
         </div>              
@@ -285,10 +294,10 @@ $userContentModel->memberID = $_SESSION['userID'];
                                 <input id="mostRecentJob" name="mostRecentJob" type="text" class="form-control" placeholder="Most recent job title" value="<?php echo $userInfo['MostRecentJob'] ?>">                   
                             </div>
                             <div class="form-group">
-                                <input id="startDate" name="startDate" type="datetime" class="form-control" placeholder="Start Date i.e. (YYYY-MM-DD)" value="<?php echo $userInfo['StartDate'] ?>">                   
+                                <input id="startDate" name="startDate" type="date" class="form-control" placeholder="Start Date i.e. (YYYY-MM-DD)" value="<?php echo $userInfo['StartDate'] ?>">                   
                             </div>
                             <div class="form-group">
-                                <input id="endDate" name="endDate" type="datetime" class="form-control" placeholder="End Date i.e. (YYYY-MM-DD)" value="<?php echo $userInfo['EndDate'] ?>">                   
+                                <input id="endDate" name="endDate" type="date" class="form-control" placeholder="End Date i.e. (YYYY-MM-DD)" value="<?php echo $userInfo['EndDate'] ?>">                   
                             </div>
                             <div class="form-group">
                                 <input id="jobResp" name="jobResp" class="form-control" placeholder="Breifly describe your job responsibilites" value="<?php echo $userInfo['JobResp'] ?>">                 
@@ -369,10 +378,10 @@ $userContentModel->memberID = $_SESSION['userID'];
                                 <input id="degreeType" name="degreeType" type="text" class="form-control" placeholder="Degree Type" value="<?php echo $userInfo['DegreeType'] ?>">                   
                             </div>
                             <div class="form-group">
-                                <input id="degreeStart" name="degreeStart" type="datetime" class="form-control" placeholder="Enter Date of Attendence i.e. (YYYY-MM-DD)" value="<?php echo $userInfo['DegreeStart'] ?>">                   
+                                <input id="degreeStart" name="degreeStart" type="date" class="form-control" placeholder="Enter Date of Attendence i.e. (YYYY-MM-DD)" value="<?php echo $userInfo['DegreeStart'] ?>">                   
                             </div>
                             <div class="form-group">
-                                <input id="degreeFinish" name="degreeFinish" type="datetime" class="form-control" placeholder="Finish Date of Attendence i.e. (YYYY-MM-DD)" value="<?php echo $userInfo['DegreeFinish'] ?>">                   
+                                <input id="degreeFinish" name="degreeFinish" type="date" class="form-control" placeholder="Finish Date of Attendence i.e. (YYYY-MM-DD)" value="<?php echo $userInfo['DegreeFinish'] ?>">                   
                             </div>
                             <div class="form-group">
                                 <input id="degreeDetail" name="degreeDetail" class="form-control" placeholder="Additional Detail" value="<?php echo $userInfo['DegreeDetail'] ?>">                  

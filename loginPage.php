@@ -30,7 +30,7 @@ $message = '';
             Util::redirect('userEditPage');                   
         } else {                         
             $msg = 'Login Failed';
-            $_SESSION['userID'] = 0;
+            $_SESSION['MemberID'] = 0;
         }
     }
 /* {End Global PHP}########################################################## */        

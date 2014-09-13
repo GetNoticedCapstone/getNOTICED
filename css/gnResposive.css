@@ -1,0 +1,230 @@
+@media(min-width:1700px){
+
+    .contentSection#landing{       
+        min-height: 1080px;
+    }
+    .contentSection#about{
+        min-height: 1080px;
+    }
+    .contentSection#team{
+        min-height: 1080px;
+    }
+    .contentSection#contact{
+        min-height: 1080px;
+    }
+}
+/* Laptop Screen size 12'' - 16''*/
+@media(min-width:1000px){
+
+    .contentSection#landing{       
+        min-height: 1080px;
+    }
+    .contentSection#about{
+        min-height: 1080px;
+    }
+    .contentSection#team{
+        min-height: 1080px;
+    }
+    .contentSection#contact{
+        min-height: 1080px;
+    }
+    .carousel{
+        margin-top: 40px;
+        margin-bottom: 20px;    
+    }
+    .carouselSize{
+        max-height: 200px;
+    }
+    .transAboutBox{
+        max-height: 220px;
+    }
+    .imgSize{
+        width: 250px;
+        height: 250px;
+    }
+    .teamSection{
+        margin-top:0;
+        max-width: 960px;
+        
+    }
+    .captionBox{
+        max-height: 300px;
+    }
+    #googleMap{
+        width:100%;
+        height:255px;
+        margin-top: 10px;
+    }
+    .contactResponsive{
+        max-height: 220px;
+    }
+    .ctImgSize{
+        width: 280px;
+        height: 200px;
+    }
+    .contactText{
+        margin-top: 75px;
+    }
+    .copyRight{
+        margin-top: 0px;
+    }
+    .ghSize{
+        height: 25px;
+        width: 25px;
+    }
+    .liSize{
+        height: 25px;
+        width: 25px;
+    }
+    h2{
+        font-size: 25px;
+    }
+   
+}/* end laptop Screen size 12'' - 16''*/
+
+/* Mobile y screen size*/
+@media(max-width:380px){
+    body{
+        overflow: hidden;
+    }
+    .contentSection#landing{       
+        min-height: 640px;
+    }
+    .contentSection#about{
+        min-height: 640px;
+    }
+    .contentSection#team{
+        min-height: 640px;
+    }
+    .contentSection#contact{
+        min-height: 640px;
+    }
+    .carousel{
+        margin-top: 40px;
+        margin-bottom: 20px;    
+    }
+    .carouselSize{
+        max-height: 200px;
+    }
+    .transAboutBox{
+        max-height: 220px;
+    }
+    .imgSize{
+        width: 250px;
+        height: 250px;
+    }
+    .teamSection{
+        margin-top:0;
+        max-width: 960px;
+        
+    }
+    .captionBox{
+        max-height: 300px;
+    }
+    #googleMap{
+        width:100%;
+        height:255px;
+        margin-top: 10px;
+    }
+    .contactResponsive{
+        max-height: 220px;
+    }
+    .ctImgSize{
+        width: 280px;
+        height: 200px;
+    }
+    .contactText{
+        margin-top: 75px;
+    }
+    .copyRight{
+        margin-top: 0px;
+    }
+    .ghSize{
+        height: 25px;
+        width: 25px;
+    }
+    .liSize{
+        height: 25px;
+        width: 25px;
+    }
+    h2{
+        font-size: 25px;
+    }
+}/* End mobile y screen size*/
+/* Mobile y screen size*/
+@media(max-width:650px){
+    body{
+        overflow: hidden;
+    }
+    .landSection{
+        margin-top:0px;   
+    }
+    .btnCircle {
+        width: 40px;
+        height: 40px;
+        margin-top: 5px;
+    }
+    .contentSection#landing{       
+        min-height: 360px;
+    }
+    .contentSection#about{
+        min-height: 360px;
+    }
+    .contentSection#team{
+        min-height: 360px;
+    }
+    .contentSection#contact{
+        min-height: 360px;
+    }
+    .carousel{
+        margin-top: 40px;
+        margin-bottom: 20px;    
+    }
+    .carouselSize{
+        max-height: 200px;
+    }
+    .transAboutBox{
+        max-height: 220px;
+    }
+    .imgSize{
+        width: 250px;
+        height: 250px;
+    }
+    .teamSection{
+        margin-top:0;
+        max-width: 960px;
+        
+    }
+    .captionBox{
+        max-height: 300px;
+    }
+    #googleMap{
+        width:100%;
+        height:255px;
+        margin-top: 10px;
+    }
+    .contactResponsive{
+        max-height: 220px;
+    }
+    .ctImgSize{
+        width: 280px;
+        height: 200px;
+    }
+    .contactText{
+        margin-top: 75px;
+    }
+    .copyRight{
+        margin-top: 0px;
+    }
+    .ghSize{
+        height: 25px;
+        width: 25px;
+    }
+    .liSize{
+        height: 25px;
+        width: 25px;
+    }
+    h2{
+        font-size: 25px;
+    }
+}/* End mobile y screen size*/
