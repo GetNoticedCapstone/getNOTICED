@@ -8,7 +8,7 @@ Designed developed and managed by David landi, Terri Gaskell, and Justin Barreir
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="css/bootstrap.css" rel="stylesheet">
-    <link href="css/indexStyle.css" rel="stylesheet" media="all">
+    <link href="css/indexStyle.css" rel="stylesheet"media="all">
     <link href="font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>      

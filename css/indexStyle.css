@@ -34,7 +34,7 @@ body{
 }
 .contentSection{
     width: 100%;
-    min-height: 860px;
+    min-height: 1080px;
     padding:50px 0;
     margin-bottom: 20px;
     box-shadow: 0px 2px 2px #222
@@ -224,7 +224,7 @@ hr{
 .extSpaceTop{
    margin-top: 20px; 
 }
-/*.carouselSize{
+.carouselSize{
     max-width: 600px;
     min-height: 250px;
     
@@ -232,7 +232,7 @@ hr{
 .carousel{
     margin-top: 90px;
     margin-bottom: 90px;
-}*/
+}
 @media (max-width: 480px){
     .carouselSize{
 /*        min-width: 250px; */
