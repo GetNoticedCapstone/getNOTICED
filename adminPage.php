@@ -1,4 +1,5 @@
 <?php include 'dependency.php'; ?>
+<?php include 'tables.php'; ?>
 
 <!DOCTYPE html>
 <!--
@@ -25,7 +26,7 @@ customers data if they are having issues.
 /* {Global PHP}############################################################## */
     //connection string to open database
     //$db = new PDO(Config::DB_DNS, Config::DB_USER, Config::DB_PASSWORD);
-    if ( $_SESSION['MemberID'] <= 0 ) {               
+    if ( $_SESSION['AdminID'] <= 0 ) {               
                     session_destroy();
                     header('Location: loginPage.php');
                     exit;
