@@ -8,7 +8,7 @@ Designed developed and managed by David landi, Terri Gaskell, and Justin Barreir
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="css/bootstrap.css" rel="stylesheet">
-    <link href="css/indexStyle.css" rel="stylesheet" media="all">
+    <link href="css/indexStyle.css" rel="stylesheet"media="all">
     <link href="font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>      
@@ -164,7 +164,7 @@ Designed developed and managed by David landi, Terri Gaskell, and Justin Barreir
                 <div class="row">
                     <div class="col-md-4 col-lg-4 extSpaceTop"><!--{justin bio}-->
                         <div class="center-block">
-                            <img src="img/justin1.png" width="300" height="300" alt="" class="img-circle img-responsive">
+                            <img src="img/justin1.png" width="300" height="300" alt="" class="img-circle img-responsive imgSize">
                             <div class="captionBox text-center">
                                 <h2 class="captionTitle">Justin Barreira</h2>
                                 <h4 class="captionTitle">Lead PHP Developer</h4>
@@ -180,7 +180,7 @@ Designed developed and managed by David landi, Terri Gaskell, and Justin Barreir
                     </div><!--{end justin bio}-->
                     <div class="col-md-4 col-lg-4 extSpaceTop"><!--{terry bio}-->
                         <div class="img-responsive center-block">
-                            <img src="img/terri.png" alt="" width="300" height="300" class="img-circle img-responsive">
+                            <img src="img/terri.png" alt="" width="300" height="300" class="img-circle img-responsive imgSize">
                             <div class="captionBox text-center img-responsive">
                                 <h2 class="captionTitle">Terri Gaskell</h2>
                                 <h4 class="captionTitle">Project Manager & sql Developer</h4>
@@ -198,7 +198,7 @@ Designed developed and managed by David landi, Terri Gaskell, and Justin Barreir
                     </div><!--{end terry bio}-->
                     <div class="col-md-4 col-lg-4 extSpaceTop"><!--{david bio}-->
                         <div class="img-responsive center-block">
-                            <img src="img/david1.jpg" width="300" height="300" alt="" class="img-circle img-responsive">
+                            <img src="img/david1.jpg" width="300" height="300" alt="" class="img-circle img-responsive imgSize">
                             <div class="captionBox text-center img-responsive">
                                 <h2 class="captionTitle">David Landi</h2>
                                 <h4 class="captionTitle">Lead Front-End Developer</h4>
@@ -224,10 +224,10 @@ Designed developed and managed by David landi, Terri Gaskell, and Justin Barreir
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <div class="img-responsive captionBox center-block">
+                        <div class="img-responsive captionBox center-block contactResponsive">
                             <div class="row">
                                 <div class="col-md-6">
-                                    <img src="img/contactUS.jpg" alt="" class="img-circle img-responsive">
+                                    <img src="img/contactUS.jpg" alt="" class="img-circle img-responsive ctImgSize">
                                 </div>
                                 <div class="col-md-6">
                                     <h1 class="text-center contactText">Contact Information</h1>
@@ -238,27 +238,27 @@ Designed developed and managed by David landi, Terri Gaskell, and Justin Barreir
                 </div>
                     <div class="row">                       
                         <div class="col-md-12">
-                            <div class="img-responsive captionBox center-block">
+                            <div class="img-responsive captionBox center-block ">
                                 <div class="row">
                                     <div class="col-md-3">
                                         <h2>David Landi</h2>
-                                        <p>djlandi@email.neit.edu</p>
+                                        
                                         <p>
-                                            <a href="https://github.com/davidlandi" target="_blank" title=""><img src="img/githubIcon.png" alt="" height="45px" width="45px" title="gitHub"></a>
-                                            <a href="https://linkedin.com/pub/david-landi/51/838/b4b/" target="_blank" title=""><img src="img/linkedinIcon.png" alt="" title="LinkedIn"></a>
+                                            <a href="https://github.com/davidlandi" target="_blank" title=""><img src="img/githubIcon.png" alt="" height="45px" width="45px" title="gitHub" class="ghSize"></a>
+                                            <a href="https://linkedin.com/pub/david-landi/51/838/b4b/" target="_blank" title=""><img src="img/linkedinIcon.png" alt="" title="LinkedIn" class="liSize"></a>
                                         </p>
                                         
                                         <h2>Terri Gaskell</h2>
-                                        <p>tlgaskell@email.neit.edu</p>
+                                        
                                         <p>
-                                            <a href="https://github.com/JustinBarreira" target="_blank" title=""><img src="img/githubIcon.png" alt="" height="45px" width="45px" title="gitHub"></a>
-                                            <a href="#" target="_blank" title=""><img src="img/linkedinIcon.png" alt="" title="LinkedIn"></a>
+                                            <a href="https://github.com/JustinBarreira" target="_blank" title=""><img src="img/githubIcon.png" alt="" height="45px" width="45px" title="gitHub" class="ghSize"></a>
+                                            <a href="#" target="_blank" title=""><img src="img/linkedinIcon.png" alt="" title="LinkedIn" class="liSize"></a>
                                         </p>
                                         <h2>Justin Barreira</h2>
-                                        <p>jabarreira@email.neit.edu</p>
+                                        
                                         <p>
-                                            <a href="https://github.com/TGaskell" target="_blank" title=""><img src="img/githubIcon.png" alt="" height="45px" width="45px" title="gitHub"></a>
-                                            <img src="img/linkedinIcon.png" alt="" title="LinkedIn">
+                                            <a href="https://github.com/TGaskell" target="_blank" title=""><img src="img/githubIcon.png" alt="" height="45px" width="45px" title="gitHub" class="ghSize"></a>
+                                            <img src="img/linkedinIcon.png" alt="" title="LinkedIn" class="liSize">
                                         </p>
                                     </div>
                                     <div class="col-md-9">
