@@ -15,7 +15,7 @@ class UserContentModel {
     
     
     public $memberID;
-    public $theme;
+    public $themeID;
     public $firstName;
     public $lastName;
     public $jobTitle;
@@ -71,7 +71,7 @@ class UserContentModel {
     }
     
     public function getTheme() {
-        return $this->theme;
+        return $this->themeID;
     }
 
     public function getFirstName() {
@@ -183,11 +183,11 @@ class UserContentModel {
     }
         
     public function setMemberID($memberID) {
-        $this->theme = $memberID;
+        $this->memberID = $memberID;
     }
     
-    public function setTheme($theme) {
-        $this->theme = $theme;
+    public function setTheme($themeID) {
+        $this->themeID = intval($themeID);
     }
 
     public function setFirstName($firstName) {

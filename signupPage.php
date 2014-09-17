@@ -24,9 +24,11 @@ $member = new UserSignUp();
       
       $memberModel = new UserSignUpModel(filter_input_array(INPUT_POST));
       $_SESSION['MemberID'] = $member->createSignIn($memberModel);
-      var_dump($_SESSION['MemberID']);
+      
       if ( null !== $_SESSION['MemberID'] ) {  
           $member->createMembers($memberModel);
+          $member->createMemberStatus();
+          $member->createMemberTheme();
           $_SESSION['login'] = true;
           echo '<p>User Created</p>';
           Util::redirect('userEditPage');

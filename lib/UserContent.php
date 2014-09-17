@@ -24,7 +24,6 @@ class UserContent extends DB {
      */
     public function updateMember(UserContentModel $contentModel){
         $result = false;
-
         if(null !== $this->getDB() && $contentModel instanceof UserContentModel){
             $dbs = $this->getDB()->prepare('update members set'
                     .' firstName = :firstName,'
@@ -80,14 +79,40 @@ class UserContent extends DB {
             $dbs ->bindParam(':address', $contentModel->address, PDO::PARAM_STR);            
             $dbs ->bindParam(':city', $contentModel->city, PDO::PARAM_STR);
             $dbs ->bindParam(':state', $contentModel->state, PDO::PARAM_STR);
-            $dbs ->bindParam(':zip', $contentModel->zip, PDO::PARAM_STR);
+            $dbs ->bindParam(':zip', $contentModel->zip, PDO::PARAM_STR);            
             
             if($dbs->execute() && $dbs->rowCount() > 0){
                 $result = true;
                 echo '<P>Updated</p>';
             }
             else{
-                echo '<P>Failed</p>';
+                echo '<P>Failed content update</p>';
+                $error = $dbs->errorInfo();
+                error_log($error[2], 3, "logs/errors.log");
+            }
+        }
+        return $result;
+    }
+    
+    /**
+     * Updates user info in the membertheme table
+     * @param UserContentModel $contentModel
+     * @return type bool
+     */
+    public function updateMemberTheme(UserContentModel $contentModel){
+        $result = false;
+        var_dump($contentModel);
+        if(null !== $this->getDB() && $contentModel instanceof UserContentModel){
+            $dbs = $this->getDB()->prepare('update membertheme set themeID = :themeID where memberID = :memberID');
+            $dbs ->bindParam(':memberID', $contentModel->memberID, PDO::PARAM_STR);
+            $dbs ->bindParam(':themeID', $contentModel->themeID, PDO::PARAM_INT);
+                        
+            if($dbs->execute() && $dbs->rowCount() > 0){
+                $result = true;
+                echo '<P>Updated</p>';
+            }
+            else{
+                echo '<P>Failed theme update</p>';
                 $error = $dbs->errorInfo();
                 error_log($error[2], 3, "logs/errors.log");
             }
@@ -118,30 +143,13 @@ class UserContent extends DB {
     }
     
     /**
-    * A public method to return a members
-    * info from the members table.    * 
-    *
-    * @param int $id 
-    *
-    * @return array
-    */
-    public function read($id = 0) {
-       if ($id !== 0) {
-           return $this->readByID($id);
-       } else {
-           return $this->readAll();
-       }
-        
-    }
-    
-    /**
-    * A private method to return a members data from the members table by their memberID
+    * A public method to return a members data from the members table by their memberID
     *
     * @param int $memberID
     * 
     * @return array
     */
-     private function readByID($id){
+     public function readByID($id){
            $results = array();
            
             if ( null !== $this->getDB() ) {
@@ -178,30 +186,6 @@ class UserContent extends DB {
          }   
          return $results;
      }
-  
-     
-     /**
-    * A public method to return the members
-    * info from the members table.    * 
-    *
-    * @param int $id 
-    *
-    * @return array
-    */
-     
-    private function readAll(){
-        $results = array();
-
-        if ( null !== $this->getDB() ) {
-           $dbs = $this->getDB()->prepare('select * from members');
-
-            if ( $dbs->execute() && $dbs->rowCount() > 0 ) {
-                $results = $dbs->fetchAll(PDO::FETCH_ASSOC);
-            }
-
-        }        
-            return $results;
-    }
     
     function get_path() {
         $path = array();

@@ -24,24 +24,28 @@ if ( $_SESSION['MemberID'] <= 0 ) {
     logout::checkLogout();
     logout::confirmAccess();
     
-$userContent = new UserContent();
-$userSignIn = new UserSignUp();
+    $userContent = new UserContent();
+    $userSignIn = new UserSignUp();
 
-$userInfo = $userContent->read($_SESSION['MemberID']);
-$signinInfo = $userSignIn->read($_SESSION['MemberID']);
+    $userInfo = $userContent->readByID($_SESSION['MemberID']);
+    $signinInfo = $userSignIn->readByID($_SESSION['MemberID']);
 
-if ( Util::isPostRequest() ) {
+    if ( Util::isPostRequest() ) {
 
-$userContentModel = new UserContentModel(filter_input_array(INPUT_POST));
-$userContentModel->memberID = $_SESSION['MemberID'];
+    $userContentModel = new UserContentModel(filter_input_array(INPUT_POST));
+    $userContentModel->memberID = $_SESSION['MemberID'];
 
-    if ( null !== $_SESSION['MemberID'] && $userContent->updateMember($userContentModel) ) {
-        echo '<p>Member Updated</p>';
+    if ( null !== $_SESSION['MemberID'] && $userContent->updateMember($userContentModel) || null !== $_SESSION['MemberID'] && $userContent->updateMemberTheme($userContentModel) ) {
         Util::redirect('userWebpage');
     } else {
-        echo '<p>User could not be updated</p>';
+        ?>
+        <script type="text/javascript">
+            window.alert("No changes were made!")
+        </script>
+        <?php
     }
 }
+
 /* {End Global PHP}########################################################## */
 ?>
     <nav class="navbar navbar-inverse" role="navigation"><!--{NAVIGATION}### -->
@@ -131,11 +135,21 @@ $userContentModel->memberID = $_SESSION['MemberID'];
                 <div class="row">
                     <div class="col-md-6"> 
                         
-                        <select id="theme" name="theme" class="drdm center-block">
-                            <option value="themeOne">ThemeOne</option>
-                            <option value="themeTwo">ThemeTwo</option>
-                            <option value="themeThree">ThemeThree</option>
-                        </select>  
+                        <select id="themeID" name="theme" class="drdm center-block">
+                        <?php           
+                        
+                            $selectedTheme = $userContent->getTheme();
+                            $themes = array("One", "Two", "Three");
+                            for ($i=0; $i<=2; $i++){
+                                if($selectedTheme == $themes[$i]){
+                                    echo "<option selected value='$i'>Theme $themes[$i]</option>";                                    
+                                }else {
+                                    echo "<option value='$i'>Theme $themes[$i]</option>";                                    
+                                }                                
+                            }                   
+                        ?>
+                        
+                        </select>
                        
                     </div>
                     <div class="col-md-6">                   

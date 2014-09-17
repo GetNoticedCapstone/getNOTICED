@@ -48,7 +48,7 @@ class Passcode extends DB{
     * 
     * @return boolean
     */
-    public function isValidLogin(Passcode $loginModel ){
+    public function isMemberLogin(Passcode $loginModel ){
         
         $isValid = false;
         
@@ -60,6 +60,30 @@ class Passcode extends DB{
                 if ( $dbs->execute() && $dbs->rowCount() > 0 ) {                    
                     $result = $dbs->fetch(PDO::FETCH_ASSOC);
                     $_SESSION['MemberID'] = $result['MemberID'];
+                    $isValid = true;
+                }
+             }
+         
+         return $isValid;
+    }
+    
+    /*
+    * A public function to check if the passcode is valid
+    * 
+    * @return boolean
+    */
+    public function isAdminLogin(Passcode $loginModel ){
+        
+        $isValid = false;
+        
+            if ( null !== $this->getDB() && $loginModel instanceof Passcode) {
+                $dbs = $this->getDB()->prepare('select * from admin where adminname = :email AND adminpassword = :password limit 1');
+                $dbs->bindParam(':email', $loginModel->getEmail(), PDO::PARAM_STR);
+                $dbs->bindParam(':password', $loginModel->getPassword(), PDO::PARAM_STR);
+
+                if ( $dbs->execute() && $dbs->rowCount() > 0 ) {                    
+                    $result = $dbs->fetch(PDO::FETCH_ASSOC);
+                    $_SESSION['MemberID'] = $result['AdminID'];
                     $isValid = true;
                 } 
                 else{

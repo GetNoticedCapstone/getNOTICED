@@ -9,7 +9,9 @@ page all a person would have to do is enter the url in their browser.
 This page also is 100% responsive and works on all major browsers.
 -->
 <?php      
-        
+
+    logout::checkLogout();
+
     $userContent = new UserContent();
     $userSignin = new UserSignUp();
     error_reporting(0);
@@ -22,10 +24,10 @@ This page also is 100% responsive and works on all major browsers.
         $memberInfo = $userContent->readByURL($url);
     }
     else{    
-        $memberInfo = $userContent->read($_SESSION['MemberID']);        
+        $memberInfo = $userContent->readByID($_SESSION['MemberID']);        
     }
     $theme = $userContent->getTheme();
-    $memberSignin = $userSignin->read($_SESSION['MemberID']);
+    $memberSignin = $userSignin->readByID($_SESSION['MemberID']);
     
 ?>
     
@@ -52,12 +54,17 @@ This page also is 100% responsive and works on all major browsers.
                 <a class="navbar-brand" href="index.php">get<i>N</i>OTICED</a>
             </div>
             <div class="collapse navbar-collapse">
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="userEditPage.php" class="member">Edit Page</a></li>
+                <ul class="nav navbar-nav navbar-right">                    
                     <li><a href="#expModal" role="button" data-toggle="modal">Experience</a></li>
                     <li><a href="#aboutModal" role="button" data-toggle="modal">About</a></li>
-                    <li><a href="#contactModal" role="button" data-toggle="modal">Contact</a></li>                    
-                    <li><a href="?logout=1" class="member">Log Out</a></li>
+                    <li><a href="#contactModal" role="button" data-toggle="modal">Contact</a></li>  
+                    <?php
+                    if ($_SESSION['login'] == true){
+                    
+                      echo  "<li><a href='userEditPage.php' class='member'>Edit Page</a></li>";
+                      echo  "<li><a href='?logout=1' class='member'>Log Out</a></li>";                
+                    }
+                    ?>
                 </ul>
             </div>
         </div>
