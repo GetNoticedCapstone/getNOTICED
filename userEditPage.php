@@ -189,7 +189,8 @@ $userContentModel->memberID = $_SESSION['MemberID'];
             <div class="frmFooter">
                 <div class="row">
                     <div class="col-md-offset-9 col-md-3">                   
-                        <a href="#"><div class="btn2 btn btn-success center-block">Next Section</a></div>                            
+                        <a href="#"><div class="btn2 btn btn-success center-block">Next Section</a></div>
+                        <a href="#"><div class="btn12 btn btn-success center-block">Back</a></div> 
                     </div>
                 </div>
             </div>  
@@ -255,7 +256,8 @@ $userContentModel->memberID = $_SESSION['MemberID'];
             <div class="frmFooter">
                 <div class="row">
                     <div class="col-md-offset-9 col-md-3">                   
-                        <a href="#"><div class="btn3 btn btn-success center-block">Next Section</a></div>                           
+                        <a href="#"><div class="btn3 btn btn-success center-block">Next Section</a></div>
+                        <a href="#"><div class="btn11 btn btn-success center-block">Back</a></div> 
                     </div>
                 </div>
             </div>  
@@ -303,7 +305,8 @@ $userContentModel->memberID = $_SESSION['MemberID'];
             <div class="frmFooter">
                 <div class="row">
                     <div class="col-md-offset-9 col-md-3">                   
-                        <a href="#"><div class="btn4 btn btn-success center-block">Next Section</a></div>                           
+                        <a href="#"><div class="btn4 btn btn-success center-block">Next Section</a></div>
+                        <a href="#"><div class="btn10 btn btn-success center-block">Back</a></div> 
                     </div>
                 </div>
             </div>  
@@ -341,7 +344,8 @@ $userContentModel->memberID = $_SESSION['MemberID'];
                 <div class="row">
                     <div class="col-md-offset-9 col-md-3">
 
-                        <a href="#"><div class="btn5 btn btn-success center-block">Next Section</a>                        
+                        <a href="#"><div class="btn5 btn btn-success center-block">Next Section</a>
+                        <a href="#"><div class="btn9 btn btn-success center-block">Back</a></div> 
                     </div>
                     </div>
                 </div>
@@ -390,7 +394,8 @@ $userContentModel->memberID = $_SESSION['MemberID'];
             <div class="frmFooter">
                 <div class="row">
                     <div class="col-md-offset-9 col-md-3">                   
-                        <a href="#"><div class="btn6 btn btn-success center-block">Next Section</a></div>                          
+                        <a href="#"><div class="btn6 btn btn-success center-block">Next Section</a></div>
+                        <a href="#"><div class="btn8 btn btn-success center-block">Back</a></div> 
                     </div>
                 </div>
             </div>  
