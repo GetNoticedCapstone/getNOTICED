@@ -1,6 +1,9 @@
 //style sheet for the index page 
 // 8/5/14
 
+//style sheet for the index page 
+// 8/5/14
+
 * {
     margin: 0;
     padding: 0;
@@ -34,10 +37,20 @@ body{
 }
 .contentSection{
     width: 100%;
-    min-height: 1080px;
+    min-height: 600px;
     padding:50px 0;
     margin-bottom: 20px;
     box-shadow: 0px 2px 2px #222
+}
+@media(min-width:1000px){
+    .contentSection{
+        min-height: 900px;
+    }
+}
+@media(min-width:1650px){
+    .contentSection{
+        min-height: 1080px;
+    }
 }
 .landSection{
     margin-top:150px;   

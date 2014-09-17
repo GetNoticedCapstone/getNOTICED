@@ -105,12 +105,6 @@ $userContentModel->memberID = $_SESSION['MemberID'];
                                     <h3>Theme 1</h3>
                                     <p>Created by David Landi</p>
                                 </div>
-                                <div class="input-group">
-                                    <span class="input-group-addon">
-                                        <input type="radio">
-                                    </span>
-                                    <input id="theme" name="theme" type="text" class="form-control">
-                                </div>
                             </div>                              
                         </div>
                         <div class="col-md-4">
@@ -119,12 +113,6 @@ $userContentModel->memberID = $_SESSION['MemberID'];
                                 <div class="caption">
                                     <h3>Theme 2</h3>
                                     <p>Created by Justin Barreira</p>
-                                </div>
-                                <div class="input-group">
-                                    <span class="input-group-addon">
-                                        <input type="radio">
-                                    </span>
-                                    <input type="text" class="form-control">
                                 </div>
                             </div>
                         </div>
@@ -135,19 +123,22 @@ $userContentModel->memberID = $_SESSION['MemberID'];
                                     <h3>Theme 3</h3>
                                     <p>Created by Terri Gaskell</p>
                                 </div>
-                                <div class="input-group">
-                                    <span class="input-group-addon">
-                                        <input type="radio">
-                                    </span>
-                                    <input type="text" class="form-control">
-                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             <div class="frmFooter">
                 <div class="row">
-                    <div class="col-md-offset-9 col-md-3">                   
+                    <div class="col-md-6"> 
+                        
+                        <select id="theme" name="theme" class="drdm center-block">
+                            <option value="themeOne">ThemeOne</option>
+                            <option value="themeTwo">ThemeTwo</option>
+                            <option value="themeThree">ThemeThree</option>
+                        </select>  
+                       
+                    </div>
+                    <div class="col-md-6">                   
                         <a href="#"><div class="btn1 btn btn-success center-block">Next Section</a></div>                           
                     </div>
                 </div>
