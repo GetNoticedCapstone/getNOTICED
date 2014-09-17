@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Description of AdminTables
+ * Class for populating the AdminTables
  */
 
 
@@ -69,7 +69,21 @@ class AdminTables extends DB {
             return $results;
     }
 
+    //return member dates
+    public function readMemberDates(){
+        $results = array();
+
+        if ( null !== $this->getDB() ) {
+           $dbs = $this->getDB()->prepare('select * from members, signin, memberstatus where MemberIDM = MemberID and MemberIDS = MemberID');
+
+            if ( $dbs->execute() && $dbs->rowCount() > 0 ) {
+                $results = $dbs->fetchAll(PDO::FETCH_ASSOC);
+            }
+        }        
+            return $results;
+    }
     
+    //return number of new members for today
     public function countNewMembers(){
         
         $dbs = $this->getDB()->prepare
@@ -80,6 +94,7 @@ class AdminTables extends DB {
         return $countNew;
     }
     
+    //return number of active members
     public function countActiveMembers(){
         
         $dbs = $this->getDB()->prepare
@@ -90,6 +105,7 @@ class AdminTables extends DB {
         return $countActive;
     }
     
+    //return number of canceled memberships
     public function countCanceledMembers(){
         
         $dbs = $this->getDB()->prepare
@@ -100,6 +116,7 @@ class AdminTables extends DB {
         return $countCanceled;
     }
     
+    //return number of registered admins
     public function countAdminMembers(){
         
         $dbs = $this->getDB()->prepare
@@ -109,6 +126,10 @@ class AdminTables extends DB {
         
         return $countAdmin;
     }
+    
+    
+    //functions to populate the tables
+    
     
     public function newMemberTable(){
         
@@ -241,6 +262,62 @@ class AdminTables extends DB {
              //echo '<td><form name="mainform" action="updateaddress.php" method="get"><input name="id" type="hidden" value="', $value['id'] ,'" /><input type="submit" value="Edit" /></form> </td>';     
             }
 
+            echo '</tbody>';
+            echo '</table>';
+            echo '</div>';
+    }
+    
+     public function memberDatesTable(){
+        
+        $memberDatesResults = $this->readMemberDates();
+        
+            echo '<div class="table-responsive">';
+            echo '<table class="table table-striped table-bordered table-hover">';
+            echo '<thead>';
+            echo '<tr>';
+            echo '<th>ID</th>';
+            echo '<th>First Name</th>';
+            echo '<th>Last Name</th>';
+            echo '<th>Date Enrolled</th>';
+            echo '<th>Email</th>';
+            echo '</tr>';
+            echo '</thead>';
+            echo '<tbody>';
+                    
+            foreach ($memberDatesResults as $key => $value) {
+             echo '<tr>';   
+             echo '<td>', $key ,'</td>';
+             echo '<td>', $value['FirstName'] ,'</td>';
+             echo '<td>', $value['LastName'] ,'</td>';
+             echo '<td>', $value['DateNew'] ,'</td>';
+             echo '<td>', $value['Email'] ,'</td>';
+             echo '</tr>';
+            }
+            
+            echo '</tbody>';
+            echo '</table>';
+            echo '</div>';
+    }
+    
+    public function tableList(){
+
+            echo '<div class="table-responsive">';
+            echo '<table class="table table-striped table-bordered table-hover">';
+            echo '<thead>';
+            echo '<tr>';
+            echo '<th>Table Name</th>';
+            echo '</tr>';
+            echo '</thead>';
+            echo '<tbody>';
+                    
+             echo '<tr>';   
+             echo '<td>New Members</td>';
+             echo '<td>Active Members</td>';
+             echo '<td>Canceled Members</td>';
+             echo '<td>Registered Admins</td>';
+             echo '</tr>';
+            
+            
             echo '</tbody>';
             echo '</table>';
             echo '</div>';
