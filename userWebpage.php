@@ -8,27 +8,33 @@ Each page will have a unique url that can be shared with anyone. To access the
 page all a person would have to do is enter the url in their browser. 
 This page also is 100% responsive and works on all major browsers.
 -->
-<?php
-    if ( $_SESSION['MemberID'] <= 0 ) {               
-                session_destroy();
-                header('Location: loginPage.php');
-                exit;
-            }
-    logout::checkLogout();
-    logout::confirmAccess();
-    
+<?php      
+        
     $userContent = new UserContent();
     $userSignin = new UserSignUp();
-    $memberInfo = $userContent->read($_SESSION['MemberID']);
+    error_reporting(0);
+    
+    $path = $userContent->get_path();
+    
+    if($path['call_parts'][0] != ""){
+        $url = $path['call_parts'][0];
+        
+        $memberInfo = $userContent->readByURL($url);
+    }
+    else{    
+        $memberInfo = $userContent->read($_SESSION['MemberID']);        
+    }
+    $theme = $userContent->getTheme();
     $memberSignin = $userSignin->read($_SESSION['MemberID']);
     
 ?>
+    
 <html lang="en">
 <head><!--{LOAD CSS & GOOGLE FONTS}######################################### -->
-    <meta charset="UTF-8">
+    <meta charset="UTF-8">    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="css/bootstrap.css" rel="stylesheet">
-    <link href="css/userThemeOne.css" rel="stylesheet" media="all">
+    <link href="css/userTheme<?php echo $theme ?>.css" rel="stylesheet" media="all">
     <link href='http://fonts.googleapis.com/css?family=Titillium+Web' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Yellowtail' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Courgette' rel='stylesheet' type='text/css'>
@@ -47,11 +53,11 @@ This page also is 100% responsive and works on all major browsers.
             </div>
             <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="userEditPage.php">Edit Page</a></li>
+                    <li><a href="userEditPage.php" class="member">Edit Page</a></li>
                     <li><a href="#expModal" role="button" data-toggle="modal">Experience</a></li>
                     <li><a href="#aboutModal" role="button" data-toggle="modal">About</a></li>
                     <li><a href="#contactModal" role="button" data-toggle="modal">Contact</a></li>                    
-                    <li><a href="?logout=1">Log Out</a></li>
+                    <li><a href="?logout=1" class="member">Log Out</a></li>
                 </ul>
             </div>
         </div>
@@ -68,9 +74,9 @@ This page also is 100% responsive and works on all major browsers.
                 <div class="col-md-4 col-xs-12 col-sm-12">
                     <div class="socialIcons">
                         <ul><!-- php add user url to href="" -->
-                            <a href="<?php echo $memberInfo['GitHub'] ?>"  title="<?php echo $memberInfo['GitHub'] ?>"><img src="img/t3Git.png" class="iconResponsive" width="65" height="65" alt=""></a>
-                            <a href="<?php echo $memberInfo['LinkedIn'] ?>" title="<?php echo $memberInfo['LinkedIn'] ?>"><img src="img/t3Linked.png" class="iconResponsive" width="65" height="65" alt=""></a>
-                            <a href="<?php echo $memberInfo['Facebook'] ?>" title="<?php echo $memberInfo['Facebook'] ?>"><img src="img/t3Facebook.png" class="iconResponsive" width="65" height="65" alt=""></a>
+                            <a href="<?php echo $memberInfo['GitHub'] ?>" target="_blank" title="<?php echo $memberInfo['GitHub'] ?>"><img src="img/t3Git.png" class="iconResponsive" width="65" height="65" alt=""></a>
+                            <a href="<?php echo $memberInfo['LinkedIn'] ?>" target="_blank" title="<?php echo $memberInfo['LinkedIn'] ?>"><img src="img/t3Linked.png" class="iconResponsive" width="65" height="65" alt=""></a>
+                            <a href="<?php echo $memberInfo['Facebook'] ?>" target="_blank" title="<?php echo $memberInfo['Facebook'] ?>"><img src="img/t3Facebook.png" class="iconResponsive" width="65" height="65" alt=""></a>
                         </ul> 
                     </div>
                 </div>
