@@ -128,7 +128,7 @@ Designed developed and managed by David landi, Terri Gaskell, and Justin Barreir
                 <div class="row">
                     <div class="col-lg-12">
                         
-                        <div id="slideShow" class="carousel carouselSize">
+                        <div id="slideShow" class="carousel carouselSize center-block">
                             <ol class="carousel-indicators">
                                 <li data-target="#slideShow" data-slide-to = "1"></li>
                                 <li data-target="#slideShow" data-slide-to = "2"></li>
@@ -152,8 +152,8 @@ Designed developed and managed by David landi, Terri Gaskell, and Justin Barreir
                             <a class="carousel-control right" href="#slideShow" data-slide="next"> 
                             <span class="icon-next"></span></a>
                         </div>
-                        <a href="#" class="btn btnCircle gnScroll center-block" data-id="team">
-                            <i class="fa fa-angle-double-down animated"></i>
+                        <a href="#" class="btn btnCircle gnScroll center-block rdHide" data-id="team">
+                            <i class="fa fa-angle-double-down animated rdHide"></i>
                         </a>
                     </div>
                 </div>            
@@ -240,28 +240,28 @@ Designed developed and managed by David landi, Terri Gaskell, and Justin Barreir
                         <div class="col-md-12">
                             <div class="img-responsive captionBox center-block ">
                                 <div class="row">
-                                    <div class="col-md-3">
-                                        <h2>David Landi</h2>
+                                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                        <h2 class="ciSize">David Landi</h2>
                                         
                                         <p>
-                                            <a href="https://github.com/davidlandi" target="_blank" title=""><img src="img/githubIcon.png" alt="" height="45px" width="45px" title="gitHub" class="ghSize"></a>
+                                            <a href="https://github.com/davidlandi" target="_blank" title=""><img src="img/githubIcon.png" alt="" title="gitHub" class="ghSize"></a>
                                             <a href="https://linkedin.com/pub/david-landi/51/838/b4b/" target="_blank" title=""><img src="img/linkedinIcon.png" alt="" title="LinkedIn" class="liSize"></a>
                                         </p>
                                         
-                                        <h2>Terri Gaskell</h2>
+                                        <h2 class="ciSize">Terri Gaskell</h2>
                                         
                                         <p>
-                                            <a href="https://github.com/JustinBarreira" target="_blank" title=""><img src="img/githubIcon.png" alt="" height="45px" width="45px" title="gitHub" class="ghSize"></a>
+                                            <a href="https://github.com/JustinBarreira" target="_blank" title=""><img src="img/githubIcon.png" alt="" title="gitHub" class="ghSize"></a>
                                             <a href="#" target="_blank" title=""><img src="img/linkedinIcon.png" alt="" title="LinkedIn" class="liSize"></a>
                                         </p>
-                                        <h2>Justin Barreira</h2>
+                                        <h2 class="ciSize">Justin Barreira</h2>
                                         
                                         <p>
-                                            <a href="https://github.com/TGaskell" target="_blank" title=""><img src="img/githubIcon.png" alt="" height="45px" width="45px" title="gitHub" class="ghSize"></a>
+                                            <a href="https://github.com/TGaskell" target="_blank" title=""><img src="img/githubIcon.png" alt="" title="gitHub" class="ghSize"></a>
                                             <img src="img/linkedinIcon.png" alt="" title="LinkedIn" class="liSize">
                                         </p>
                                     </div>
-                                    <div class="col-md-9">
+                                    <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
                               
                                         <div id="googleMap">
                                 
@@ -276,24 +276,24 @@ Designed developed and managed by David landi, Terri Gaskell, and Justin Barreir
                     <div class="col-md-12">
                         <footer>
                             <div class="row">
-                                <div class="col-md-4">
-                                    <p class="text-left">
-                                        <strong>School Information</strong><br/>
+                                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                    <p class="ftLeftText">
+                                        <span class="ftTitle">School Information</span><br/>
                                         New England Tech<br/>
                                        AS, Software Engineering<br/>
                                         Capstone Project 2014
                                     </p>
                                 </div>
-                                 <div class="col-md-4">
-                                     <p class="text-center">
-                                         <strong>Technical Resources</strong><br/>
+                                 <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                     <p class="ftMidText">
+                                         <span class="ftTitle">Technical Resources</span><br/>
                                          <a href="http://getbootstrap.com/components/">Twitter Bootstrap Framework</a><br/>
                                          <a href="http://php.net/">php</a><br/>
                                          <a href="http://www.w3schools.com/js/">JavaScript</a>  
                                      </p>
                                 </div>                               
-                                <div class="col-md-4">
-                                    <p class="copyRight text-right">&COPY; 2014 get<i>N</i>OTICED. All rights reserved</p>
+                                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                    <p class="copyRight ftRightText">&COPY; 2014 get<i>N</i>OTICED. All rights reserved</p>
                                 </div>                             
                             </div>
                         </footer>
