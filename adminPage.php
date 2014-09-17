@@ -24,8 +24,7 @@ customers data if they are having issues.
 <body><!--{END CSS & GOOGLE FONTS}###########################################-->
 <?php
 /* {Global PHP}############################################################## */
-    //connection string to open database
-    //$db = new PDO(Config::DB_DNS, Config::DB_USER, Config::DB_PASSWORD);
+
     if ( $_SESSION['AdminID'] <= 0 ) {               
                     session_destroy();
                     header('Location: loginPage.php');
@@ -33,7 +32,8 @@ customers data if they are having issues.
                 }
         logout::checkLogout();
         logout::confirmAccess();
-    $tables = new AdminTables();
+        
+        $tables = new AdminTables();
 
 /* {End Global PHP}########################################################## */    
 ?>
@@ -55,7 +55,7 @@ customers data if they are having issues.
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-wrench"></span> Admin Tools <span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
                         <li><a href="#"><i class="fa fa-table fa-fw"></i>Tables</a></li>
-                        <li><a href="#"><i class="fa fa-edit fa-fw"></i> Forms</a></li>
+                        <li><a href="#"><i class="fa fa-edit fa-fw"></i>Forms</a></li>
                     </ul>
                 </li>
                 <li><a href="?logout=1">Log Out</a></li>
@@ -154,7 +154,7 @@ customers data if they are having issues.
                     <div class="panel-footer text-center">
                         <div class="row">
                             <div class="col-xs-12">
-                                <a href="#">View Details</a>
+                                <a href="#canceledMemberModal" role="button" data-toggle="modal">View Details</a>
                             </div>
                         </div>
                     </div>
@@ -187,7 +187,7 @@ customers data if they are having issues.
                     <div class="panel-footer text-center">
                         <div class="row">
                             <div class="col-xs-12">
-                                <a href="#">View Details</a>
+                                <a href="#registerdAdminModal" role="button" data-toggle="modal">View Details</a>
                             </div>
                         </div>
                     </div>
@@ -261,7 +261,10 @@ customers data if they are having issues.
             <div class="modal-body">
                 <div class="row">
                     <div class="col-md-12">
-                        <?php newMemberTable();?>
+                        <?php 
+                            $tableNewMembers = $tables->newMemberTable();
+                            echo $tableNewMembers;
+                        ?>
                     </div>
                 </div>
             </div>
@@ -278,7 +281,10 @@ customers data if they are having issues.
             <div class="modal-body">
                 <div class="row">
                     <div class="col-md-12">
-                        <?php activeMemberTable();?>
+                        <?php 
+                            $tableActiveMembers = $tables->activeMemberTable();
+                            echo $tableActiveMembers;
+                        ?>
                     </div>
                 </div>
             </div>
@@ -295,7 +301,10 @@ customers data if they are having issues.
             <div class="modal-body">
                 <div class="row">
                     <div class="col-md-12">
-                        
+                    <?php 
+                        $tableCanceledMembers = $tables->canceledMemberTable();
+                        echo $tableCanceledMembers;
+                    ?>    
                     </div>
                 </div>
             </div>
@@ -312,7 +321,10 @@ customers data if they are having issues.
             <div class="modal-body">
                 <div class="row">
                     <div class="col-md-12">
-                        
+                     <?php 
+                        $tableAdmin = $tables->adminTable();
+                        echo $tableAdmin;
+                    ?>   
                     </div>
                 </div>
             </div>
