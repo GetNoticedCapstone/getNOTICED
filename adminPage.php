@@ -1,4 +1,5 @@
 <?php include 'dependency.php'; ?>
+<?php include 'tables.php'; ?>
 
 <!DOCTYPE html>
 <!--
@@ -23,16 +24,16 @@ customers data if they are having issues.
 <body><!--{END CSS & GOOGLE FONTS}###########################################-->
 <?php
 /* {Global PHP}############################################################## */
-    //connection string to open database
-    //$db = new PDO(Config::DB_DNS, Config::DB_USER, Config::DB_PASSWORD);
-    if ( $_SESSION['MemberID'] <= 0 ) {               
-                    session_destroy();
-                    header('Location: loginPage.php');
-                    exit;
-                }
-        logout::checkLogout();
-        logout::confirmAccess();
-    $tables = new AdminTables();
+
+//    if ( $_SESSION['AdminID'] <= 0 ) {               
+//                    session_destroy();
+//                    header('Location: loginPage.php');
+//                    exit;
+//                }
+//        logout::checkLogout();
+//        logout::confirmAccess();
+        
+        $tables = new AdminTables();
 
 /* {End Global PHP}########################################################## */    
 ?>
@@ -53,8 +54,8 @@ customers data if they are having issues.
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-wrench"></span> Admin Tools <span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
-                        <li><a href="#"><i class="fa fa-table fa-fw"></i>Tables</a></li>
-                        <li><a href="#"><i class="fa fa-edit fa-fw"></i> Forms</a></li>
+                        <li><a href="#tableListModal" role="button" data-toggle="modal"><i class="fa fa-table fa-fw"></i>Tables</a></li>
+                        <li><a href="#"><i class="fa fa-edit fa-fw"></i>Forms</a></li>
                     </ul>
                 </li>
                 <li><a href="?logout=1">Log Out</a></li>
@@ -153,7 +154,7 @@ customers data if they are having issues.
                     <div class="panel-footer text-center">
                         <div class="row">
                             <div class="col-xs-12">
-                                <a href="#">View Details</a>
+                                <a href="#canceledMemberModal" role="button" data-toggle="modal">View Details</a>
                             </div>
                         </div>
                     </div>
@@ -186,26 +187,25 @@ customers data if they are having issues.
                     <div class="panel-footer text-center">
                         <div class="row">
                             <div class="col-xs-12">
-                                <a href="#">View Details</a>
+                                <a href="#registerdAdminModal" role="button" data-toggle="modal">View Details</a>
                             </div>
                         </div>
                     </div>
                 </div><!--{End Registered Admins}-->
             </div>
             <div class="col-sm-4 col-md-4 col-lg-4">
-                <div class="panel panelOrange marginTop"><!--{new members}-->
+                <div class="panel panelOrange marginTop"><!--{member dates}-->
                     <div class="panel-heading">
                         <div class="row">
                             <div class="col-xs-3">
-                                
+                              <i class="fa fa-support fa-5x"></i>  
                             </div>
                             <div class="col-xs-9">
                                 <div class="counter text-center">                                     
-                                    <h1>1</h1>
-                                    <?php#print_r($resultsnm);?>                                                                  
-                                </div>
+                                <h1>&nbsp </h1>
+                                 </div>
                                 <div class="boxTitle text-center">
-                                    <p>New Members</p>
+                                   <p>Member Dates</p>
                                 </div> 
                             </div>
                         </div>
@@ -213,14 +213,14 @@ customers data if they are having issues.
                     <div class="panel-footer text-center">
                         <div class="row">
                             <div class="col-xs-12">
-                                <a href="#">View Details</a>
+                                <a href="#memberDatesModal" role="button" data-toggle="modal">View Details</a>
                             </div>
                         </div>
                     </div>
-                </div><!--{new members}-->
+                </div><!--{End member dates}-->
             </div>
             <div class="col-sm-4 col-md-4 col-lg-4">
-                <div class="panel panelStudio marginTop"><!--{new members}-->
+                <div class="panel panelStudio marginTop"><!--{future use}-->
                     <div class="panel-heading">
                         <div class="row">
                             <div class="col-xs-3">
@@ -228,11 +228,11 @@ customers data if they are having issues.
                             </div>
                             <div class="col-xs-9">
                                 <div class="counter text-center">                                     
-                                    <h1>1</h1>
-                                    <?php#print_r($resultsnm);?>                                                                  
+                                    <h1>&nbsp</h1>
+                                    <?php //enter php code here ?>                                                                  
                                 </div>
                                 <div class="boxTitle text-center">
-                                    <p>New Members</p>
+                                    <p>Future Use</p>
                                 </div> 
                             </div>
                         </div>
@@ -244,7 +244,7 @@ customers data if they are having issues.
                             </div>
                         </div>
                     </div>
-                </div><!--{new members}-->
+                </div><!--{future use}-->
             </div>
         </div>
         </div>
@@ -260,7 +260,10 @@ customers data if they are having issues.
             <div class="modal-body">
                 <div class="row">
                     <div class="col-md-12">
-                        <?php newMemberTable();?>
+                        <?php 
+                            $tableNewMembers = $tables->newMemberTable();
+                            echo $tableNewMembers;
+                        ?>
                     </div>
                 </div>
             </div>
@@ -277,7 +280,10 @@ customers data if they are having issues.
             <div class="modal-body">
                 <div class="row">
                     <div class="col-md-12">
-                        <?php activeMemberTable();?>
+                        <?php 
+                            $tableActiveMembers = $tables->activeMemberTable();
+                            echo $tableActiveMembers;
+                        ?>
                     </div>
                 </div>
             </div>
@@ -294,7 +300,10 @@ customers data if they are having issues.
             <div class="modal-body">
                 <div class="row">
                     <div class="col-md-12">
-                        
+                    <?php 
+                        $tableCanceledMembers = $tables->canceledMemberTable();
+                        echo $tableCanceledMembers;
+                    ?>    
                     </div>
                 </div>
             </div>
@@ -311,31 +320,57 @@ customers data if they are having issues.
             <div class="modal-body">
                 <div class="row">
                     <div class="col-md-12">
-                        
+                     <?php 
+                        $tableAdmin = $tables->adminTable();
+                        echo $tableAdmin;
+                    ?>   
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<div id="comingSoonOneModal" class="modal fade">
+<div id="memberDatesModal" class="modal fade">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h3 class="modal-title">Coming Soon</h3>
+                <h3 class="modal-title">Member Dates</h3>
             </div>
             <div class="modal-body">
                 <div class="row">
                     <div class="col-md-12">
-                        
+                    <?php 
+                        $tableMemberDates = $tables->memberDatesTable();
+                        echo $tableMemberDates;
+                    ?>     
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<div id="comingSoonTwoModal" class="modal fade">
+<div id="tableListModal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h3 class="modal-title">Tables</h3>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-12">
+                    <?php    
+                      $tableList = $tables->tableList();
+                        echo $tableList;
+                     ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="futureUseModal" class="modal fade">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
