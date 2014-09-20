@@ -1,5 +1,5 @@
 <?php include 'dependency.php'; ?>
-<?php include 'tables.php'; ?>
+
 
 <!DOCTYPE html>
 <!--

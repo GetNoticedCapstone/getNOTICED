@@ -18,7 +18,7 @@ class AdminTables extends DB {
         $results = array();
 
         if ( null !== $this->getDB() ) {
-           $dbs = $this->getDB()->prepare('select * from members, memberstatus where MemberIDM = MemberIDS and StatusCode = "A"');
+           $dbs = $this->getDB()->prepare('select * from Members, MemberStatus where MemberIDM = MemberIDS and StatusCode = "A"');
 
             if ( $dbs->execute() && $dbs->rowCount() > 0 ) {
                 $results = $dbs->fetchAll(PDO::FETCH_ASSOC);
@@ -32,7 +32,7 @@ class AdminTables extends DB {
         $results = array();
 
         if ( null !== $this->getDB() ) {
-           $dbs = $this->getDB()->prepare('select * from members, memberstatus where MemberIDM = MemberIDS and StatusCode = "A" and DateNew = CURDATE()');
+           $dbs = $this->getDB()->prepare('select * from Members, MemberStatus where MemberIDM = MemberIDS and StatusCode = "A" and DateNew = CURDATE()');
 
             if ( $dbs->execute() && $dbs->rowCount() > 0 ) {
                 $results = $dbs->fetchAll(PDO::FETCH_ASSOC);
@@ -87,7 +87,7 @@ class AdminTables extends DB {
     public function countNewMembers(){
         
         $dbs = $this->getDB()->prepare
-            ('select * from memberstatus where StatusCode = "A" and DateNew = CURDATE()');
+            ('select * from MemberStatus where StatusCode = "A" and DateNew = CURDATE()');
         $dbs->execute();
         $countNew = $dbs->rowCount();
         
@@ -304,20 +304,14 @@ class AdminTables extends DB {
             echo '<div class="table-responsive">';
             echo '<table class="table table-striped table-bordered table-hover">';
             echo '<thead>';
-            echo '<tr>';
-            echo '<th>Table Name</th>';
-            echo '</tr>';
             echo '</thead>';
             echo '<tbody>';
-                    
-             echo '<tr>';   
-             echo '<td>New Members</td>';
-             echo '<td>Active Members</td>';
-             echo '<td>Canceled Members</td>';
-             echo '<td>Registered Admins</td>';
-             echo '</tr>';
-            
-            
+            echo '<tr>';   
+            echo '<td><a href="#newMemberModal" role="button" data-toggle="modal">New Members</a></td>';
+            echo '<td>Active Members</td>';
+            echo '<td>Canceled Members</td>';
+            echo '<td>Registered Admins</td>';
+            echo '</tr>';
             echo '</tbody>';
             echo '</table>';
             echo '</div>';
