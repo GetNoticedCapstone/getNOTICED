@@ -66,13 +66,7 @@ Designed developed and managed by David landi, Terri Gaskell, and Justin Barreir
                             up today and take charge of your career by providing employers with a centralized location 
                             where all of your qualification will easily be accessible with a simple mouse click. GetNOTICED 
                             today.
-                            </p>
-                            
-                            <p><div class="btn1 btn btnNext btn-success gnScroll" data-id="about"><a href="#">Next Page</a></div></p>
-                        </div>
-                    </div>
-                    <div id="screen2" class="co-md-12">
-                        <div class="transAboutBox center-block img-responsive">
+                            </p>                                                                     
                             <h2>Design and functionality</h2>
                             <p>
                             Our entire web based saas application incorporates responsive design making it mobile friendly 
@@ -91,12 +85,7 @@ Designed developed and managed by David landi, Terri Gaskell, and Justin Barreir
                             this database our focus will be on creating features for a admin to get all the statics and data they will 
                             need as efficiently as possible. Successful implementation of the features, design and a useful database 
                             that have been specified will result a great product.
-                            </p>
-                            <p><div class="btn2 btn btnNext btn-success gnScroll" data-id="about"><a href="#">Next Page</a></div></p>
-                        </div>
-                    </div>
-                    <div id="screen3" class="co-md-12">
-                        <div class="transAboutBox center-block img-responsive">
+                            </p>                                             
                             <h2>PHP Summary</h2>
                             <p>
                             The visual aesthetics of the front-end will be the first thing the user see’s and we will be
@@ -111,18 +100,12 @@ Designed developed and managed by David landi, Terri Gaskell, and Justin Barreir
                             specifically for the getNOTICED web application guaranteeing it fits into and works how it’s supposed
                             to.
                             </p>
-                            <p><div class="btn3 btn btnNext btn-success gnScroll" data-id="about"><a href="#">Next Page</a></div></p>
-                        </div>
-                    </div>
-                    <div id="screen4" class="co-md-12">
-                        <div class="transAboutBox center-block img-responsive">
                             <h2>Sql Summary</h2>
                             <p>
                             We will be utilizing MySql for the database. The database will be in third normal form with
                             primary and foreign keys to establish relationships within the database. This will be based upon the 
                             established EER diagram.
-                            </p>
-                            <p><div class="btn4 btn btnNext btn-success gnScroll" data-id="about"><a href="#">Next Page</a></div></p>
+                            </p>                       
                         </div>
                     </div>
                 </div>
@@ -227,7 +210,7 @@ Designed developed and managed by David landi, Terri Gaskell, and Justin Barreir
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <div class="img-responsive captionBox center-block contactResponsive">
+                        <div class="img-responsive captionBox center-block ctBxTop">
                             <div class="row">
                                 <div class="col-md-6">
                                     <img src="img/contactUS.jpg" alt="" class="img-circle img-responsive ctImgSize">
@@ -241,11 +224,10 @@ Designed developed and managed by David landi, Terri Gaskell, and Justin Barreir
                 </div>
                     <div class="row">                       
                         <div class="col-md-12">
-                            <div class="img-responsive captionBox ctBxSize center-block ">
+                            <div class="img-responsive captionBox ctBxSize center-block">
                                 <div class="row">
                                     <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-                                        <h2 class="ciSize">David Landi</h2>
-                                        
+                                        <h2 class="ciSize">David Landi</h2>                                       
                                         <p>
                                             <a href="https://github.com/davidlandi" target="_blank" title=""><img src="img/githubIcon.png" alt="" title="gitHub" class="ghSize"></a>
                                             <a href="https://linkedin.com/pub/david-landi/51/838/b4b/" target="_blank" title=""><img src="img/linkedinIcon.png" alt="" title="LinkedIn" class="liSize"></a>
@@ -311,7 +293,7 @@ Designed developed and managed by David landi, Terri Gaskell, and Justin Barreir
 <script src="js/bootstrap.js"></script> 
 <script src="js/pageScroll.js"></script>
 <script src="js/googleMaps.js"></script>
-<script src="js/contentSlider.js"></script>
+
 <!--{END JAVASCRIPT}#########################################################-->        
 </body>
 </html>
