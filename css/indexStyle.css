@@ -1,57 +1,68 @@
-//style sheet for the index page 
+/* Developed by David Landi 2014
+ * NEIT Capstone Project AS Software Engineering 
+ * Team Members: David Landi, Terri Gaskell, Justin Barreira 
+ * This style sheet contains all of the css design emements for the index page.
+ * Mobile first design using breaking points set vai media queries to increase 
+ * the size of elements with in the index page base on device screen width. 
+ * Media queries are located at the bottom of this style sheet, all other 
+ * are sorted in alpha. 
+ * 309 lines
+ */
+
+/*{Mobile First Design########################################################*/
 * {
     margin: 0;
     padding: 0;
     font-family: 'Helvetica Neue', arial, sans-serif;      
 }
+.aboutFontSize{
+    font-size: 90%;  
+}
 body{
     background: #DADFE1;
 }
-.header{
-    position: fixed;
-    width: 100%;
-    background: #222;
-    z-index: 10;   
-}
-.header .navbar-brand{
-    font-weight: 900;
-}
-.header .navbar{
-    margin: 0;
-    border: none;
-}
-.introText{
-    text-shadow: 1px 1px 2px black;
-}
-.contentSection{
-    width: 100%;
-    min-height: 580px;
-    margin-bottom: 5px;
-    padding:50px 0;
-    box-shadow: 0px 2px 2px #222
-}
-.landSection{
-    margin-top:50px; 
-}
-
-.title{
-    text-shadow: 2px 2px 5px black;
-    font-family: 'Raleway', sans-serif;
-    color: black; 
-    font-size: 40px;
-}
-.introText{
-    text-shadow: 1px 1px 2px black;
-    font-size: 15px;
-    margin-bottom: 50px;
+.btnNext{
+    visibility: hidden;
 }
 .btnStarted{
     margin-bottom: 100px;
 }
+.captionBox{
+    padding: 10px;
+    background: url(../img/contentBG.png);
+    box-shadow: 0px 2px 5px #000;
+    color: #fff;
+    font-weight:bolder;
+    font-family: 'Open Sans Condensed', sans-serif;
+    text-shadow: 1px 1px 1px #000;
+    font-size: 12px;
+    margin-top: 10px;
+    height: 260px;
+}
+.captionTitle{
+    color: #fff;
+    font-weight:bolder;
+    text-shadow: 2px 2px 3px #000; 
+}
+.carouselSize{
+    max-width: 650px;
+    min-height: 200px;   
+}
+.carousel{
+    margin-top: 90px;
+    margin-bottom: 90px;
+    margin-top: 30px;
+}
+.copyRight{
+    margin-top: 60px;
+}
+.contactText{
+    margin-top: 20px;
+    text-shadow: 2px 2px 2px #22313F;
+    font-size: 35px;
+}
 .contentSection#landing{
-    background: url(../img/landingBG.jpg)bottom center no-repeat;
-    
-    
+    background: url(../img/landingBG.jpg)bottom center no-repeat;  
 }
 .contentSection#about{
     background: url(../img/aboutsectionBG.jpg)bottom center no-repeat;
@@ -66,25 +77,16 @@ body{
     background: url(../img/ciBG.png);
     background-color:#BDC3C7
 }
-
-hr{
-    height: 12px;
-    border: 0;
-    box-shadow: inset 0 12px 12px -12px rgba(0,0,0,0.5);
-    margin-bottom: 20px;
+.contentSection{
+    width: 100%;
+    min-height: 640px;
+    margin-bottom: 5px;
+    padding:50px 0;
+    box-shadow: 0px 2px 2px #222
 }
-.contactText{
-    margin-top: 20px;
-    text-shadow: 2px 2px 2px #22313F;
-    font-size: 35px;
-}
-.ghSize{
-    width: 30px;
-    height: 30px;
-}
-.liSize{
-    width: 30px;
-    height: 30px;
+.ciSize{
+    font-size: 20px;
+    text-align: center;
 }
 .ctImgSize{
     width: 250px;
@@ -92,8 +94,11 @@ hr{
     margin-left: 27px;
     margin-top: 20px;
 }
-.ciSize{
-    font-size: 23px;
+.ctBxSize{
+    height: 380px;
+}
+.extSpaceTop{
+   margin-top: 20px; 
 }
 .ftLeftText{
     font-size: 11px;
@@ -111,25 +116,59 @@ hr{
     font-size: 11px;
     text-align: center;
 }
+.ghSize{
+    width: 30px;
+    height: 30px;
+}
+#googleMap{
+    width:100%;
+    height:310px;
+    margin-top: 20px;
+}
+.header{
+    position: fixed;
+    width: 100%;
+    background: #222;
+    z-index: 10;   
+}
+.header .navbar-brand{
+    font-weight: 900;
+}
+.header .navbar{
+    margin: 0;
+    border: none;
+}
+hr{
+    height: 12px;
+    border: 0;
+    box-shadow: inset 0 12px 12px -12px rgba(0,0,0,0.5);
+    margin-bottom: 20px;
+}
+.imgSize{
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+    height: 60%;
+}
+.introText{
+    text-shadow: 1px 1px 2px black;
+    font-size: 14px;
+    margin-bottom: 50px;
+}
+.liSize{
+    width: 30px;
+    height: 30px;
+}
+.title{
+    margin-top:100px;
+    text-shadow: 2px 2px 5px black;
+    font-family: 'Raleway', sans-serif;
+    color: black; 
+    font-size: 45px;
+}
 .teamSection{
     margin-top:20px;
     max-width: 940px;
-}
-.captionBox{
-    padding: 10px;
-    background: url(../img/contentBG.png);
-    box-shadow: 0px 2px 5px #000;
-    color: #fff;
-    font-weight:bolder;
-    font-family: 'Open Sans Condensed', sans-serif;
-    text-shadow: 1px 1px 1px #000;
-    font-size: 15px;
-    margin-top: 10px;
-}
-.captionTitle{
-    color: #fff;
-    font-weight:bolder;
-    text-shadow: 2px 2px 3px #000; 
 }
 .transAboutBox{
     width: 600px;
@@ -137,35 +176,14 @@ hr{
     opacity: 0.7;
     padding-left: 10px;
     padding-right: 10px;
-    
     box-shadow: 0px 2px 5px;
 }
-.extSpaceTop{
-   margin-top: 20px; 
-}
-.carouselSize{
-    max-width: 600px;
-    min-height: 250px;   
-}
-.carousel{
-    margin-top: 90px;
-    margin-bottom: 90px;
-    margin-top: 30px;
-}
-.btnNext{
-    margin-bottom: 20px;
-    margin-top: 20px;
-    margin-left: 225px;
-}
-.copyRight{
-    margin-top: 60px;
-}
-#googleMap{
-    width:100%;
-    height:310px;
-    margin-top: 20px;
-}
+/*############################################################################*/
+
 /*{Page Scroll btn}###########################################################*/
+/*This section contains all of the style elements needed for the circle btn with
+ *down arrows. This btn also has a pulsing effected on hover */
+
 .btnCircle {
     width: 70px;
     height: 70px;
@@ -235,7 +253,8 @@ hr{
 }
 /*############################################################################*/
 
-/*{Screens 12" - 19"}#########################################################*/
+/*{Media Queries}#############################################################*/
+/*Screens 12" - 19"*/
 @media(min-width:1000px){
     body{
         overflow: hidden;
@@ -255,13 +274,9 @@ hr{
     .introText{
         font-size: 25px;
     }
-    .landSection{
-        margin-top:150px; 
-    }
+    
 }
-/*############################################################################*/
-
-/*{Screens 20" & above}#######################################################*/
+/*Screens 20" & above*/
 @media(min-width:1650px){
     .contentSection{
         min-height: 1080px;

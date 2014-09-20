@@ -57,7 +57,7 @@ Designed developed and managed by David landi, Terri Gaskell, and Justin Barreir
             <div class="container aboutSection">
                 <div class="row">
                     <div id="screen1" class="co-md-12">
-                        <div class="transAboutBox center-block img-responsive">
+                        <div class="transAboutBox center-block img-responsive aboutFontSize">
                             <h2>About</h2>
                             <p>
                             Here at GetNOTICED 
@@ -67,6 +67,7 @@ Designed developed and managed by David landi, Terri Gaskell, and Justin Barreir
                             where all of your qualification will easily be accessible with a simple mouse click. GetNOTICED 
                             today.
                             </p>
+                            
                             <p><div class="btn1 btn btnNext btn-success gnScroll" data-id="about"><a href="#">Next Page</a></div></p>
                         </div>
                     </div>
@@ -152,8 +153,10 @@ Designed developed and managed by David landi, Terri Gaskell, and Justin Barreir
                             <a class="carousel-control right" href="#slideShow" data-slide="next"> 
                             <span class="icon-next"></span></a>
                         </div>
-                        <a href="#" class="btn btnCircle gnScroll center-block rdHide" data-id="team">
-                            <i class="fa fa-angle-double-down animated rdHide"></i>
+                       
+                        
+                        <a href="#" class="btn btnCircle gnScroll center-block " data-id="team">
+                            <i class="fa fa-angle-double-down animated "></i>
                         </a>
                     </div>
                 </div>            
@@ -238,7 +241,7 @@ Designed developed and managed by David landi, Terri Gaskell, and Justin Barreir
                 </div>
                     <div class="row">                       
                         <div class="col-md-12">
-                            <div class="img-responsive captionBox center-block ">
+                            <div class="img-responsive captionBox ctBxSize center-block ">
                                 <div class="row">
                                     <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
                                         <h2 class="ciSize">David Landi</h2>
