@@ -25,24 +25,25 @@ body{
 }
 .contentSection{
     width: 100%;
-    min-height: 580px;
+    min-height: 640px;
     margin-bottom: 5px;
     padding:50px 0;
     box-shadow: 0px 2px 2px #222
 }
-.landSection{
-    margin-top:50px; 
-}
+/*.landSection{
+    margin-top:100px; 
+}*/
 
 .title{
+    margin-top:100px;
     text-shadow: 2px 2px 5px black;
     font-family: 'Raleway', sans-serif;
     color: black; 
-    font-size: 40px;
+    font-size: 45px;
 }
 .introText{
     text-shadow: 1px 1px 2px black;
-    font-size: 15px;
+    font-size: 14px;
     margin-bottom: 50px;
 }
 .btnStarted{
@@ -78,6 +79,16 @@ hr{
     text-shadow: 2px 2px 2px #22313F;
     font-size: 35px;
 }
+.aboutFontSize{
+    font-size: 90%;  
+}
+.imgSize{
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+    height: 60%;
+}
+
 .ghSize{
     width: 30px;
     height: 30px;
@@ -123,13 +134,17 @@ hr{
     font-weight:bolder;
     font-family: 'Open Sans Condensed', sans-serif;
     text-shadow: 1px 1px 1px #000;
-    font-size: 15px;
+    font-size: 13px;
     margin-top: 10px;
+    height: 260px;
 }
 .captionTitle{
     color: #fff;
     font-weight:bolder;
     text-shadow: 2px 2px 3px #000; 
+}
+.ctBxSize{
+    height: 380px;
 }
 .transAboutBox{
     width: 600px;
@@ -144,8 +159,8 @@ hr{
    margin-top: 20px; 
 }
 .carouselSize{
-    max-width: 600px;
-    min-height: 250px;   
+    max-width: 650px;
+    min-height: 200px;   
 }
 .carousel{
     margin-top: 90px;
@@ -153,9 +168,7 @@ hr{
     margin-top: 30px;
 }
 .btnNext{
-    margin-bottom: 20px;
-    margin-top: 20px;
-    margin-left: 225px;
+    visibility: hidden;
 }
 .copyRight{
     margin-top: 60px;
@@ -255,9 +268,7 @@ hr{
     .introText{
         font-size: 25px;
     }
-    .landSection{
-        margin-top:150px; 
-    }
+    
 }
 /*############################################################################*/
 
