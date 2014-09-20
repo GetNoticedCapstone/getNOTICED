@@ -1,6 +1,5 @@
 <?php include 'dependency.php'; ?>
 
-
 <!DOCTYPE html>
 <!--
 The admin page will be access by users who have a flag setup in the sql

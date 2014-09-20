@@ -14,6 +14,7 @@ class logout {
             $_SESSION['login'] = null;
             $_SESSION['userID'] = 0;
             session_destroy();
+            Util::redirect('loginPage');
         }
         
     }

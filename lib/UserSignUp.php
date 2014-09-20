@@ -16,9 +16,11 @@ class UserSignUp extends DB {
     }
 
     /**
-     * putting user sign up data in the data base
+     * A public method to create a user in the signin table
+     * 
      * @param UserSignUpModel $signUpModel
-     * @return type
+     * 
+     * @return $_SESSION['MemberID']
      */
     public function createSignIn(UserSignUpModel $signUpModel){
         $result = 0;
@@ -29,8 +31,7 @@ class UserSignUp extends DB {
             $dbs ->bindParam(':password', $signUpModel->password, PDO::PARAM_STR);
                     
             if($dbs->execute() && $dbs->rowCount() > 0){
-                $result = intval($this->getDB()->lastInsertId());
-                echo '<P>Created</p>';
+                $result = intval($this->getDB()->lastInsertId());               
             }
             else{
                 echo '<P>Failed</p>';
@@ -45,7 +46,7 @@ class UserSignUp extends DB {
     * A public method to create a new entry into the members
     * table.
     *
-    * @param int $id
+    * @param UserSignUpModel $signUpModel
     *
     * @return boolean
     */  
@@ -67,20 +68,52 @@ class UserSignUp extends DB {
     }
     
     /**
-    * A public method to return a members
-    * info from the signin table.    * 
+    * A public method to create a new entry into the memberstatus
+    * table.
     *
-    * @param int $id 
+    * @return boolean
+    */  
+    public function createMemberStatus() {
+        $result = false;
+                
+        //INSERT INTO ABOUT_PAGE VALUES
+         if ( null !== $this->getDB() ) {
+            $status = "A";
+             
+            $dbs = $this->getDB()->prepare('insert into memberstatus set memberID = :memberID, statuscode = :statuscode, datenew = :datenew');
+            $dbs ->bindParam(':memberID', $_SESSION['MemberID'], PDO::PARAM_STR);
+            $dbs ->bindParam(':statuscode', $status, PDO::PARAM_STR);
+            $dbs ->bindParam(':datenew', date('Y-m-d'), PDO::PARAM_STR);           
+                        
+            if ( $dbs->execute() && $dbs->rowCount()) {
+                $result = true;
+            }                
+         }           
+        return $result;
+    }
+    
+    /**
+    * A public method to create a new entry into the memberstatus
+    * table.
     *
-    * @return array
-    */
-    public function read($id = 0) {
-       if ($id !== 0) {
-           return $this->readByID($id);
-       } else {
-           return $this->readAll();
-       }
-        
+    * @return boolean
+    */  
+    public function createMemberTheme() {
+        $result = false;
+                
+        //INSERT INTO ABOUT_PAGE VALUES
+         if ( null !== $this->getDB() ) {
+            $theme = "One";
+             
+            $dbs = $this->getDB()->prepare('insert into membertheme set memberID = :memberID, themeID = :themeID');
+            $dbs ->bindParam(':memberID', $_SESSION['MemberID'], PDO::PARAM_STR);
+            $dbs ->bindParam(':themeID', $theme, PDO::PARAM_STR);           
+                        
+            if ( $dbs->execute() && $dbs->rowCount()) {
+                $result = true;
+            }                
+         }           
+        return $result;
     }
     
     /**
@@ -91,7 +124,7 @@ class UserSignUp extends DB {
     * 
     * @return array
     */
-     private function readByID($id){
+     public function readByID($id){
            $results = array();
            
             if ( null !== $this->getDB() ) {

@@ -20,15 +20,19 @@ If user not found alert user ask if they forgot password or need to signup
 <?php
 /* {Global PHP}############################################################## */
 $message = '';
+
     if ( !isset($_SESSION['login']) ) {
         $_SESSION['login'] = false;
     }
     if ( Util::isPostRequest() ) {
         $checkCredentials = new Passcode();
-        if ( $checkCredentials->isValidLogin($checkCredentials) ) {                    
+        if ( $checkCredentials->isMemberLogin($checkCredentials) ) {                    
             $_SESSION['login'] = true;
             Util::redirect('userEditPage');                   
-        } else {                         
+        } else if ( $checkCredentials->isAdminLogin($checkCredentials) ) {                         
+            $_SESSION['login'] = true;
+            Util::redirect('adminPage');
+        } else {
             $msg = 'Login Failed';
             $_SESSION['MemberID'] = 0;
         }

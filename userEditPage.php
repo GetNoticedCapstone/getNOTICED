@@ -24,24 +24,28 @@ if ( $_SESSION['MemberID'] <= 0 ) {
     logout::checkLogout();
     logout::confirmAccess();
     
-$userContent = new UserContent();
-$userSignIn = new UserSignUp();
+    $userContent = new UserContent();
+    $userSignIn = new UserSignUp();
 
-$userInfo = $userContent->read($_SESSION['MemberID']);
-$signinInfo = $userSignIn->read($_SESSION['MemberID']);
+    $userInfo = $userContent->readByID($_SESSION['MemberID']);
+    $signinInfo = $userSignIn->readByID($_SESSION['MemberID']);
 
-if ( Util::isPostRequest() ) {
+    if ( Util::isPostRequest() ) {
 
-$userContentModel = new UserContentModel(filter_input_array(INPUT_POST));
-$userContentModel->memberID = $_SESSION['MemberID'];
+    $userContentModel = new UserContentModel(filter_input_array(INPUT_POST));
+    $userContentModel->memberID = $_SESSION['MemberID'];
 
-    if ( null !== $_SESSION['MemberID'] && $userContent->updateMember($userContentModel) ) {
-        echo '<p>Member Updated</p>';
+    if ( null !== $_SESSION['MemberID'] && $userContent->updateMember($userContentModel) || null !== $_SESSION['MemberID'] && $userContent->updateMemberTheme($userContentModel) ) {
         Util::redirect('userWebpage');
     } else {
-        echo '<p>User could not be updated</p>';
+        ?>
+        <script type="text/javascript">
+            window.alert("No changes were made!")
+        </script>
+        <?php
     }
 }
+
 /* {End Global PHP}########################################################## */
 ?>
     <nav class="navbar navbar-inverse" role="navigation"><!--{NAVIGATION}### -->
@@ -105,12 +109,6 @@ $userContentModel->memberID = $_SESSION['MemberID'];
                                     <h3>Theme 1</h3>
                                     <p>Created by David Landi</p>
                                 </div>
-                                <div class="input-group">
-                                    <span class="input-group-addon">
-                                        <input type="radio">
-                                    </span>
-                                    <input id="theme" name="theme" type="text" class="form-control">
-                                </div>
                             </div>                              
                         </div>
                         <div class="col-md-4">
@@ -119,12 +117,6 @@ $userContentModel->memberID = $_SESSION['MemberID'];
                                 <div class="caption">
                                     <h3>Theme 2</h3>
                                     <p>Created by Justin Barreira</p>
-                                </div>
-                                <div class="input-group">
-                                    <span class="input-group-addon">
-                                        <input type="radio">
-                                    </span>
-                                    <input type="text" class="form-control">
                                 </div>
                             </div>
                         </div>
@@ -135,19 +127,32 @@ $userContentModel->memberID = $_SESSION['MemberID'];
                                     <h3>Theme 3</h3>
                                     <p>Created by Terri Gaskell</p>
                                 </div>
-                                <div class="input-group">
-                                    <span class="input-group-addon">
-                                        <input type="radio">
-                                    </span>
-                                    <input type="text" class="form-control">
-                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             <div class="frmFooter">
                 <div class="row">
-                    <div class="col-md-offset-9 col-md-3">                   
+                    <div class="col-md-6"> 
+                        
+                        <select id="themeID" name="theme" class="drdm center-block">
+                        <?php           
+                        
+                            $selectedTheme = $userContent->getTheme();
+                            $themes = array("One", "Two", "Three");
+                            for ($i=0; $i<=2; $i++){
+                                if($selectedTheme == $themes[$i]){
+                                    echo "<option selected value='$i'>Theme $themes[$i]</option>";                                    
+                                }else {
+                                    echo "<option value='$i'>Theme $themes[$i]</option>";                                    
+                                }                                
+                            }                   
+                        ?>
+                        
+                        </select>
+                       
+                    </div>
+                    <div class="col-md-6">                   
                         <a href="#"><div class="btn1 btn btn-success center-block">Next Section</a></div>                           
                     </div>
                 </div>
@@ -198,7 +203,8 @@ $userContentModel->memberID = $_SESSION['MemberID'];
             <div class="frmFooter">
                 <div class="row">
                     <div class="col-md-offset-9 col-md-3">                   
-                        <a href="#"><div class="btn2 btn btn-success center-block">Next Section</a></div>                            
+                        <a href="#"><div class="btn2 btn btn-success center-block">Next Section</a></div>
+                        <a href="#"><div class="btn12 btn btn-success center-block">Back</a></div> 
                     </div>
                 </div>
             </div>  
@@ -264,7 +270,8 @@ $userContentModel->memberID = $_SESSION['MemberID'];
             <div class="frmFooter">
                 <div class="row">
                     <div class="col-md-offset-9 col-md-3">                   
-                        <a href="#"><div class="btn3 btn btn-success center-block">Next Section</a></div>                           
+                        <a href="#"><div class="btn3 btn btn-success center-block">Next Section</a></div>
+                        <a href="#"><div class="btn11 btn btn-success center-block">Back</a></div> 
                     </div>
                 </div>
             </div>  
@@ -312,7 +319,8 @@ $userContentModel->memberID = $_SESSION['MemberID'];
             <div class="frmFooter">
                 <div class="row">
                     <div class="col-md-offset-9 col-md-3">                   
-                        <a href="#"><div class="btn4 btn btn-success center-block">Next Section</a></div>                           
+                        <a href="#"><div class="btn4 btn btn-success center-block">Next Section</a></div>
+                        <a href="#"><div class="btn10 btn btn-success center-block">Back</a></div> 
                     </div>
                 </div>
             </div>  
@@ -350,7 +358,8 @@ $userContentModel->memberID = $_SESSION['MemberID'];
                 <div class="row">
                     <div class="col-md-offset-9 col-md-3">
 
-                        <a href="#"><div class="btn5 btn btn-success center-block">Next Section</a>                        
+                        <a href="#"><div class="btn5 btn btn-success center-block">Next Section</a>
+                        <a href="#"><div class="btn9 btn btn-success center-block">Back</a></div> 
                     </div>
                     </div>
                 </div>
@@ -399,7 +408,8 @@ $userContentModel->memberID = $_SESSION['MemberID'];
             <div class="frmFooter">
                 <div class="row">
                     <div class="col-md-offset-9 col-md-3">                   
-                        <a href="#"><div class="btn6 btn btn-success center-block">Next Section</a></div>                          
+                        <a href="#"><div class="btn6 btn btn-success center-block">Next Section</a></div>
+                        <a href="#"><div class="btn8 btn btn-success center-block">Back</a></div> 
                     </div>
                 </div>
             </div>  
