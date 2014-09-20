@@ -247,7 +247,7 @@ dates.
         </div>
         </div>
     </div><!--{END MAIN WRAPPER}#############################################-->
-<!--{MODAL'S}################################################################-->
+<!--{MODALS}################################################################-->
 <div id="newMemberModal" class="modal fade" >
     <div class="modal-dialog">
         <div class="modal-content">
@@ -404,7 +404,7 @@ dates.
         </div>
     </div>
 </div>
-<!--{END MODAL'S}############################################################-->
+<!--{END MODALS}############################################################-->
 <!--{lOAD JAVASCRIPT}########################################################-->
 <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
