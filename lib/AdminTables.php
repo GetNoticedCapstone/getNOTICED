@@ -298,24 +298,5 @@ class AdminTables extends DB {
             echo '</table>';
             echo '</div>';
     }
-    
-    public function tableList(){
-
-            echo '<div class="table-responsive">';
-            echo '<table class="table table-striped table-bordered table-hover">';
-            echo '<thead>';
-            echo '</thead>';
-            echo '<tbody>';
-            echo '<tr>';   
-            echo '<td><a href="#newMemberModal" role="button" data-toggle="modal">New Members</a></td>';
-            echo '<td>Active Members</td>';
-            echo '<td>Canceled Members</td>';
-            echo '<td>Registered Admins</td>';
-            echo '</tr>';
-            echo '</tbody>';
-            echo '</table>';
-            echo '</div>';
-    }
-       
 }
 

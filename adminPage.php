@@ -7,9 +7,8 @@ database that identifies them as admins. To get to the page a admin will click
 on the sign in link in the navagation bar and enter in their login info just as a 
 regular user would. If the login info matches a admin in our database the user 
 will be redirected to adminPage.php.
-This page will have tools such basic querys to view signup stats, member signup
-dates. It will also offer access to the database to allow a admin to modify a 
-customers data if they are having issues.
+This page will have tools such basic queries to view signup stats, member signup
+dates.
 -->
 <html lang="en">   
 <head><!--{LOAD CSS & GOOGLE FONTS}##########################################-->
@@ -54,7 +53,7 @@ customers data if they are having issues.
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-wrench"></span> Admin Tools <span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
                         <li><a href="#tableListModal" role="button" data-toggle="modal"><i class="fa fa-table fa-fw"></i>Tables</a></li>
-                        <li><a href="#"><i class="fa fa-edit fa-fw"></i>Forms</a></li>
+                        <li><a href="#formsListModal" role="button" data-toggle="modal"><i class="fa fa-edit fa-fw"></i>Forms</a></li>
                     </ul>
                 </li>
                 <li><a href="?logout=1">Log Out</a></li>
@@ -249,7 +248,7 @@ customers data if they are having issues.
         </div>
     </div><!--{END MAIN WRAPPER}#############################################-->
 <!--{MODAL'S}################################################################-->
-<div id="newMemberModal" class="modal fade">
+<div id="newMemberModal" class="modal fade" >
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -259,7 +258,7 @@ customers data if they are having issues.
             <div class="modal-body">
                 <div class="row">
                     <div class="col-md-12">
-                        <?php 
+                        <?php
                             $tableNewMembers = $tables->newMemberTable();
                             echo $tableNewMembers;
                         ?>
@@ -359,27 +358,46 @@ customers data if they are having issues.
             <div class="modal-body">
                 <div class="row">
                     <div class="col-md-12">
-                    <?php    
-                      $tableList = $tables->tableList();
-                        echo $tableList;
-                     ?>
+                    <div class="table-responsive">
+                        <table class="table table-striped table-bordered table-hover">
+                            <tbody>
+                                <tr>   
+                                    <td><a href="#newMemberModal" role="button" data-toggle="modal" onclick="$('#tableListModal').modal('hide')" >New Members</a></td>
+                                    <td><a href="#activeMemberModal" role="button" data-toggle="modal" onclick="$('#tableListModal').modal('hide')" >Active Members</a></td>
+                                    <td><a href="#canceledMemberModal" role="button" data-toggle="modal" onclick="$('#tableListModal').modal('hide')" >Canceled Members</a></td>
+                                    <td><a href="#registerdAdminModal" role="button" data-toggle="modal" onclick="$('#tableListModal').modal('hide')" >Registered Admins</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<div id="futureUseModal" class="modal fade">
+<div id="formsListModal" class="modal fade">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h3 class="modal-title">Coming Soon</h3>
+                <h3 class="modal-title">Form Pages</h3>
             </div>
             <div class="modal-body">
                 <div class="row">
                     <div class="col-md-12">
-                        
+                        <div class="table-responsive">
+                           <table class="table table-striped table-bordered table-hover">
+                               <tbody>
+                                   <tr>   
+                                       <td><a href='signupPage.php' role="button" >SignUp</a></td>
+                                       <td><a href='userEditPage' role="button" >User Edit</a></td>
+                                       <td><a href='userWebpage' role="button" >User Webpage</a></td>
+                                       <td><a href='loginPage' role="button" >Login</a></td>
+                                   </tr>
+                               </tbody>
+                           </table>
+                       </div>   
                     </div>
                 </div>
             </div>
