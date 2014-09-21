@@ -1,17 +1,38 @@
 /*
-all style for login page
+all style for login page & signup page 
 */
 body{
     background: url(../img/adminBG.jpg);
 }
 .frmLogin{
-    margin-top: 50px;
+    height: 485px;
     background: url(../img/frmBG.png);
     background-color: #ebe8e6;
-    max-width: 500px;
     padding: 20px;
     box-shadow: 0px 1px 7px #fff;
 }
+.frmSu{
+    height: 510px;
+}
+.titleFont{
+    font-size: 22px;
+}
+.help{
+    margin-top: 200px;
+ }
+ .modContent{
+     max-width: 350px;
+     
+ }
+ .modal-header{
+     background-color: #F9BF3B; 
+ }
+ .modal-body{
+     background-color: #EEEEEE;
+     min-height: 250px;
+     max-height: 350px;
+ }
+
 @media (min-width: 960px){
     .centerAll{
         width: 960px;
@@ -20,6 +41,22 @@ body{
         left: 50%;
         transform: translate(-50%, -50%);
     }
+    .frmLogin{
+        margin-top: 50px;
+        max-width: 500px;
+        height: auto;
+    }
+    .titleFont{
+        font-size: 26px;
+    }
+    .help{
+        margin-top: 300px;
+    }
+    .modal-body{
+
+     min-height: 250px;
+     max-height: 450px;
+ }
 }
 .titleFont{
     font-family: 'Nothing You Could Do', cursive;

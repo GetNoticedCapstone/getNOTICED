@@ -52,13 +52,13 @@ $member = new UserSignUp();
         <div id="mainNav" class="collapse navbar-collapse">
             <ul class="nav navbar-nav navbar-right">                                                 
                 <li><a href="loginPage.php">login</a></li>
-                <li><a href="signupPage.php">Help</a></li> 
+                <li><a href="#signUpHelpModal" role="button" data-toggle="modal">Help</a></li> 
             </ul>
         </div>                  
         </div>              
     </nav><!--{END NAVIGATION}############################################## -->
-    <div class="container centerAll"><!--{MAIN WRAPPER}############################### -->
-        <form class="frmLogin center-block" method="post">
+    <div class="container centerAll"><!--{MAIN WRAPPER}##################### -->
+        <form class="frmLogin frmSu center-block" method="post">
             <div class="frmHeader">
                 <div class="row">
                     <div class="col-md-6">
@@ -66,6 +66,7 @@ $member = new UserSignUp();
                     </div>
                     <div class="col-md-6">
                         <h2 class="text-center titleFont">Free Membership</h2>
+                        <label class="nameTaken"></label>
                     </div>
                 </div>
                 <hr/>
@@ -82,9 +83,7 @@ $member = new UserSignUp();
                         <div class="form-group">
                             <input id="websiteURL" name="websiteURL" type="text" class="form-control nameTaken" placeholder="Website URL" required="true"/>
                         </div>
-                        <div class="form-group">
-                            <label class="nameTaken"></label>
-                        </div>
+
                     </div>
                 </div>
             </div>
@@ -98,6 +97,39 @@ $member = new UserSignUp();
             </div>            
         </form>
     </div><!--{END MAIN WRAPPER}############################################ -->
+ <!--{MODALS}################################################################-->   
+<div id="signUpHelpModal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content text-justify help">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Help</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="modContent center-block">
+                            <p>
+                            If you are already a member please click the "Already a member?" button 
+                            and you will be redirected to the login page. 
+                            </p>
+                            <p>
+                            All three fields are required to become a new member. 
+                            </p>
+                            <p>
+                            If you need further support, please contact us at <br>
+                            tlgaskell@email.neit.edu<br>
+                            djlandi@email.neit.edu<br>
+                            jabarreira@email.neit.edu
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--{END MODALS}#############################################################-->
 <!--{lOAD JAVASCRIPT}####################################################### -->
         <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
         <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>

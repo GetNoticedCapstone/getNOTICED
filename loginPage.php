@@ -53,7 +53,7 @@ $message = '';
         <div id="mainNav" class="collapse navbar-collapse">
             <ul class="nav navbar-nav navbar-right">                                                 
                 <li><a href="signupPage.php">Sign up</a></li>
-                <li><a href="signupPage.php">Help</a></li> 
+                <li><a href="#loginInHelpModal">Help</a></li> 
             </ul>
         </div>                  
         </div>              
@@ -95,6 +95,39 @@ $message = '';
             </div>            
         </form>
     </div><!--{END MAIN WRAPPER}############################################ -->
+ <!--{MODALS}################################################################-->   
+<div id="loginInHelpModal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content text-justify help">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Help</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="modContent center-block">
+                            <p>
+                            If you are already a member please click the "Already a member?" button 
+                            and you will be redirected to the login page. 
+                            </p>
+                            <p>
+                            All three fields are required to become a new member. 
+                            </p>
+                            <p>
+                            If you need further support, please contact us at <br>
+                            tlgaskell@email.neit.edu<br>
+                            djlandi@email.neit.edu<br>
+                            jabarreira@email.neit.edu
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--{END MODALS}#############################################################-->
 <!--{lOAD JAVASCRIPT}####################################################### -->
 <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>

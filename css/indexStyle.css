@@ -6,7 +6,7 @@
  * the size of elements with in the index page base on device screen width. 
  * Media queries are located at the bottom of this style sheet, all other 
  * are sorted in alpha. 
- * 417 lines
+ * 415 lines
  */
 
 /*{Mobile First Design########################################################*/
@@ -20,6 +20,7 @@
 }
 body{
     background: #DADFE1;
+    overflow: visible;
 }
 .btnNext{
     visibility: hidden;
@@ -326,8 +327,7 @@ hr{
     }
     .contactText{
         margin-top: 70px;
-        font-size: 50px;
-        
+        font-size: 50px;       
     }
     .ctImgSize{
         margin-top: 6px;
@@ -335,7 +335,6 @@ hr{
         height: 185px;
     }
 }
-
 /*Screens 20" & above*/
 @media(min-width:1650px){
     .contentSection{
