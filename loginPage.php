@@ -48,12 +48,12 @@ $message = '';
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a href="index.php" class="navbar-brand">get<i>N</i>OTICED</a>
+            <a href="index.php" class="navbar-brand"><span class="glyphicon glyphicon-home"></span> get<i>N</i>OTICED</a>
         </div>
         <div id="mainNav" class="collapse navbar-collapse">
             <ul class="nav navbar-nav navbar-right">                                                 
                 <li><a href="signupPage.php">Sign up</a></li>
-                <li><a href="#loginInHelpModal" role="button" data-toggle="modal">Help</a></li> 
+                <li><a href="#loginInHelpModal" role="button" data-toggle="modal"><i class="fa fa-info-circle"></i> Help</a></li> 
             </ul>
         </div>                  
         </div>              

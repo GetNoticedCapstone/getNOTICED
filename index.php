@@ -25,7 +25,7 @@ Designed developed and managed by David landi, Terri Gaskell, and Justin Barreir
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a href="#" class="navbar-brand scrollTop">get<i>N</i>OTICED</a>
+                    <a href="#" class="navbar-brand scrollTop"><span class="glyphicon glyphicon-home"></span> get<i>N</i>OTICED</a>
                 </div>
                 <div id="mainNav" class="collapse navbar-collapse">
                     <ul class="nav navbar-nav">                           
