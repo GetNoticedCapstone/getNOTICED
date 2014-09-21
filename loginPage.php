@@ -53,7 +53,7 @@ $message = '';
         <div id="mainNav" class="collapse navbar-collapse">
             <ul class="nav navbar-nav navbar-right">                                                 
                 <li><a href="signupPage.php">Sign up</a></li>
-                <li><a href="#loginInHelpModal">Help</a></li> 
+                <li><a href="#loginInHelpModal" role="button" data-toggle="modal">Help</a></li> 
             </ul>
         </div>                  
         </div>              
@@ -108,11 +108,13 @@ $message = '';
                     <div class="col-md-12">
                         <div class="modContent center-block">
                             <p>
-                            If you are already a member please click the "Already a member?" button 
-                            and you will be redirected to the login page. 
+                            Currently, functionality to reset your password online 
+                            is not available.  We hope to have this feature rolled 
+                            out in the near future.  In the mean time please contact 
+                            us directly and we will reset your password. 
                             </p>
                             <p>
-                            All three fields are required to become a new member. 
+                            Both fields are required to login.
                             </p>
                             <p>
                             If you need further support, please contact us at <br>
