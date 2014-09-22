@@ -36,12 +36,12 @@ if ( $_SESSION['MemberID'] <= 0 ) {
     $userContentModel = new UserContentModel(filter_input_array(INPUT_POST));
     $userContentModel->memberID = $_SESSION['MemberID'];
 
-    if ( null !== $_SESSION['MemberID'] && $userContent->updateMember($userContentModel) || null !== $_SESSION['MemberID'] && $userContent->updateMemberTheme($userContentModel) ) {
+    if ( null !== $_SESSION['MemberID'] && $userContent->updateMember($userContentModel)) {
         Util::redirect('userWebpage');
     } else {
         ?>
         <script type="text/javascript">
-            window.alert("No changes were made!")
+            window.alert("No changes were made!");
         </script>
         <?php
     }

@@ -31,10 +31,14 @@ $message = '';
             Util::redirect('userEditPage');                   
         } else if ( $checkCredentials->isAdminLogin($checkCredentials) ) {                         
             $_SESSION['login'] = true;
+            echo "Admin login";
             Util::redirect('adminPage');
         } else {
-            $msg = 'Login Failed';
-            $_SESSION['MemberID'] = 0;
+            ?>
+                <script type="text/javascript">
+                    window.alert("Email or Password is incorrect.\n\Please check entries and try again.");
+                </script>
+            <?php          
         }
     }
 /* {End Global PHP}########################################################## */        
@@ -79,7 +83,6 @@ $message = '';
                         </div>
                         <div class="form-group">
                             <input type="password" name="password" class="form-control" placeholder="Password" required="true">
-                            <?php if ( !empty($msg)) {echo '<p>', $msg, '</p>';}?>
                         </div>
                     </div>
                 </div>

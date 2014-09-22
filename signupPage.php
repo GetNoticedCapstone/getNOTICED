@@ -19,6 +19,14 @@ new user then create new record, and redirect to userContent page
 <?php  
 /* {Global PHP}############################################################## */
 $member = new UserSignUp();  
+$urlRequest = new UserSignUpModel();
+$urlRequest->setWebsiteURL(filter_input(INPUT_POST, 'websiteURL'));
+
+if ( $member->websiteTaken($urlRequest) )
+{
+    echo "Test";
+}
+
 
  if ( Util::isPostRequest() ) {
       
@@ -80,10 +88,12 @@ $member = new UserSignUp();
                         <div class="form-group">
                             <input id="password" name="password" type="password" class="form-control" placeholder="Password" required="true"/>                   
                         </div>
-                        <div class="form-group">
-                            <input id="websiteURL" name="websiteURL" type="text" class="form-control nameTaken" placeholder="Website URL" required="true"/>
+                        <div for="websiteURL" class="form-group">
+                            <input id="websiteURL" name="websiteURL" type="text" class="form-control" placeholder="Website URL" required="true"/>
                         </div>
-
+                        <div class="form-group">
+                        <label id="nameTaken"></label>
+                        </div>
                     </div>
                 </div>
             </div>
