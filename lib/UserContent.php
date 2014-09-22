@@ -19,7 +19,9 @@ class UserContent extends DB {
     
     /**
      * Updates user info in the members table
+     * 
      * @param UserContentModel $contentModel
+     * 
      * @return type bool
      */
     public function updateMember(UserContentModel $contentModel){
@@ -99,7 +101,9 @@ class UserContent extends DB {
     
     /**
      * Updates user info in the membertheme table
+     * 
      * @param UserContentModel $contentModel
+     * 
      * @return type bool
      */
     public function updateMemberTheme(UserContentModel $contentModel){
