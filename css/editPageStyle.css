@@ -60,4 +60,11 @@ a:hover {
     min-width: 215px;
     height: 30px;
     margin-bottom: 10px;
+    
 }
+.thumbnail img{
+   height: 240px;
+    width: 240px;
+}
+.btn{max-width: 215px;}
+.imgMarkUp{margin-bottom: 5px;}

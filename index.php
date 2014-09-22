@@ -44,7 +44,7 @@ Designed developed and managed by David landi, Terri Gaskell, and Justin Barreir
                 <div class="row">
                     <div class="col-md-12">
                         <h1 class="title">get<i>N</i>OTICED</h1>
-                        <p class="introText">Create your own signal page mobile friendly web portfolio to help set you apart from other candidates.</p>
+                        <p class="introText">Create your own single page mobile friendly web portfolio to help set you apart from other candidates.</p>
                         <p><a class="btn btnStarted  btn-success" href="signupPage.php">Get Started!</a></p>
                         <a href="#" class="btn btnCircle gnScroll" data-id="about">
                             <i class="fa fa-angle-double-down animated"></i>
@@ -121,13 +121,13 @@ Designed developed and managed by David landi, Terri Gaskell, and Justin Barreir
                             <center>
                                 <div class="carousel-inner">
                                     <div class="item active">
-                                        <img src="img/theme1.png" alt="" class="img-responsive carouselSize ">
+                                        <img src="img/themeOnePic.jpg" alt="" class="img-responsive carouselSize ">
                                     </div>
                                     <div class="item">
-                                        <img src="img/theme2.png" alt="" class="img-responsive carouselSize">
+                                        <img src="img/theme2.jpg" alt="" class="img-responsive carouselSize">
                                     </div>
                                     <div class="item">
-                                        <img src="img/theme3.png" alt="" class="img-responsive carouselSize">
+                                        <img src="img/theme3.jpg" alt="" class="img-responsive carouselSize">
                                     </div>
                                 </div>
                             </center>

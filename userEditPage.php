@@ -10,6 +10,7 @@ This is the main page where users can add and edit personal info that will build
     <link href="css/bootstrap.css" rel="stylesheet">
     <link href="css/editPageStyle.css" rel="stylesheet" media="all">
     <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+    <link href="font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <title>Edit Content</title>
 </head><!--{END CSS & GOOGLE FONTS}##########################################-->
 <body> 
@@ -104,28 +105,28 @@ if ( $_SESSION['MemberID'] <= 0 ) {
                     <div class="row">
                         <div class="col-md-4">
                             <div class="thumbnail center-block">
-                                <img class="img-responsive" src="http://placehold.it/250x250" alt="">
+                                <img class="img-responsive img-thumbnail" src="img/themeOnePic.jpg" alt="">
                                 <div class="caption">
-                                    <h3>Theme 1</h3>
-                                    <p>Created by David Landi</p>
+                                    <h4 class="text-center">Theme 1</h4>
+                                    
                                 </div>
                             </div>                              
                         </div>
                         <div class="col-md-4">
                             <div class="thumbnail center-block">
-                                <img class="img-responsive" src="http://placehold.it/250x250" alt="">
+                                <img src="img/theme2.jpg" class="img-responsive img-thumbnail " alt="">
                                 <div class="caption">
-                                    <h3>Theme 2</h3>
-                                    <p>Created by Justin Barreira</p>
+                                    <h4 class="text-center">Theme 2</h4>
+                                    
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="thumbnail center-block">
-                                <img class="img-responsive" src="http://placehold.it/250x250" alt="">
+                                <img class="img-responsive img-thumbnail " src="img/theme3.jpg" alt="">
                                 <div class="caption">
-                                    <h3>Theme 3</h3>
-                                    <p>Created by Terri Gaskell</p>
+                                    <h4 class="text-center">Theme 3</h4>
+                                    
                                 </div>
                             </div>
                         </div>
@@ -133,7 +134,7 @@ if ( $_SESSION['MemberID'] <= 0 ) {
                 </div>
             <div class="frmFooter">
                 <div class="row">
-                    <div class="col-md-6"> 
+                    <div class="col-md-12"> 
                         
                         <select id="themeID" name="theme" class="drdm center-block">
                         <?php           
@@ -147,14 +148,10 @@ if ( $_SESSION['MemberID'] <= 0 ) {
                                     echo "<option value='$i'>Theme $themes[$i]</option>";                                    
                                 }                                
                             }                   
-                        ?>
-                        
+                        ?>                      
                         </select>
-                       
-                    </div>
-                    <div class="col-md-6">                   
-                        <a href="#"><div class="btn1 btn btn-success center-block">Next Section</a></div>                           
-                    </div>
+                       <a href="#" class="btn"><div class="btn1 btn btn-success pull-right">Next Section</a></div>
+                    </div>     
                 </div>
             </div>  
             </div><!--{end 1st form}-->
@@ -195,16 +192,26 @@ if ( $_SESSION['MemberID'] <= 0 ) {
                                 <input id="zip" name="zip" type="text" class="form-control" placeholder="Zip" value="<?php echo $userInfo['Zip'] ?>">                   
                             </div>
                         </div>
-                        <div class="col-sm-12 col-md-12 col-lg-12">
-
+                        <div class="col-sm-6 col-md-6 col-lg-6">
+                            <div class="center-block">
+                                <img src="img/contactMarkup.jpg" class="img-responsive imgMarkUp" alt="" height="400" width="450"> 
+                            </div>
+                            <p><i class="fa fa-info-circle"></i><br>
+                                As you can see in the image above, the first name and last name fields will be used
+                                to display your name at the top left of the website. As for the rest of the information
+                                you add on this form, it will added to the contact section which gets displayed in a popup 
+                                when someone clicks on the phone icon. 
+                            </p>
+                            
+                                
                         </div>
                     </div>
                 </div>
             <div class="frmFooter">
                 <div class="row">
-                    <div class="col-md-offset-9 col-md-3">                   
-                        <a href="#"><div class="btn2 btn btn-success center-block">Next Section</a></div>
-                        <a href="#"><div class="btn12 btn btn-success center-block">Back</a></div> 
+                    <div class="col-md-12 ">                   
+                        <a href="#" class="btn"><div class="btn2 btn btn-success pull-right">Next Section</a></div>
+                        <a href="#" class="btn"><div class="btn12 btn btn-success pull-left">Back</a></div> 
                     </div>
                 </div>
             </div>  
@@ -222,10 +229,14 @@ if ( $_SESSION['MemberID'] <= 0 ) {
                     <div class="row">
                         <div class="col-md-4">
                             <div class="thumbnail center-block">
-                                <img class="img-responsive" src="http://placehold.it/250x250" alt="">
+                                <img class="img-responsive" src="img/gitImage.jpg" height="250" width="250" alt="">
                                 <div class="caption">
-                                    <h3>GitHub</h3>
-                                    <p>A great place to show off your work</p>
+                                    <h4>GitHub</h4>
+                                    <p>
+                                        To add this social media Icon to your site
+                                        enter your gitHub url and click the click
+                                        the button.
+                                    </p>
                                 </div>
                                 <div class="input-group">
                                     <span class="input-group-addon">
@@ -237,10 +248,14 @@ if ( $_SESSION['MemberID'] <= 0 ) {
                         </div>
                         <div class="col-md-4">
                             <div class="thumbnail center-block">
-                                <img class="img-responsive" src="http://placehold.it/250x250" alt="">
+                                <img class="img-responsive" src="img/fbImage.jpg"  alt="">
                                 <div class="caption">
-                                    <h3>Facebook</h3>
-                                    <p>Be sure not to have content that you wouldnt want a employer to see</p>
+                                    <h4>Facebook</h4>
+                                    <p>
+                                        To add this social media Icon to your site
+                                        enter your Facebook url and click the click
+                                        the button.
+                                    </p>
                                 </div>
                                 <div class="input-group">
                                     <span class="input-group-addon">
@@ -252,10 +267,14 @@ if ( $_SESSION['MemberID'] <= 0 ) {
                         </div>
                         <div class="col-md-4">
                             <div class="thumbnail center-block">
-                                <img class="img-responsive" src="http://placehold.it/250x250" alt="">
+                                <img class="img-responsive" src="img/linkinImg.jpg" alt="">
                                 <div class="caption">
-                                    <h3>LinkedIn</h3>
-                                    <p>A great place to network and display qualifications</p>
+                                    <h4>LinkedIn</h4>
+                                    <p>
+                                        To add this social media Icon to your site
+                                        enter your Facebook url and click the click
+                                        the button.
+                                    </p>
                                 </div>
                                 <div class="input-group">
                                     <span class="input-group-addon">
@@ -269,9 +288,9 @@ if ( $_SESSION['MemberID'] <= 0 ) {
                 </div>
             <div class="frmFooter">
                 <div class="row">
-                    <div class="col-md-offset-9 col-md-3">                   
-                        <a href="#"><div class="btn3 btn btn-success center-block">Next Section</a></div>
-                        <a href="#"><div class="btn11 btn btn-success center-block">Back</a></div> 
+                    <div class="col-md-12">                   
+                        <a href="#" class="btn"><div class="btn3 btn btn-success pull-right">Next Section</a></div>
+                        <a href="#" class="btn"><div class="btn11 btn btn-success pull-left">Back</a></div> 
                     </div>
                 </div>
             </div>  
@@ -311,16 +330,21 @@ if ( $_SESSION['MemberID'] <= 0 ) {
                             </div>
                         </div>
                         <div class="col-sm-6 col-md-6 col-lg-6">
-                            <p>With in this section please enter your top 3 skills and most resent position.<br>
-                                We recommend entering content that relates to the type of position you are looking for.</p>
+                            <div class="center-block">
+                                <img src="img/expMarkup.jpg" class="img-responsive imgMarkUp" alt="" height="400" width="450"> 
+                            </div>
+                            <p><i class="fa fa-info-circle"></i><br> 
+                                Information within this form will be added to the experience section and will be 
+                                displayed in a popup once someone clicks on the notepad icon. 
+                            </p>
                         </div>
                     </div>
                 </div>
             <div class="frmFooter">
                 <div class="row">
-                    <div class="col-md-offset-9 col-md-3">                   
-                        <a href="#"><div class="btn4 btn btn-success center-block">Next Section</a></div>
-                        <a href="#"><div class="btn10 btn btn-success center-block">Back</a></div> 
+                    <div class="col-md-12">                   
+                        <a href="#" class="btn"><div class="btn4 btn btn-success pull-right">Next Section</a></div>
+                        <a href="#" class="btn"><div class="btn10 btn btn-success pull-left">Back</a></div> 
                     </div>
                 </div>
             </div>  
@@ -346,21 +370,27 @@ if ( $_SESSION['MemberID'] <= 0 ) {
                             </div>
                         </div>
                         <div class="col-sm-6 col-md-6 col-lg-6">
-                            <p>With in the summary section provide a brief description about your professional background.<br>
-                               If you are still in school and have little experience this would be a good section for you to highlight 
-                               why you believe that you are a good candidate for any potential company's that may be viewing your webpage.</p>
-                            <p>With in the objective section provide a brief explanation about the type of position you are looking for.</p>
-                            <p>Please limit your text with in the Responsibilities section to 150 characters.</p>
+                            <div class="center-block">
+                                <img src="img/expMarkupSO.jpg" class="img-responsive imgMarkUp" alt="" height="400" width="450"> 
+                            </div>
+                            <p><i class="fa fa-info-circle"></i><br> 
+                                Information within this form will be added to the experience section and will be 
+                                displayed in a popup once someone clicks on the notepad icon. With in the summary section provide a brief description about your professional background.
+                                If you are still in school and have little experience this would be a good section for you to highlight 
+                                why you believe that you are a good candidate for any potential company's that may be viewing your webpage.
+                                With in the objective section provide a brief explanation about the type of position you are looking for.
+                                Please limit your text with in the Responsibilities section to 150 characters.
+                            </p>
                         </div>
                     </div>
                 </div>                 
             <div class="frmFooter">
                 <div class="row">
-                    <div class="col-md-offset-9 col-md-3">
+                    <div class="col-md-12">
 
-                        <a href="#"><div class="btn5 btn btn-success center-block">Next Section</a>
-                        <a href="#"><div class="btn9 btn btn-success center-block">Back</a></div> 
-                    </div>
+                        <a href="#" class="btn"><div class="btn5 btn btn-success pull-right">Next Section</a></div>
+                        <a href="#" class="btn"><div class="btn9 btn btn-success pull-left">Back</a></div> 
+                    
                     </div>
                 </div>
             </div>  
@@ -398,18 +428,24 @@ if ( $_SESSION['MemberID'] <= 0 ) {
                         </div>
                         <div class="col-sm-6 col-md-6 col-lg-6">
 
-                            <p>Enter your education information.<br>
-                               With in the additional detail section you can enter major projects you have completed, 
-                               classes that you have taken, or you can leave it blank.<br>
-                               Please limit your text with in the Responsibilities section to 150 characters.</p>
+                            <div class="center-block">
+                                <img src="img/expMarkup.jpg" class="img-responsive imgMarkUp" alt="" height="400" width="450"> 
+                            </div>
+                            <p><i class="fa fa-info-circle"></i><br> 
+                                Information within this form will be added to the experience section and will be 
+                                displayed in a popup once someone clicks on the notepad icon. Enter your education information.
+                                With in the additional detail section you can enter major projects you have completed, 
+                                classes that you have taken, or you can leave it blank.
+                                Please limit your text with in the Responsibilities section to 150 characters.
+                            </p>
                         </div>
                     </div>
                 </div>                 
             <div class="frmFooter">
                 <div class="row">
-                    <div class="col-md-offset-9 col-md-3">                   
-                        <a href="#"><div class="btn6 btn btn-success center-block">Next Section</a></div>
-                        <a href="#"><div class="btn8 btn btn-success center-block">Back</a></div> 
+                    <div class="col-md-12">                   
+                        <a href="#"><div class="btn6 btn btn-success pull-right">Next Section</a></div>
+                        <a href="#"><div class="btn8 btn btn-success pull-left">Back</a></div> 
                     </div>
                 </div>
             </div>  
@@ -426,22 +462,26 @@ if ( $_SESSION['MemberID'] <= 0 ) {
                 <div class="frmCore">
                     <div class="row">
                         <div class="col-md-6 col-lg-6 col-sm-6">
-
+                            <div class="center-block">
+                                <img src="img/success.png" class="img-responsive center-block"> 
+                            </div>
                         </div>
                         <div class="col-sm-6 col-md-6 col-lg-6">
 
-                            <p>Enter your education information.<br>
-                               With in the additional detail section you can enter major projects you have completed, 
-                               classes that you have taken, or you can leave it blank.<br>
-                               Please limit your text with in the Responsibilities section to 150 characters.</p>
+                            
+                            <p><i class="fa fa-info-circle"></i><br> 
+                                Thats it! click the submit button and your site will automatically 
+                                get published. If you would like to review your information click 
+                                the back button. 
+                            </p>
                         </div>
                     </div>
                 </div>                 
             <div class="frmFooter">
                 <div class="row">
-                    <div class="col-md-offset-9 col-md-3">
-                        <button class="btn btn-primary btn-block" type="submit" value="Submit">Submit</button>
-                        <a href="#"><div class="btn7 btn btn-success center-block">Back</a></div>                          
+                    <div class="col-md-12">
+                        <button class="btn btn-primary btn-block pull-right" type="submit" value="Submit">Submit</button>
+                        <a href="#" class="btn"><div class="btn7 btn btn-success pull-left">Back</a></div>                          
                     </div>
                 </div>
             </div>
