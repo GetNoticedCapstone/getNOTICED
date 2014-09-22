@@ -19,7 +19,9 @@ class UserContent extends DB {
     
     /**
      * Updates user info in the members table
+     * 
      * @param UserContentModel $contentModel
+     * 
      * @return type bool
      */
     public function updateMember(UserContentModel $contentModel){
@@ -86,22 +88,27 @@ class UserContent extends DB {
                 echo '<P>Updated</p>';
             }
             else{
-                echo '<P>Failed content update</p>';
                 $error = $dbs->errorInfo();
                 error_log($error[2], 3, "logs/errors.log");
             }
+            if( $this->updateMemberTheme($contentModel) ){
+                $result = true;
+            }
+            
         }
         return $result;
     }
     
     /**
      * Updates user info in the membertheme table
+     * 
      * @param UserContentModel $contentModel
+     * 
      * @return type bool
      */
     public function updateMemberTheme(UserContentModel $contentModel){
         $result = false;
-        var_dump($contentModel);
+        
         if(null !== $this->getDB() && $contentModel instanceof UserContentModel){
             $dbs = $this->getDB()->prepare('update membertheme set themeID = :themeID where memberID = :memberID');
             $dbs ->bindParam(':memberID', $contentModel->memberID, PDO::PARAM_STR);
@@ -109,10 +116,8 @@ class UserContent extends DB {
                         
             if($dbs->execute() && $dbs->rowCount() > 0){
                 $result = true;
-                echo '<P>Updated</p>';
             }
             else{
-                echo '<P>Failed theme update</p>';
                 $error = $dbs->errorInfo();
                 error_log($error[2], 3, "logs/errors.log");
             }

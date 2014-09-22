@@ -83,7 +83,7 @@ class Passcode extends DB{
 
                 if ( $dbs->execute() && $dbs->rowCount() > 0 ) {                    
                     $result = $dbs->fetch(PDO::FETCH_ASSOC);
-                    $_SESSION['MemberID'] = $result['AdminID'];
+                    $_SESSION['AdminID'] = $result['AdminID'];
                     $isValid = true;
                 } 
                 else{
