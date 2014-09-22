@@ -18,7 +18,7 @@ class AdminTables extends DB {
         $results = array();
 
         if ( null !== $this->getDB() ) {
-           $dbs = $this->getDB()->prepare('select * from Members, MemberStatus where MemberIDM = MemberIDS and StatusCode = "A"');
+           $dbs = $this->getDB()->prepare('select * from Members, MemberStatus where members.MemberID = memberstatus.MemberID and StatusCode = "A"');
 
             if ( $dbs->execute() && $dbs->rowCount() > 0 ) {
                 $results = $dbs->fetchAll(PDO::FETCH_ASSOC);
@@ -32,7 +32,7 @@ class AdminTables extends DB {
         $results = array();
 
         if ( null !== $this->getDB() ) {
-           $dbs = $this->getDB()->prepare('select * from Members, MemberStatus where MemberIDM = MemberIDS and StatusCode = "A" and DateNew = CURDATE()');
+           $dbs = $this->getDB()->prepare('select * from Members, MemberStatus where members.MemberID = memberstatus.MemberID and StatusCode = "A" and DateNew = CURDATE()');
 
             if ( $dbs->execute() && $dbs->rowCount() > 0 ) {
                 $results = $dbs->fetchAll(PDO::FETCH_ASSOC);
@@ -46,7 +46,7 @@ class AdminTables extends DB {
         $results = array();
 
         if ( null !== $this->getDB() ) {
-           $dbs = $this->getDB()->prepare('select * from members, memberstatus where MemberIDM = MemberIDS and StatusCode = "C"');
+           $dbs = $this->getDB()->prepare('select * from members, memberstatus where members.MemberID = memberstatus.MemberID and StatusCode = "C"');
 
             if ( $dbs->execute() && $dbs->rowCount() > 0 ) {
                 $results = $dbs->fetchAll(PDO::FETCH_ASSOC);
@@ -74,7 +74,7 @@ class AdminTables extends DB {
         $results = array();
 
         if ( null !== $this->getDB() ) {
-           $dbs = $this->getDB()->prepare('select * from members, signin, memberstatus where MemberIDM = MemberID and MemberIDS = MemberID');
+           $dbs = $this->getDB()->prepare('select * from members, signin, memberstatus where members.MemberID = signin.MemberID and signin.MemberID = memberstatus.MemberID');
 
             if ( $dbs->execute() && $dbs->rowCount() > 0 ) {
                 $results = $dbs->fetchAll(PDO::FETCH_ASSOC);
@@ -156,7 +156,7 @@ class AdminTables extends DB {
              echo '<td>', $value['LastName'] ,'</td>';
              echo '<td>', $value['DateNew'] ,'</td>';
              echo '<td>', $value['WebsiteURL'] ,'</td>';
-             echo '<td>', $value['PrimaryPhone'] ,'</td>';
+             echo '<td>', $value['Phone'] ,'</td>';
              echo '</tr>';
              //echo '<td><a href="updateaddress.php?id=', $value['id'] ,'">Edit</a> </td>';         
              //echo '<td><form name="mainform" action="updateaddress.php" method="get"><input name="id" type="hidden" value="', $value['id'] ,'" /><input type="submit" value="Edit" /></form> </td>';     
@@ -192,7 +192,7 @@ class AdminTables extends DB {
              echo '<td>', $value['LastName'] ,'</td>';
              echo '<td>', $value['DateNew'] ,'</td>';
              echo '<td>', $value['WebsiteURL'] ,'</td>';
-             echo '<td>', $value['PrimaryPhone'] ,'</td>';
+             echo '<td>', $value['Phone'] ,'</td>';
              echo '</tr>';
              //echo '<td><a href="updateaddress.php?id=', $value['id'] ,'">Edit</a> </td>';         
              //echo '<td><form name="mainform" action="updateaddress.php" method="get"><input name="id" type="hidden" value="', $value['id'] ,'" /><input type="submit" value="Edit" /></form> </td>';     
@@ -228,7 +228,7 @@ class AdminTables extends DB {
              echo '<td>', $value['LastName'] ,'</td>';
              echo '<td>', $value['DateNew'] ,'</td>';
              echo '<td>', $value['WebsiteURL'] ,'</td>';
-             echo '<td>', $value['PrimaryPhone'] ,'</td>';
+             echo '<td>', $value['Phone'] ,'</td>';
              echo '</tr>';
              //echo '<td><a href="updateaddress.php?id=', $value['id'] ,'">Edit</a> </td>';         
              //echo '<td><form name="mainform" action="updateaddress.php" method="get"><input name="id" type="hidden" value="', $value['id'] ,'" /><input type="submit" value="Edit" /></form> </td>';     

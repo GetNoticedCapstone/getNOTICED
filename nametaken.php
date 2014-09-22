@@ -1,11 +1,12 @@
 <?php include 'dependency.php'; ?>
 <?php
 
-$nameRequest = new UserSignUpModel(filter_input_array(INPUT_POST));
+$nameRequest = new UserSignUpModel();
+$nameRequest->setWebsiteURL(filter_input(INPUT_POST, 'websiteURL'));
         
-$checkWebsite = array( "taken" => 'Available', "website" => $nameRequest->getWebsiteURL() );
+//$checkWebsite = array( "taken" => 'Available', "website" => $nameRequest->getWebsiteURL() );
 
-$users = new Users();
+$users = new UserSignUp();
 
 if ( $users->websiteTaken($websiteRequest) )
 {

@@ -23,13 +23,13 @@ dates.
 <?php
 /* {Global PHP}############################################################## */
 
-//    if ( $_SESSION['AdminID'] <= 0 ) {               
-//                    session_destroy();
-//                    header('Location: loginPage.php');
-//                    exit;
-//                }
-//        logout::checkLogout();
-//        logout::confirmAccess();
+    if ( $_SESSION['AdminID'] < 0 ) {               
+                    session_destroy();
+                    header('Location: loginPage.php');
+                    exit;
+                }
+        logout::checkLogout();
+        logout::confirmAccess();
         
         $tables = new AdminTables();
 
