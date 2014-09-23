@@ -138,8 +138,8 @@ Designed developed and managed by David landi, Terri Gaskell, and Justin Barreir
                         </div>
                        
                         
-                        <a href="#" class="btn btnCircle gnScroll center-block " data-id="team">
-                            <i class="fa fa-angle-double-down animated "></i>
+                        <a href="#" class="btn btnCircle gnScroll center-block rdHide" data-id="team">
+                            <i class="fa fa-angle-double-down animated rdHide "></i>
                         </a>
                     </div>
                 </div>            
@@ -148,61 +148,56 @@ Designed developed and managed by David landi, Terri Gaskell, and Justin Barreir
         <div id="team" class="contentSection"><!--{team section}#############-->
             <div class="container teamSection">
                 <div class="row">
-                    <div class="col-md-4 col-lg-4 extSpaceTop"><!--{justin bio}-->
-                        <div class="center-block">
+                    <div class="col-md-4 col-lg-4"><!--{justin bio}-->
+                        <div class="img-responsive center-block extSpaceTop">
                             <img src="img/justin1.png" width="300" height="300" alt="" class="img-circle img-responsive imgSize">
-                            <div class="captionBox text-center">
-                                <h2 class="captionTitle">Justin Barreira</h2>
-                                <h4 class="captionTitle">Lead PHP Developer</h4>
-                                <p class="text-justify">As the lead PHP developer for this project, Justin's main responsibility was to
-                                ensure the successful implementation of the driving force behind our sass application.
-                                Some of the actions taken to accomplish this were to implement a design pattern, conduct 
-                                PHP code reviews before any code was moved to production, and invested a solid amount of time
-                                to research new ways to approve upon our PHP code. 
-                                </p>
-                                <br><br>
-                            </div>                        
                         </div>
+                        <div class="captionBox text-center">
+                            <h2 class="captionTitle">Justin Barreira</h2>
+                            <h4 class="captionTitle">Lead PHP Developer</h4>
+                            <p class="text-justify">
+                                As the lead PHP developer for this project, Justin's main responsibility was to
+                                ensure the successful development and implementation of the PHP solution that makes 
+                                this product work. The PHP solution needed for this project is pretty complex, but 
+                                Justin worked it out and deserves allot of credit for making this application actually work. 
+                            </p>
+                            
+                        </div>                        
                     </div><!--{end justin bio}-->
-                    <div class="col-md-4 col-lg-4 extSpaceTop"><!--{terry bio}-->
-                        <div class="img-responsive center-block">
-                            <img src="img/terri.png" alt="" width="300" height="300" class="img-circle img-responsive imgSize">
-                            <div class="captionBox text-center img-responsive">
-                                <h2 class="captionTitle">Terri Gaskell</h2>
-                                <h4 class="captionTitle">Project Manager & sql Developer</h4>
-                                
-                                <p class="text-justify">
-                                As the Project Manager and lead sql developer for this project, Terri was responsible for
-                                keeping the team on track in order to meet our deadlines and was also responsible for the
-                                development of the sql database needed for our sass application. Terri implemented a number
-                                of processes to both keep the team organized and create a culture where communication and 
-                                collaboration were maintained at high levels throughout the project. 
-                                </p>
-                                <br>
-                            </div> 
+                    <div class="col-md-4 col-lg-4"><!--{terry bio}-->
+                        <div class="img-responsive center-block extSpaceTop">
+                            <img src="img/terri.png" alt="" width="298" height="298" class="img-circle img-responsive imgSize">
                         </div>
+                        <div class="captionBox text-center img-responsive adjSize">
+                            <h2 class="captionTitle">Terri Gaskell</h2>
+                            <h4 class="captionTitle">Project Manager & sql Developer</h4>                               
+                            <p class="text-justify">
+                                As the lead sql developer for this project, Terri was responsible for the
+                                development of the sql database needed for our application.  Along with the 
+                                development of the database she also created administrative tools for the admin page 
+                                that allow a admin to manage the data contained within our application. 
+                            </p>
+                            
+                        </div>                       
                     </div><!--{end terry bio}-->
                     <div class="col-md-4 col-lg-4 extSpaceTop"><!--{david bio}-->
                         <div class="img-responsive center-block">
                             <img src="img/david1.jpg" width="300" height="300" alt="" class="img-circle img-responsive imgSize">
-                            <div class="captionBox text-center img-responsive">
-                                <h2 class="captionTitle">David Landi</h2>
-                                <h4 class="captionTitle">Lead Front-End Developer</h4>
-                                <p class="text-justify">
-                                As the lead Front-End developer for this project, David was responsible for the overall
-                                design and functionality our web based sass application. Some of the actions taken to 
-                                accomplish this were to conduct HTML, CSS, and javascript code reviews before any code 
-                                was moved to production, utilized the Twitter Bootstrap framework, and focused on designing 
-                                a customer centric application in order to ensure our product is easy on the eye and easy for
-                                anyone to use.
-                                </p>
-                                <br>
-                            </div> 
                         </div>
+                        <div class="captionBox text-center img-responsive">
+                            <h2 class="captionTitle">David Landi</h2>
+                            <h4 class="captionTitle">Lead Front-End Developer</h4>
+                            <p class="text-justify">
+                                As the lead Front-End developer for this project, David was responsible for the overall
+                                design and functionality of our web application. This included the HTML, Javascript and Css 
+                                development needed for this project to be mobile friendly, user friendly and visually appealing.
+                                He devoted a great deal of time designing something that looks great and utilizes modern web development. 
+                            </p>                         
+                        </div>                        
                     </div><!--{end david bio}-->
                 </div><!--{end row}-->
-                <a href="#" class="btn btnCircle gnScroll center-block" data-id="contact">
-                    <i class="fa fa-angle-double-down animated"></i>
+                <a href="#" class="btn btnCircle gnScroll center-block rdHide" data-id="contact">
+                    <i class="fa fa-angle-double-down animated rdHide"></i>
                 </a>
             </div><!--{end container}-->
         </div><!--{end team section}#########################################-->

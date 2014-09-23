@@ -66,5 +66,27 @@ a:hover {
    height: 240px;
     width: 240px;
 }
-.btn{max-width: 215px;}
+.btn{
+    
+    min-width: 100px;
+    max-width: 130px;
+    min-height: 20px;
+    
+}
 .imgMarkUp{margin-bottom: 5px;}
+
+.help{
+    margin-top: 200px;
+ }
+ .modContent{
+     max-width: 350px;
+     
+ }
+ .modal-header{
+     background-color: #F9BF3B; 
+ }
+ .modal-body{
+     background-color: #EEEEEE;
+     min-height: 250px;
+     max-height: 350px;
+ }
