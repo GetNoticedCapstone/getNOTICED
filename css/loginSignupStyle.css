@@ -18,7 +18,7 @@ body{
     font-size: 22px;
 }
 .help{
-    margin-top: 200px;
+    margin-top: 100px;
  }
  .modContent{
      max-width: 350px;
@@ -50,7 +50,7 @@ body{
         font-size: 26px;
     }
     .help{
-        margin-top: 300px;
+        margin-top: 200px;
     }
     .modal-body{
 

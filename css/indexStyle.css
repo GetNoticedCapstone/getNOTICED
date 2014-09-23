@@ -352,12 +352,12 @@ hr{
         background: url(../img/aboutsectionBG.jpg)bottom right no-repeat; 
     }
     .aboutFontSize{
-        font-size: 100%; 
+        font-size: 95%; 
         text-align: justify;
     }
     .transAboutBox{
         margin-top: 20px;
-        height: 250px;
+        height: 220px;
     }
     .carousel{
         margin-bottom: 30px;
@@ -367,13 +367,16 @@ hr{
         height: 75%;
     }
     .captionBox{
-        height: 290px;
+        height: 250px;
+        margin-bottom: 40px;
         padding-top: 1px;    
     }
     .ctBxTop{
         height: 200px;
+        margin-bottom: 0px;
     }
     .ctBxSize{
+        height: 290px;
         margin-bottom: 0px;
         padding-left: 20px;
     }
@@ -432,10 +435,10 @@ hr{
     }
     .transAboutBox{
         margin-top: 60px;
-        height: 450px;
+        height: 350px;
     }
     .carousel{
-        margin-bottom: 50px;
+        margin-bottom: 70px;
    }
    .imgSize{
         width: 90%;
@@ -450,7 +453,7 @@ hr{
     }
     .ctBxTop{
         margin-bottom: 0px;
-        height: 318px;
+        height: 280px;
         padding: 15px;
     }
     .ctBxSize{
@@ -471,8 +474,8 @@ hr{
     }
     .ctImgSize{
         
-        width: 385px;
-        height: 285px;
+        width: 345px;
+        height: 245px;
     }
 }
 /*############################################################################*/
