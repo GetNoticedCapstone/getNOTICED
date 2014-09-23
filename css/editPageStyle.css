@@ -66,5 +66,11 @@ a:hover {
    height: 240px;
     width: 240px;
 }
-.btn{max-width: 215px;}
+.btn{
+    
+    min-width: 100px;
+    max-width: 130px;
+    min-height: 20px;
+    
+}
 .imgMarkUp{margin-bottom: 5px;}

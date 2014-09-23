@@ -150,7 +150,7 @@ if ( $_SESSION['MemberID'] <= 0 ) {
                             }                   
                         ?>                      
                         </select>
-                       <a href="#" class="btn"><div class="btn1 btn btn-success pull-right">Next Section</a></div>
+                       <a href="#" class="btn"><div class="btn1 btn btn-info pull-right">Next Section</a></div>
                     </div>     
                 </div>
             </div>  
@@ -210,8 +210,8 @@ if ( $_SESSION['MemberID'] <= 0 ) {
             <div class="frmFooter">
                 <div class="row">
                     <div class="col-md-12 ">                   
-                        <a href="#" class="btn"><div class="btn2 btn btn-success pull-right">Next Section</a></div>
-                        <a href="#" class="btn"><div class="btn12 btn btn-success pull-left">Back</a></div> 
+                        <a href="#" class="btn"><div class="btn2 btn btn-info pull-right">Next Section</a></div>
+                        <a href="#" class="btn"><div class="btn12 btn btn-danger pull-left">Back</a></div> 
                     </div>
                 </div>
             </div>  
@@ -289,8 +289,8 @@ if ( $_SESSION['MemberID'] <= 0 ) {
             <div class="frmFooter">
                 <div class="row">
                     <div class="col-md-12">                   
-                        <a href="#" class="btn"><div class="btn3 btn btn-success pull-right">Next Section</a></div>
-                        <a href="#" class="btn"><div class="btn11 btn btn-success pull-left">Back</a></div> 
+                        <a href="#" class="btn"><div class="btn3 btn btn-info pull-right">Next Section</a></div>
+                        <a href="#" class="btn"><div class="btn11 btn btn-danger pull-left">Back</a></div> 
                     </div>
                 </div>
             </div>  
@@ -343,8 +343,8 @@ if ( $_SESSION['MemberID'] <= 0 ) {
             <div class="frmFooter">
                 <div class="row">
                     <div class="col-md-12">                   
-                        <a href="#" class="btn"><div class="btn4 btn btn-success pull-right">Next Section</a></div>
-                        <a href="#" class="btn"><div class="btn10 btn btn-success pull-left">Back</a></div> 
+                        <a href="#" class="btn"><div class="btn4 btn btn-info pull-right">Next Section</a></div>
+                        <a href="#" class="btn"><div class="btn10 btn btn-danger pull-left">Back</a></div> 
                     </div>
                 </div>
             </div>  
@@ -388,8 +388,8 @@ if ( $_SESSION['MemberID'] <= 0 ) {
                 <div class="row">
                     <div class="col-md-12">
 
-                        <a href="#" class="btn"><div class="btn5 btn btn-success pull-right">Next Section</a></div>
-                        <a href="#" class="btn"><div class="btn9 btn btn-success pull-left">Back</a></div> 
+                        <a href="#" class="btn"><div class="btn5 btn btn-info pull-right">Next Section</a></div>
+                        <a href="#" class="btn"><div class="btn9 btn btn-danger pull-left">Back</a></div> 
                     
                     </div>
                 </div>
@@ -444,8 +444,8 @@ if ( $_SESSION['MemberID'] <= 0 ) {
             <div class="frmFooter">
                 <div class="row">
                     <div class="col-md-12">                   
-                        <a href="#"><div class="btn6 btn btn-success pull-right">Next Section</a></div>
-                        <a href="#"><div class="btn8 btn btn-success pull-left">Back</a></div> 
+                        <a href="#"><div class="btn6 btn btn-info pull-right">Next Section</a></div>
+                        <a href="#"><div class="btn8 btn btn-danger pull-left">Back</a></div> 
                     </div>
                 </div>
             </div>  
@@ -481,7 +481,7 @@ if ( $_SESSION['MemberID'] <= 0 ) {
                 <div class="row">
                     <div class="col-md-12">
                         <button class="btn btn-primary btn-block pull-right" type="submit" value="Submit">Submit</button>
-                        <a href="#" class="btn"><div class="btn7 btn btn-success pull-left">Back</a></div>                          
+                        <a href="#" class="btn"><div class="btn7 btn btn-danger pull-left">Back</a></div>                          
                     </div>
                 </div>
             </div>
