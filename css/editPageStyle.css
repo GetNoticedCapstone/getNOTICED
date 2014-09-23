@@ -74,3 +74,19 @@ a:hover {
     
 }
 .imgMarkUp{margin-bottom: 5px;}
+
+.help{
+    margin-top: 200px;
+ }
+ .modContent{
+     max-width: 350px;
+     
+ }
+ .modal-header{
+     background-color: #F9BF3B; 
+ }
+ .modal-body{
+     background-color: #EEEEEE;
+     min-height: 250px;
+     max-height: 350px;
+ }
