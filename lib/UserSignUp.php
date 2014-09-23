@@ -166,7 +166,13 @@ class UserSignUp extends DB {
          
          return $isTaken;
     }
-    
+    /**
+      * A public function to check if a email has already been taken.
+      * 
+      * @Param UserSignUpModel $signinModel
+      * 
+      * @return bool
+      */
     public function emailTaken(UserSignUpModel $signinModel) {
         
         $email = $signinModel->getEmail();

@@ -18,23 +18,41 @@ new user then create new record, and redirect to userContent page
 <body>
 <?php  
 /* {Global PHP}############################################################## */
-$member = new UserSignUp();  
-$_SESSION["ValidURL"] = false;
+$member = new UserSignUp();
 
-if ( $_SESSION["ValidURL"] === true )
+if ( !isset($_SESSION['ValidSignUp']) ) {
+        $_SESSION['ValidSignUp'] = false;
+    }
+
+if ( $_SESSION["ValidSignUp"] === true )
 {
     if ( Util::isPostRequest() ) {
       
-        if ( null !== $_SESSION['MemberID'] ) {  
-          $member->createMembers($memberModel);
-          $member->createMemberStatus();
-          $member->createMemberTheme();
-          $_SESSION['login'] = true;
-          echo '<p>User Created</p>';
-          Util::redirect('userEditPage');
-      } else {
-          echo '<p>User could not be created</p>';
+        $memberModel = new UserSignUpModel(filter_input_array(INPUT_POST));
+        if(!$member->emailTaken($memberModel))
+        {
+            $_SESSION["MemberID"] = $member->createSignIn($memberModel);
+        
+        
+            if ( null !== $_SESSION['MemberID'] ) {  
+              $member->createMembers($memberModel);
+              $member->createMemberStatus();
+              $member->createMemberTheme();
+              $_SESSION['login'] = true;
+              echo '<p>User Created</p>';
+              Util::redirect('userEditPage');
+            } else {
+              echo '<p>User could not be created</p>';
+            }
       }
+    else{
+    ?>
+        <script type="text/javascript">
+            window.alert("The email you entered is already in use.\n\Please enter a different Email and try again.");
+        </script>
+    <?php
+
+    }
   }
 }
 else
@@ -89,9 +107,6 @@ else
                     <div class="col-md-12">
                         <div class="form-group">
                             <input id="email" name="email" type="email" class="form-control" placeholder="Email" required="true"/>
-                        </div> 
-                        <div class="form-group">
-                            <span class="emailTaken"></span>
                         </div>
                         <div class="form-group">
                             <input id="password" name="password" type="password" class="form-control" placeholder="Password" required="true"/>                   
