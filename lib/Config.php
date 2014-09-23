@@ -12,7 +12,7 @@ class Config {
     
  
 //     const   DB_DNS = "mysql:host=it.neit.edu;port=3306;dbname=getnoticed",
-//             DB_USER  = "getnoticed_user",
+//             DB_USER  = "getnoticed",
 //             DB_PASSWORD  = "neit2014";
     
 }

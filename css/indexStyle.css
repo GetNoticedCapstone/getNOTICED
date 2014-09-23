@@ -6,7 +6,7 @@
  * the size of elements with in the index page base on device screen width. 
  * Media queries are located at the bottom of this style sheet, all other 
  * are sorted in alpha. 
- * 415 lines
+ * 477 lines
  */
 
 /*{Mobile First Design########################################################*/
@@ -29,7 +29,7 @@ body{
     margin-bottom: 100px;
 }
 .captionBox{
-    padding: 10px;
+    padding: 2px 10px 5px 10px;
     background: url(../img/contentBG.png);
     box-shadow: 0px 2px 5px #000;
     color: #fff;
@@ -38,7 +38,7 @@ body{
     text-shadow: 1px 1px 1px #000;
     font-size: 12px;
     margin-top: 10px;
-    height: 260px;
+    height: 240px;
 }
 .captionTitle{
     color: #fff;
@@ -47,11 +47,9 @@ body{
 }
 .carouselSize{
     max-width: 600px;
-  
     max-height: 280px; 
 }
 .carousel{
-/*    margin-top: 90px;*/
     margin-bottom: 70px;
     margin-top: 20px;   
 }
@@ -163,7 +161,7 @@ hr{
     height: 30px;
 }
 .title{
-    margin-top:100px;
+    margin-top:50px;
     text-shadow: 2px 2px 5px black;
     font-family: 'Raleway', sans-serif;
     color: black; 
@@ -261,12 +259,75 @@ hr{
     visibility:  hidden;
 }
 /*############################################################################*/
-
+/*Screens 10" - 12"*/
 /*{Media Queries}#############################################################*/
-/*Screens 12" - 19"*/
-@media(min-width:1000px){
+@media(min-width:800px){
+    .contentSection{
+        min-height: 770px;
+    }
+    .header .navbar-brand{
+        padding-left: 0;
+    }
+    .navbar-nav{
+        float: right;
+    }
+    .title{
+        margin-top: 100px;
+        font-size: 60px;
+    }
+    .introText{
+        font-size: 18px;
+    }
+    .transAboutBox{
+        margin-top: 20px;
+        height: 200px;
+    }
+    .captionBox{
+        height: 250px;
+        padding-top: 1px;    
+    }
+    .ctBxTop{
+        height: 120px;
+    }
+    .extSpaceTop{
+        margin-top: 0px;
+    }
+    header{
+        margin-bottom: 0px;
+    }
+    .adjSize{
+        height: 240px;
+    }
+    .ctBxSize{
+        margin-bottom: 0px;
+        padding-left: 20px;
+    }
+    #googleMap{
+/*        width:100%;*/
+        height:210px;
+        margin-top: 20px;
+    }
+    .ciSize{
+    font-size: 16px;
+    text-align:  left;
+    }
+    .contactText{
+        margin-top: 40px;
+        font-size: 30px;       
+    }
+    .ctImgSize{
+        margin-top: 10px;
+        width: 235px;
+        height: 100px;
+    }
+}
+/*Screens 13" - 19"*/
+@media(min-width:1050px){
     body{
         overflow: hidden;
+    }
+    .rdHide{
+        visibility: visible;
     }
     .contentSection{
         min-height: 900px;
