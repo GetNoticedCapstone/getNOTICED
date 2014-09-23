@@ -8,8 +8,6 @@
 
 /**
  * Description of SignupModel
- *
- * @author David
  */
 class UserSignUpModel {
     

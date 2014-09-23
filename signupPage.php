@@ -19,21 +19,13 @@ new user then create new record, and redirect to userContent page
 <?php  
 /* {Global PHP}############################################################## */
 $member = new UserSignUp();  
-$urlRequest = new UserSignUpModel();
-$urlRequest->setWebsiteURL(filter_input(INPUT_POST, 'websiteURL'));
+$_SESSION["ValidURL"] = false;
 
-if ( $member->websiteTaken($urlRequest) )
+if ( $_SESSION["ValidURL"] === true )
 {
-    echo "Test";
-}
-
-
- if ( Util::isPostRequest() ) {
+    if ( Util::isPostRequest() ) {
       
-      $memberModel = new UserSignUpModel(filter_input_array(INPUT_POST));
-      $_SESSION['MemberID'] = $member->createSignIn($memberModel);
-      
-      if ( null !== $_SESSION['MemberID'] ) {  
+        if ( null !== $_SESSION['MemberID'] ) {  
           $member->createMembers($memberModel);
           $member->createMemberStatus();
           $member->createMemberTheme();
@@ -43,7 +35,21 @@ if ( $member->websiteTaken($urlRequest) )
       } else {
           echo '<p>User could not be created</p>';
       }
-  } 
+  }
+}
+else
+{
+    if ( Util::isPostRequest()){
+            ?>    
+            <script type="text/javascript">
+                window.alert("Your account could not be created.\n\Please enter a different URL and try again.");
+            </script>        
+    <?php
+    
+    }
+}
+
+  
 /* {End Global PHP}########################################################## */  
 ?>                 
     <nav class="navbar navbar-inverse" role="navigation"><!--{NAVIGATION}### -->
@@ -74,7 +80,6 @@ if ( $member->websiteTaken($urlRequest) )
                     </div>
                     <div class="col-md-6">
                         <h2 class="text-center titleFont">Free Membership</h2>
-                        <label class="nameTaken"></label>
                     </div>
                 </div>
                 <hr/>
@@ -84,15 +89,18 @@ if ( $member->websiteTaken($urlRequest) )
                     <div class="col-md-12">
                         <div class="form-group">
                             <input id="email" name="email" type="email" class="form-control" placeholder="Email" required="true"/>
-                        </div>                        
+                        </div> 
+                        <div class="form-group">
+                            <span class="emailTaken"></span>
+                        </div>
                         <div class="form-group">
                             <input id="password" name="password" type="password" class="form-control" placeholder="Password" required="true"/>                   
                         </div>
-                        <div for="websiteURL" class="form-group">
-                            <input id="websiteURL" name="websiteURL" type="text" class="form-control" placeholder="Website URL" required="true"/>
+                        <div class="form-group">
+                            <input id="websiteURL" name="websiteURL" type="text" class="form-control" placeholder="Create Website URL" required="true"/>
                         </div>
                         <div class="form-group">
-                        <label id="nameTaken"></label>
+                            <span class="nameTaken"></span>
                         </div>
                     </div>
                 </div>
@@ -124,7 +132,10 @@ if ( $member->websiteTaken($urlRequest) )
                             and you will be redirected to the login page. 
                             </p>
                             <p>
-                            All three fields are required to become a new member. 
+                            All three fields are required to become a new member.
+                            
+                            For the Website URL, enter your own personal web URL.
+                            This will create the address you will give out so people can visit your site.
                             </p>
                             <p>
                             If you need further support, please contact us at <br>
@@ -141,10 +152,10 @@ if ( $member->websiteTaken($urlRequest) )
 </div>
 <!--{END MODALS}#############################################################-->
 <!--{lOAD JAVASCRIPT}####################################################### -->
+        <script src="js/signupValidation.js"></script>
         <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
         <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-        <script src="js/bootstrap.js"></script>  
-        <script src="js/signupValidation.js.js"></script>
+        <script src="js/bootstrap.js"></script>        
 <!--{END JAVASCRIPT}######################################################## -->  
 </body>
 </html>

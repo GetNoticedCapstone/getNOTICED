@@ -140,15 +140,42 @@ class UserSignUp extends DB {
            return $results;
      }
      
-     public function websiteTaken(UserSignUpModel $signinModel) {
+     /**
+      * A public function to check if a URL name has already been taken.
+      * 
+      * @Param UserSignUpModel $signinModel
+      * 
+      * @return bool
+      */
+     
+    public function websiteTaken(UserSignUpModel $signinModel) {
         
         $website = $signinModel->getWebsiteURL();
         $isTaken = false;
         
             if ( null !== $this->getDB() ) {
 
-                $dbs = $this->getDB()->prepare('select websiteURL from members where website = :website limit 1');
-                $dbs->bindParam(':website', $website, PDO::PARAM_STR);
+                $dbs = $this->getDB()->prepare('select WebsiteURL from members where WebsiteURL = :websiteURL limit 1');
+                $dbs->bindParam(':websiteURL', $website, PDO::PARAM_STR);
+
+                if ( $dbs->execute() && $dbs->rowCount() > 0 ) {
+                    $isTaken = true;
+                } 
+
+             }
+         
+         return $isTaken;
+    }
+    
+    public function emailTaken(UserSignUpModel $signinModel) {
+        
+        $email = $signinModel->getEmail();
+        $isTaken = false;
+        
+            if ( null !== $this->getDB() ) {
+
+                $dbs = $this->getDB()->prepare('select Email from signin where Email = :email limit 1');
+                $dbs->bindParam(':email', $email, PDO::PARAM_STR);
 
                 if ( $dbs->execute() && $dbs->rowCount() > 0 ) {
                     $isTaken = true;
